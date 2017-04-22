@@ -27,42 +27,14 @@ export default class extends Phaser.State {
     // Make the camera follow the sprite
     this.game.camera.follow(this.player)
 
-    // Enable cursor keys so we can create some controls
-    this.cursors = this.game.input.keyboard.createCursorKeys()
-
-    // Enable WASD movement
-    this.upButton = this.game.input.keyboard.addKey(Phaser.Keyboard.UP)
-    this.downButton = this.game.input.keyboard.addKey(Phaser.Keyboard.DOWN)
-
     this.game.scale.pageAlignHorizontally = true
     this.game.scale.pageAlignVertically = true
     this.game.scale.refresh()
-
-    loadMap(this.game)
   }
 
   update () {
-    setMovement(this.player.body, this.upButton, this.downButton)
-
     if (this.player.body.x >= this.world.bounds.width) {
       this.state.start('Fight')
     }
   }
-}
-
-function setMovement (sprite, up, down) {
-  if (up.isDown) {
-    sprite.velocity.y = 300
-  } else if (down.isDown) {
-    sprite.velocity.y = -300
-  } else {
-    sprite.velocity.y = 0
-  }
-}
-
-function loadMap (game) {
-  var travelEarth = 'assets/tilemaps/travel_earth/tiles.json'
-
-  game.load.tilemap('tilemap', travelEarth, null, Phaser.Tilemap.TILED_JSON)
-  game.load.image('tiles', 'assets/images/lofi_environment_4x.png', 32, 32, 16)
 }

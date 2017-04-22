@@ -40,31 +40,49 @@ export default class extends Phaser.State {
   }
 
   update () {
+
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.sprite, this.groundLayer)
 
     const player = this.sprite.body
+    
     // Make the sprite jump when the up key is pushed
     if (player.onFloor() && this.cursors.up.isDown) {
       player.velocity.y = -400
     }
 
     if (this.cursors.right.isDown) {
+      
       if (this.cursors.right.shiftKey) {
         player.velocity.x = 200
       } else {
         player.velocity.x = 100
       }
+      
       this.sprite.scale.x = 1
+
     } else if (this.cursors.left.isDown) {
+      
       if (this.cursors.left.shiftKey) {
         player.velocity.x = -200
       } else {
         player.velocity.x = -100
       }
+      
       this.sprite.scale.x = -1
+
     } else {
       player.velocity.x = 0
     }
+
   }
 }
+
+
+
+
+
+
+
+
+

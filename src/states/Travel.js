@@ -28,11 +28,17 @@ export default class extends Phaser.State {
     this.game.scale.pageAlignHorizontally = true
     this.game.scale.pageAlignVertically = true
     this.game.scale.refresh()
+
+    this.game.time.advancedTiming = true
   }
 
   update () {
     if (this.player.body.x >= this.world.bounds.width) {
       this.state.start('Fight')
     }
+  }
+
+  render () {
+    this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
   }
 }

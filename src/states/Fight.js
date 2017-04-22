@@ -45,12 +45,18 @@ export default class extends Phaser.State {
     this.game.scale.pageAlignHorizontally = true
     this.game.scale.pageAlignVertically = true
     this.game.scale.refresh()
+
+    this.game.time.advancedTiming = true
   }
 
   update () {
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.player, this.groundLayer)
     this.game.physics.arcade.collide(this.boss, this.groundLayer)
+  }
+
+  render () {
+    this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
   }
 }
 

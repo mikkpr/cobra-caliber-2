@@ -37,6 +37,12 @@ export default class extends Phaser.State {
 
     // Enable cursor keys so we can create some controls
     this.cursors = this.game.input.keyboard.createCursorKeys()
+
+    // Enable WASD movement
+    this.upButton = this.game.input.keyboard.addKey(Phaser.Keyboard.W);
+    this.downButton = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
+    this.leftButton = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
+    this.rightButton = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
   }
 
   update () {
@@ -45,13 +51,13 @@ export default class extends Phaser.State {
     this.game.physics.arcade.collide(this.sprite, this.groundLayer)
 
     const player = this.sprite.body
-    
+
     // Make the sprite jump when the up key is pushed
-    if (player.onFloor() && this.cursors.up.isDown) {
+    if (player.onFloor() && (this.cursors.up.isDown || this.upButton.isDown)) {
       player.velocity.y = -400
     }
 
-    if (this.cursors.right.isDown) {
+    if (this.cursors.right.isDown || this.rightButton.isDown) {
       
       if (this.cursors.right.shiftKey) {
         player.velocity.x = 200
@@ -61,7 +67,7 @@ export default class extends Phaser.State {
       
       this.sprite.scale.x = 1
 
-    } else if (this.cursors.left.isDown) {
+    } else if (this.cursors.left.isDown || this.leftButton.isDown) {
       
       if (this.cursors.left.shiftKey) {
         player.velocity.x = -200

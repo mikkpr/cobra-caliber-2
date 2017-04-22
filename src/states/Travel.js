@@ -14,10 +14,11 @@ export default class extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
-    this.map = this.game.add.tilemap('tilemap')
+    this.map = this.game.add.tilemap('earth_travel')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
     
-    // Add both the background and ground layers. We won't be doing anything with the GroundLayer though
+    // Add both the background and ground layers. We won't be doing anything
+    // with the GroundLayer though
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
     this.groundLayer = this.map.createLayer('groundlayer')
 

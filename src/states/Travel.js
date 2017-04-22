@@ -19,9 +19,7 @@ export default class extends Phaser.State {
     this.backgroundLayer.resizeWorld()
 
     // Add the sprite to the game and enable arcade physics on it
-    var playerSpawnX = this.game.world.centerX / 2
-
-    this.player = new Player(this.game, playerSpawnX, this.game.world.centerY)
+    this.player = new Player(this.game, 100, this.game.world.centerY)
     this.world.add(this.player)
 
     // Make the camera follow the sprite

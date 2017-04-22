@@ -139,7 +139,7 @@ function setMovement(sprite, sprite_body, up, left, right) {
 function addBasicPhysics(item) {
   item.body.bounce.y = 0.3
   item.body.gravity.y = 1000
-  item.body.gravity.x = 0
+  // item.body.gravity.x = 20000
   item.anchor.setTo(0.5)
 }
 

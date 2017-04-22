@@ -22,20 +22,21 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 100, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    var player_spawn_x = this.game.world.centerX;
-    var player_spawn_y = this.game.world.centerY;
+    var player_spawn_x = this.game.world.centerX / 2;
+    var baddie_spawn_x = this.game.world.centerX + this.game.world.centerX / 2;
 
-    this.sprite = this.game.add.sprite(player_spawn_x, player_spawn_y, 'chars_ss')
+    this.sprite = this.game.add.sprite(player_spawn_x, this.game.world.centerY, 'chars_ss')
     this.game.physics.arcade.enable(this.sprite)
+
+    this.baddie_1 = this.game.add.sprite(baddie_spawn_x, this.game.world.centerY, 'baddie_1')
+    this.game.physics.arcade.enable(this.baddie_1)
 
     // Change the world size to match the size of this layer
     this.groundLayer.resizeWorld()
 
     // Set some physics on the sprite
-    this.sprite.body.bounce.y = 0.3
-    this.sprite.body.gravity.y = 1000
-    this.sprite.body.gravity.x = 0
-    this.sprite.anchor.setTo(0.5)
+    addBasicPhysics(this.sprite);
+    addBasicPhysics(this.baddie_1);
 
     // Make the camera follow the sprite
     this.game.camera.follow(this.sprite)
@@ -63,39 +64,87 @@ export default class extends Phaser.State {
 
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.sprite, this.groundLayer)
+    this.game.physics.arcade.collide(this.baddie_1, this.groundLayer)
 
     const player = this.sprite.body
+    const baddie = this.baddie_1.body
+
+    setArrowMovement(this.cursors, baddie, this.baddie_1)
+    setMovement(player, this.sprite, this.upButton, this.leftButton, this.rightButton)
+  }
+
+}
+
+function setArrowMovement(cursors, sprite, sprite_body) {
 
     // Make the sprite jump when the up key is pushed
-    if (player.onFloor() && (this.cursors.up.isDown || this.upButton.isDown)) {
-      player.velocity.y = -400
+    if (sprite.onFloor() && cursors.up.isDown) {
+      sprite.velocity.y = -400
     }
 
-    if (this.cursors.right.isDown || this.rightButton.isDown) {
+    if (cursors.right.isDown) {
       
-      if (this.cursors.right.shiftKey) {
-        player.velocity.x = 200
+      if (cursors.right.shiftKey) {
+        sprite.velocity.x = 200
       } else {
-        player.velocity.x = 100
+        sprite.velocity.x = 100
       }
       
-      this.sprite.scale.x = 1
+      sprite_body.scale.x = 1
 
-    } else if (this.cursors.left.isDown || this.leftButton.isDown) {
+    } else if (cursors.left.isDown) {
       
-      if (this.cursors.left.shiftKey) {
-        player.velocity.x = -200
+      if (cursors.left.shiftKey) {
+        sprite.velocity.x = -200
       } else {
-        player.velocity.x = -100
+        sprite.velocity.x = -100
       }
       
-      this.sprite.scale.x = -1
+      sprite_body.scale.x = -1
 
     } else {
-      player.velocity.x = 0
+      sprite.velocity.x = 0
+    }
+}
+
+function setMovement(sprite, sprite_body, up, left, right) {
+    
+    // Make the sprite jump when the up key is pushed
+    if (sprite.onFloor() && up.isDown) {
+      sprite.velocity.y = -400
     }
 
-  }
+    if (right.isDown) {
+      
+      if (right.shiftKey) {
+        sprite.velocity.x = 200
+      } else {
+        sprite.velocity.x = 100
+      }
+      
+      sprite_body.scale.x = 1
+
+    } else if (left.isDown) {
+      
+      if (left.shiftKey) {
+        sprite.velocity.x = -200
+      } else {
+        sprite.velocity.x = -100
+      }
+      
+      sprite_body.scale.x = -1
+
+    } else {
+      sprite.velocity.x = 0
+    }
+
+}
+
+function addBasicPhysics(item) {
+  item.body.bounce.y = 0.3
+  item.body.gravity.y = 1000
+  item.body.gravity.x = 0
+  item.anchor.setTo(0.5)
 }
 
 

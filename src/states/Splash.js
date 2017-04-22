@@ -20,6 +20,8 @@ export default class extends Phaser.State {
 
     this.load.spritesheet('chars_ss', 'assets/images/lofi_char_4x.png', char_size * char_grid_hor, char_size * char_grid_vert, 1)
 
+    this.load.spritesheet('baddie_1', 'assets/images/baddie_1.png', 62, 69, 16)
+    
     var template_tiles = 'assets/tilemaps/template/tiles.json'
     var boss_fight = "assets/tilemaps/boss/tiles.json"
 

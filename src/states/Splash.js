@@ -9,6 +9,7 @@ export default class extends Phaser.State {
 
     this.loaderBg = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBg')
     this.loaderBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBar')
+    
     centerGameObjects([this.loaderBg, this.loaderBar])
 
     this.load.setPreloadSprite(this.loaderBar)
@@ -23,7 +24,7 @@ export default class extends Phaser.State {
     this.load.spritesheet('baddie_1', 'assets/images/baddie_1.png', 62, 69, 16)
     
     var template_tiles = 'assets/tilemaps/template/tiles.json'
-    var boss_fight = "assets/tilemaps/boss/tiles.json"
+    var boss_fight = "assets/tilemaps/boss_moon/tiles.json"
 
     this.load.tilemap('tilemap', boss_fight, null, Phaser.Tilemap.TILED_JSON)
     this.load.image('tiles', 'assets/images/lofi_environment_4x.png', 32, 32, 16)

@@ -12,7 +12,7 @@ export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
-    this.game.plugins.add(Curve, [20, 0, 20])
+    // this.game.plugins.add(Curve, [20, 0, 20])
 
     this.map = this.game.add.tilemap('tilemap')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -155,7 +155,7 @@ function setMovement(sprite, sprite_body, up, left, right) {
       }
       
       sprite_body.scale.x = -1
-
+      loadMap();
     } else {
       sprite.velocity.x = 0
     }
@@ -169,7 +169,13 @@ function addBasicPhysics(item) {
   item.anchor.setTo(0.5)
 }
 
+function loadMap()
+{
+    var boss_fight = "assets/tilemaps/travel_earth/tiles.json"
 
+    this.load.tilemap('tilemap', boss_fight, null, Phaser.Tilemap.TILED_JSON)
+    this.load.image('tiles', 'assets/images/lofi_environment_4x.png', 32, 32, 16)
+}
 
 
 

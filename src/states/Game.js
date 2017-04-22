@@ -80,6 +80,25 @@ function setArrowMovement(cursors, sprite, sprite_body) {
     // Make the sprite jump when the up key is pushed
     if (sprite.onFloor() && cursors.up.isDown) {
       sprite.velocity.y = -400
+
+      // Do a barrel roll
+      sprite_body.scale.y = -0.3;
+      var time = 100;
+      setTimeout(function() { 
+        sprite_body.scale.y = -0.6;
+        setTimeout(function() { 
+          sprite_body.scale.y = 0.1;
+          setTimeout(function() { 
+            sprite_body.scale.y = 0.3;
+            setTimeout(function() { 
+              sprite_body.scale.y = 0.6;
+              setTimeout(function() { 
+                sprite_body.scale.y = 1;
+              }, time);
+            }, time);
+          }, time);
+        }, time);
+      }, time);
     }
 
     if (cursors.right.isDown) {

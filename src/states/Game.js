@@ -3,7 +3,9 @@ import Phaser from 'phaser'
 export default class extends Phaser.State {
   init () {}
 
-  preload () {}
+  preload () {
+
+  }
 
   create () {
     this.game.world.enableBody = true
@@ -11,9 +13,8 @@ export default class extends Phaser.State {
 
     this.map = this.game.add.tilemap('tilemap')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
-
-    // Add both the background and ground layers. We won't be doing anything with the
-    // GroundLayer though
+    
+    // Add both the background and ground layers. We won't be doing anything with the GroundLayer though
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
     this.groundLayer = this.map.createLayer('groundlayer')
 
@@ -21,17 +22,21 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 100, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    this.sprite = this.game.add.sprite(10, this.game.world.centerY, 'chars_ss')
+    var player_spawn_x = this.game.world.centerX;
+    var player_spawn_y = this.game.world.centerY;
+
+    this.sprite = this.game.add.sprite(player_spawn_x, player_spawn_y, 'chars_ss')
     this.game.physics.arcade.enable(this.sprite)
 
     // Change the world size to match the size of this layer
     this.groundLayer.resizeWorld()
 
     // Set some physics on the sprite
-    this.sprite.body.bounce.y = 0
+    this.sprite.body.bounce.y = 0.3
     this.sprite.body.gravity.y = 1000
     this.sprite.body.gravity.x = 0
     this.sprite.anchor.setTo(0.5)
+
     // Make the camera follow the sprite
     this.game.camera.follow(this.sprite)
 
@@ -43,6 +48,15 @@ export default class extends Phaser.State {
     this.downButton = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
     this.leftButton = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
     this.rightButton = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
+
+    // Game scaling:
+    //game.scale.setGameSize(1200, 450); // et voila!
+    // game.position.x = 50;
+
+    this.game.scale.pageAlignHorizontally = true;
+    this.game.scale.pageAlignVertically = true;
+    this.game.scale.refresh();
+
   }
 
   update () {

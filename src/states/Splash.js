@@ -13,9 +13,17 @@ export default class extends Phaser.State {
 
     this.load.setPreloadSprite(this.loaderBar)
 
-    this.load.spritesheet('chars_ss', 'assets/images/lofi_char_4x.png', 32, 32, 16)
+    const char_size = 32;
 
-    this.load.tilemap('tilemap', 'assets/tilemaps/tiles.json', null, Phaser.Tilemap.TILED_JSON)
+    var char_grid_vert = 1;
+    var char_grid_hor = 1;
+
+    this.load.spritesheet('chars_ss', 'assets/images/lofi_char_4x.png', char_size * char_grid_hor, char_size * char_grid_vert, 1)
+
+    var template_tiles = 'assets/tilemaps/template/tiles.json'
+    var boss_fight = "assets/tilemaps/boss/tiles.json"
+
+    this.load.tilemap('tilemap', boss_fight, null, Phaser.Tilemap.TILED_JSON)
     this.load.image('tiles', 'assets/images/lofi_environment_4x.png', 32, 32, 16)
   }
 

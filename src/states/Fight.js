@@ -41,6 +41,10 @@ export default class extends Phaser.State {
 
     // Make the camera follow the player.
     this.game.camera.follow(this.player)
+
+    this.game.scale.pageAlignHorizontally = true
+    this.game.scale.pageAlignVertically = true
+    this.game.scale.refresh()
   }
 
   update () {

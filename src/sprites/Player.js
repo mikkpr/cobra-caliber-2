@@ -11,38 +11,25 @@ export default class extends Phaser.Sprite {
 
     this.cursors = this.game.input.keyboard.createCursorKeys()
 	
-	// Gamepad support
-	game.input.gamepad.start();
-	pad1 = game.input.gamepad.pad1;
+	  // Gamepad support
+	  game.input.gamepad.start()
   }
 
   update () {
+	  const pad1 = game.input.gamepad.pad1
+
     const acc_v = 300
-    if (this.cursors.up.isDown) {
+    if (this.cursors.up.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1) {
       this.body.velocity.y = -acc_v
-    } else if (this.cursors.down.isDown) {
+    } else if (this.cursors.down.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1) {
       this.body.velocity.y = acc_v
     }
 	
-	if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1) {
-		this.body.velocity.y = -acc_v;
-    }
-    else if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1) {
-		this.body.velocity.y = acc_v;
-    }
-	
     const acc_h = 500
-    if (this.cursors.left.isDown) {
+    if (this.cursors.left.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
       this.body.velocity.x = -acc_h
-    } else if (this.cursors.right.isDown) {
+    } else if (this.cursors.right.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1) {
       this.body.velocity.x = acc_h
-    }
-	
-	if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
-        this.body.velocity.x = -acc_h;
-    }
-    else if (pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1) {
-        this.body.velocity.x = acc_h;
     }
   }
 }

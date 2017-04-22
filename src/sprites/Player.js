@@ -13,7 +13,7 @@ export default class extends Phaser.Sprite {
 	
 	// Gamepad support
 	game.input.gamepad.start();
-	
+	pad1 = game.input.gamepad.pad1;
   }
 
   update () {

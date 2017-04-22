@@ -12,7 +12,7 @@ export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
-    this.game.plugins.add(Curve, [20, 0, 20])
+    this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
     this.map = this.game.add.tilemap('tilemap')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')

@@ -8,7 +8,7 @@ export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
-    this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
+    this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
     this.map = this.game.add.tilemap('earth_travel')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -40,5 +40,9 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
+  }
+
+  shutdown () {
+    this.game.plugins.remove(this.curve)
   }
 }

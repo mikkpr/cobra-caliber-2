@@ -8,10 +8,11 @@ export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
+
     this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
     this.map = this.game.add.tilemap('earth_travel')
-    this.map.addTilesetImage('lofi_environment_4x', 'tiles')
+	this.map.addTilesetImage('lofi_environment_4x', 'tiles')
 
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
@@ -21,6 +22,15 @@ export default class extends Phaser.State {
     // Add the sprite to the game and enable arcade physics on it
     this.player = new Player(this.game, 100, this.game.world.centerY)
     this.world.add(this.player)
+
+    // Add a bitchin trail because we are going supersonic
+	this.playerTrail = game.add.emitter(this.player.x, this.player.y, 15);
+	this.playerTrail.makeParticles('chars_small', 165);
+	this.playerTrail.setXSpeed(0, 0);
+	this.playerTrail.setYSpeed(0, 0);
+	this.playerTrail.setAlpha(0.8, 0.01, 150);
+	this.playerTrail.setRotation(0);
+	this.playerTrail.start(false, 50, 10);
 
     // Make the camera follow the sprite
     this.game.camera.follow(this.player)
@@ -36,6 +46,9 @@ export default class extends Phaser.State {
     if (this.player.body.x >= this.world.bounds.width) {
       this.state.start('Fight')
     }
+
+    this.playerTrail.x = this.player.x;
+    this.playerTrail.y = this.player.y;
   }
 
   render () {

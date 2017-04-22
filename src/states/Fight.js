@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 
+import Boss from '../sprites/Boss'
 import Player from '../sprites/Player'
 
 import Curve from '../plugins/Curve'
@@ -29,36 +30,34 @@ export default class extends Phaser.State {
 
     // Add the sprite to the game and enable arcade physics on it
     var player_spawn_x = this.game.world.centerX / 2;
-    var baddie_spawn_x = this.game.world.centerX + this.game.world.centerX / 2;
+    var boss_spawn_x = this.game.world.centerX + this.game.world.centerX / 2;
 
     this.player = new Player(this.game, player_spawn_x, this.game.world.centerY)
     this.world.add(this.player)
 
-    this.baddie_1 = this.game.add.sprite(baddie_spawn_x, this.game.world.centerY, 'chars_large', 72)
-    this.game.physics.arcade.enable(this.baddie_1)
+    this.boss = new Boss(this.game, boss_spawn_x, this.game.world.centerY)
+    this.world.add(this.boss)
 
     // Change the world size to match the size of this layer
     this.groundLayer.resizeWorld()
 
-    // Set some physics on the sprite
-    addBasicPhysics(this.player);
-    addBasicPhysics(this.baddie_1);
+    // Add gravity to the sprites.
+    addGravity(this.player);
+    addGravity(this.boss);
 
     // Make the camera follow the player.
     this.game.camera.follow(this.player)
   }
 
   update () {
-
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.player, this.groundLayer)
-    this.game.physics.arcade.collide(this.baddie_1, this.groundLayer)
+    this.game.physics.arcade.collide(this.boss, this.groundLayer)
   }
 
 }
 
-function addBasicPhysics(item) {
+function addGravity(item) {
   item.body.bounce.y = 0.3
   item.body.gravity.y = 1000
-  // item.body.gravity.x = 20000
 }

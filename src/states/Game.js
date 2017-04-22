@@ -21,20 +21,17 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 100, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    this.sprite = this.game.add.sprite(10, this.game.world.centerY, 'player')
+    this.sprite = this.game.add.sprite(10, this.game.world.centerY, 'chars_ss')
     this.game.physics.arcade.enable(this.sprite)
 
     // Change the world size to match the size of this layer
     this.groundLayer.resizeWorld()
 
-    console.log(this.groundLayer, this.backgroundLayer)
-
     // Set some physics on the sprite
-    this.sprite.body.bounce.y = 0.2
-    this.sprite.body.gravity.y = 3000
-    this.sprite.body.gravity.x = 20
-    this.sprite.body.velocity.x = 100
-
+    this.sprite.body.bounce.y = 0
+    this.sprite.body.gravity.y = 1000
+    this.sprite.body.gravity.x = 0
+    this.sprite.anchor.setTo(0.5)
     // Make the camera follow the sprite
     this.game.camera.follow(this.sprite)
 
@@ -46,9 +43,28 @@ export default class extends Phaser.State {
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.sprite, this.groundLayer)
 
+    const player = this.sprite.body
     // Make the sprite jump when the up key is pushed
-    if (this.cursors.up.isDown) {
-      this.sprite.body.velocity.y = -500
+    if (player.onFloor() && this.cursors.up.isDown) {
+      player.velocity.y = -400
+    }
+
+    if (this.cursors.right.isDown) {
+      if (this.cursors.right.shiftKey) {
+        player.velocity.x = 200
+      } else {
+        player.velocity.x = 100
+      }
+      this.sprite.scale.x = 1
+    } else if (this.cursors.left.isDown) {
+      if (this.cursors.left.shiftKey) {
+        player.velocity.x = -200
+      } else {
+        player.velocity.x = -100
+      }
+      this.sprite.scale.x = -1
+    } else {
+      player.velocity.x = 0
     }
   }
 }

@@ -19,6 +19,9 @@ export default class extends Phaser.State {
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
     this.groundLayer = this.map.createLayer('groundlayer')
 
+    // Change the world size to match the size of this layer
+    this.groundLayer.resizeWorld()
+
     // Before you can use the collide function you need to set what tiles can collide
     this.map.setCollisionBetween(1, 100, true, 'groundlayer')
 
@@ -31,9 +34,6 @@ export default class extends Phaser.State {
 
     this.boss = new Boss(this.game, bossSpawnX, this.game.world.centerY)
     this.world.add(this.boss)
-
-    // Change the world size to match the size of this layer
-    this.groundLayer.resizeWorld()
 
     // Add gravity to the sprites.
     addGravity(this.player)

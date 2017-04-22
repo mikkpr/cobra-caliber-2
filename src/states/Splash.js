@@ -12,13 +12,8 @@ export default class extends Phaser.State {
 
     this.load.setPreloadSprite(this.loaderBar)
 
-    const char_size = 32;
-
-    var char_grid_vert = 1;
-    var char_grid_hor = 1;
-
-    this.load.spritesheet('chars_ss', 'assets/images/lofi_char_4x.png', char_size * char_grid_hor, char_size * char_grid_vert, 1)
-    this.load.spritesheet('baddie_1', 'assets/images/baddie_1.png', 62, 69, 16)
+    this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
+    this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
     
     this.load.tilemap('moon_fight', 'assets/tilemaps/moon_fight.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('earth_travel', 'assets/tilemaps/earth_travel.json', null, Phaser.Tilemap.TILED_JSON)

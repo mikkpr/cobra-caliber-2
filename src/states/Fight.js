@@ -29,10 +29,10 @@ export default class extends Phaser.State {
     var player_spawn_x = this.game.world.centerX / 2;
     var baddie_spawn_x = this.game.world.centerX + this.game.world.centerX / 2;
 
-    this.sprite = this.game.add.sprite(player_spawn_x, this.game.world.centerY, 'chars_ss')
+    this.sprite = this.game.add.sprite(player_spawn_x, this.game.world.centerY, 'chars_small', 0)
     this.game.physics.arcade.enable(this.sprite)
 
-    this.baddie_1 = this.game.add.sprite(baddie_spawn_x, this.game.world.centerY, 'baddie_1')
+    this.baddie_1 = this.game.add.sprite(baddie_spawn_x, this.game.world.centerY, 'chars_large', 72)
     this.game.physics.arcade.enable(this.baddie_1)
 
     // Change the world size to match the size of this layer

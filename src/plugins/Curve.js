@@ -26,7 +26,7 @@ export default class extends Phaser.Plugin {
     // Copy ImageData, shifting each column of pixels down by the curve offset.
     const pre = this.game.context.getImageData(0, 0, this.game.width, this.game.height)
     for (let i = 0; i < pre.data.length; i++) {
-      this.post[i] = pre.data[i - this.curveOff[i]]
+      this.post[i + this.curveOff[i]] = pre.data[i]
     }
     this.game.context.putImageData(new ImageData(this.post, pre.width), 0, 0)
   }

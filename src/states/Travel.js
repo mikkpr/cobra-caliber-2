@@ -16,6 +16,7 @@ export default class extends Phaser.State {
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
+    this.backgroundLayer.resizeWorld()
 
     // Add the sprite to the game and enable arcade physics on it
     var playerSpawnX = this.game.world.centerX / 2;
@@ -24,11 +25,11 @@ export default class extends Phaser.State {
     this.world.add(this.player)
 
     // Make the camera follow the sprite
-    this.game.camera.follow(this.sprite)
+    this.game.camera.follow(this.player)
   }
 
   update () {
-    if (this.player.x > this.game.world.width) {
+    if (this.player.x > this.world.width) {
       this.state.start('Fight')
     }
   }

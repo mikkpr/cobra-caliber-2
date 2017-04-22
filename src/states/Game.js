@@ -12,7 +12,7 @@ export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
-    // this.game.plugins.add(Curve, [20, 0, 20])
+    this.game.plugins.add(Curve, [20, 0, 20])
 
     this.map = this.game.add.tilemap('tilemap')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -73,17 +73,21 @@ export default class extends Phaser.State {
     const player = this.sprite.body
     const baddie = this.baddie_1.body
 
-    setArrowMovement(this.cursors, baddie, this.baddie_1)
+    setMovement(baddie, this.baddie_1, this.cursors.up, this.cursors.left, this.cursors.right)
     setMovement(player, this.sprite, this.upButton, this.leftButton, this.rightButton)
   }
 
 }
 
-function setArrowMovement(cursors, sprite, sprite_body) {
+function setMovement(sprite, sprite_body, up, left, right) {
+
+    var velocity_jumping = -500;
+    var velocity_running = 400;
+    var velocity_walking = 200;
 
     // Make the sprite jump when the up key is pushed
-    if (sprite.onFloor() && cursors.up.isDown) {
-      sprite.velocity.y = -400
+    if (sprite.onFloor() && up.isDown) {
+      sprite.velocity.y = velocity_jumping
 
       // Do a barrel roll
       sprite_body.scale.y = -0.3;
@@ -103,46 +107,15 @@ function setArrowMovement(cursors, sprite, sprite_body) {
           }, time);
         }, time);
       }, time);
-    }
 
-    if (cursors.right.isDown) {
-      
-      if (cursors.right.shiftKey) {
-        sprite.velocity.x = 200
-      } else {
-        sprite.velocity.x = 100
-      }
-      
-      sprite_body.scale.x = 1
-
-    } else if (cursors.left.isDown) {
-      
-      if (cursors.left.shiftKey) {
-        sprite.velocity.x = -200
-      } else {
-        sprite.velocity.x = -100
-      }
-      
-      sprite_body.scale.x = -1
-
-    } else {
-      sprite.velocity.x = 0
-    }
-}
-
-function setMovement(sprite, sprite_body, up, left, right) {
-    
-    // Make the sprite jump when the up key is pushed
-    if (sprite.onFloor() && up.isDown) {
-      sprite.velocity.y = -400
     }
 
     if (right.isDown) {
       
       if (right.shiftKey) {
-        sprite.velocity.x = 200
+        sprite.velocity.x = velocity_running
       } else {
-        sprite.velocity.x = 100
+        sprite.velocity.x = velocity_walking
       }
       
       sprite_body.scale.x = 1
@@ -150,9 +123,9 @@ function setMovement(sprite, sprite_body, up, left, right) {
     } else if (left.isDown) {
       
       if (left.shiftKey) {
-        sprite.velocity.x = -200
+        sprite.velocity.x = -Math.abs(velocity_running)
       } else {
-        sprite.velocity.x = -100
+        sprite.velocity.x = -Math.abs(velocity_walking)
       }
       
       sprite_body.scale.x = -1
@@ -176,8 +149,6 @@ function loadMap(game)
 
     game.load.tilemap('tilemap', travel_earth, null, Phaser.Tilemap.TILED_JSON)
     game.load.image('tiles', 'assets/images/lofi_environment_4x.png', 32, 32, 16)
-
-    console.log("did load earth travel map")
 }
 
 

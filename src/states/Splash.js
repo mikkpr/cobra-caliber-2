@@ -22,6 +22,6 @@ export default class extends Phaser.State {
   }
 
   create () {
-    this.state.start('Fight')
+    this.state.start('Travel')
   }
 }

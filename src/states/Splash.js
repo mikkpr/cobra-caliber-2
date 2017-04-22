@@ -18,7 +18,7 @@ export default class extends Phaser.State {
     this.load.tilemap('moon_fight', 'assets/tilemaps/moon_fight.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('earth_travel', 'assets/tilemaps/earth_travel.json', null, Phaser.Tilemap.TILED_JSON)
 
-    this.load.image('tiles', 'assets/images/lofi_environment_4x.png', 32, 32, 16)
+    this.load.image('tiles', 'assets/images/lofi_environment_4x.png')
   }
 
   create () {

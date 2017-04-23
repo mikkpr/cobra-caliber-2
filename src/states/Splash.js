@@ -38,6 +38,7 @@ export default class extends Phaser.State {
     this.load.image('tiles_lofi_stations_2', 'assets/images/lofi_scifi_stations_2_4x.png')
     this.load.image('tiles_lofi_stations_3', 'assets/images/lofi_scifi_stations_3_4x.png')
     this.load.image('tiles_lofi_items', 'assets/images/lofi_scifi_items_4x.png')
+    this.load.image('tiles_interface', 'assets/images/lofi_interface_4x.png')
 
     this.game.curve = this.game.plugins.add(CurvePlugin)
 

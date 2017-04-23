@@ -23,6 +23,7 @@ export default class extends Phaser.State {
     this.map.addTilesetImage('lofi_scifi_stations_2_4x', 'tiles_lofi_stations_2')
     this.map.addTilesetImage('lofi_scifi_stations_3_4x', 'tiles_lofi_stations_3')
     this.map.addTilesetImage('lofi_scifi_items_4x', 'tiles_lofi_items')
+    this.map.addTilesetImage('lofi_interface_4x', 'tiles_interface')
 
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
@@ -53,8 +54,8 @@ export default class extends Phaser.State {
       [ 9600, 100, {target: this.player, burst: true}],
       [10560, 300, {target: this.player, burst: true}],
       [11200, 200, {target: this.player, burst: true}],
-      [11800, 300, {target: this.player, burst: true}],
-      [11904, 100, {target: this.player, burst: true}],
+      [11900, 366],
+      [11900, 32],
       [14720, 100],
       [20384, 256, {target: this.player, burst: true, homing: true}]
     ).forEach(([x, y, options]) =>

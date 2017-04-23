@@ -1,7 +1,6 @@
 import Phaser from 'phaser'
 
 import Player from '../sprites/Player'
-import Obstacle from '../sprites/Obstacle'
 import Turret from '../sprites/Turret'
 
 import { enableMusicForState } from '../utils.js'
@@ -12,7 +11,8 @@ export default class extends Phaser.State {
   }
 
   create () {
-    enableMusicForState('bigbeat', this)
+    this.disableMusic = enableMusicForState('bigbeat', this)
+
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])
@@ -33,14 +33,22 @@ export default class extends Phaser.State {
     this.world.add(this.player)
     this.player.body.gravity.x = 1800
 
-    this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
-    this.world.add(this.obstacle)
-
     this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true })
     this.world.add(this.turret)
 
+    this.world.add(new Turret(this.game, this.player, 9600, 100, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 7200, 100, 80, 179, { target: this.player, burst: false }))
+    this.world.add(new Turret(this.game, this.player, 10560, 300, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 11200, 200, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 11800, 300, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 11904, 100, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 14720, 100, 80, 179))
+    this.world.add(new Turret(this.game, this.player, 20384, 256, 80, 179, { target: this.player, burst: true, homing: true }))
+
     // Make the camera follow the sprite
-    this.game.camera.follow(this.player)
+    // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
+    // this.game.camera.follow(this.player)
+    this.game.camera.setPosition(0, 0)
 
     this.game.scale.pageAlignHorizontally = true
     this.game.scale.pageAlignVertically = true
@@ -58,7 +66,12 @@ export default class extends Phaser.State {
   }
 
   update () {
+    this.game.camera.x = this.player.x - this.game.width / 2
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
+  }
+
+  shutdown () {
+    this.disableMusic()
   }
 
   hitWorldBounds (sprite, up, down, left, right) {

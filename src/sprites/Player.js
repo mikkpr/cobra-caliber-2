@@ -34,7 +34,7 @@ export default class extends Phaser.Sprite {
     this.playerTrail.start(false, 50, 10)
 
     // Default maxVelocity in 1G, this magic number is used everywhere
-    this.body.maxVelocity.x = 800
+    this.body.maxVelocity.x = 500
   }
 
   say (text, completed) {
@@ -68,7 +68,6 @@ export default class extends Phaser.Sprite {
     this.emitter.start(false, duration, 10, 4)
 
     var player = this
-    var world = this.game.world
     player.kill()
 
     setTimeout(function () {

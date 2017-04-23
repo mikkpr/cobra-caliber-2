@@ -19,7 +19,7 @@ export default class extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])
 
-    enableMusicForState('ambient', this)
+    this.disableMusic = enableMusicForState('ambient', this)
 
     this.map = this.game.add.tilemap(this.tilemap)
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -59,6 +59,8 @@ export default class extends Phaser.State {
     this.game.scale.refresh()
 
     this.game.time.advancedTiming = true
+
+    this.player.body.collideWorldBounds = true
   }
 
   update () {
@@ -70,9 +72,14 @@ export default class extends Phaser.State {
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
   }
+
+  shutdown () {
+    this.disableMusic()
+  }
 }
 
 function addGravity (item) {
-  item.body.bounce.y = 0.3
+  item.body.bounce.y = 0.1
   item.body.gravity.y = 1000
+  item.body.drag.x = 1000
 }

@@ -67,7 +67,7 @@ export default class extends Phaser.State {
 
   update () {
 
-    this.game.physics.arcade.overlap(this.player, this.obstacle, this.playerDeathEvent, null, this);
+    this.game.physics.arcade.overlap(this.player, this.obstacle, this.onCollision, null, this);
     
     this.playerTrail.x = this.player.x
     this.playerTrail.y = this.player.y
@@ -87,10 +87,32 @@ export default class extends Phaser.State {
     game.state.start('Travel');
   }
 
-  playerDeathEvent () {
+  onCollision () {
   	// TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
-  	this.player.x = 100;
-  	this.player.y = this.game.world.centerY;
+
+    var duration = 500
+
+    var x = this.player.x;
+    var y = this.player.y;
+
+    this.emitter = game.add.emitter(x, y, 6);
+    this.emitter.makeParticles('chars_small', 200);
+    this.emitter.width = 10;
+    this.emitter.height = 10;
+    this.emitter.minParticleScale = 0.5;
+    this.emitter.maxParticleScale = 3;
+    this.emitter.minParticleSpeed.set(0, 0);
+    this.emitter.maxParticleSpeed.set(0, 0);
+    this.emitter.gravity = 0;
+    this.emitter.start(false, duration, 50, 6); 
+
+    var player = this.player
+    var world = this.game.world
+    player.kill()
+
+    setTimeout(function() {
+      player.reset(50, world.centerY)
+    }, duration)
   }
 
   hitWorldBounds (sprite, up, down, left, right) {

@@ -33,7 +33,7 @@ export default class extends Phaser.State {
     var playerSpawnX = this.game.world.centerX / 2
     var bossSpawnX = this.game.world.centerX + this.game.world.centerX / 2
 
-    this.player = new Player(this.game, playerSpawnX, this.game.world.centerY)
+    this.player = new Player(this.game, playerSpawnX, this.game.world.centerY, true)
     this.world.add(this.player)
 
     this.boss = new Boss(this.game, bossSpawnX, this.game.world.centerY)

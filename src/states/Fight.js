@@ -41,7 +41,7 @@ export default class extends Phaser.State {
 
     this.player = new Player(this.game, playerSpawnX, this.game.world.centerY, { canTurn: true, isFalling: false })
     this.player.body.velocity.x = 500
-
+    
     this.world.add(this.player)
 
     this.boss = new Boss(this.game, this.player, bossSpawnX, this.game.world.height - 90)

@@ -37,11 +37,17 @@ export default class extends Phaser.Sprite {
     this.body.maxVelocity.x = 800
   }
 
-  say (text) {
-    
+  say (text, completed) {
     var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
-    this.text = this.game.add.text(0, 0, "I have been searching for you for a long time... father", style);
+    this.text = this.game.add.text(0, 0, text, style);
     this.text.anchor.set(0.5);
+
+    var context = this
+
+    setTimeout(function() {
+      context.text.destroy()
+      completed()
+    }, 2000)
   }
 
   resetWithAnimation () {

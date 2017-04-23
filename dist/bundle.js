@@ -2,9 +2,9 @@ webpackJsonp([0],[
 /* 0 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/_export.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_export.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(/*! ./_global */ 2)
@@ -55,9 +55,9 @@ module.exports = $export;
 /* 1 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_an-object.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_an-object.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 4);
@@ -70,9 +70,9 @@ module.exports = function(it){
 /* 2 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/_global.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_global.js ***!
+  \*******************************************************/
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -84,9 +84,9 @@ if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 /* 3 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/core-js/modules/_fails.js ***!
-  \*************************************/
+/*!******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_fails.js ***!
+  \******************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(exec){
@@ -101,9 +101,9 @@ module.exports = function(exec){
 /* 4 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_is-object.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_is-object.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(it){
@@ -114,9 +114,9 @@ module.exports = function(it){
 /* 5 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************!*\
-  !*** ./~/core-js/modules/_wks.js ***!
-  \***********************************/
+/*!****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_wks.js ***!
+  \****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var store      = __webpack_require__(/*! ./_shared */ 59)('wks')
@@ -135,9 +135,9 @@ $exports.store = store;
 /* 6 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_descriptors.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_descriptors.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
@@ -149,13 +149,13 @@ module.exports = !__webpack_require__(/*! ./_fails */ 3)(function(){
 /* 7 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_object-dp.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-dp.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(/*! ./_an-object */ 1)
-  , IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 101)
+  , IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 100)
   , toPrimitive    = __webpack_require__(/*! ./_to-primitive */ 24)
   , dP             = Object.defineProperty;
 
@@ -175,9 +175,9 @@ exports.f = __webpack_require__(/*! ./_descriptors */ 6) ? Object.defineProperty
 /* 8 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_to-length.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_to-length.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -191,9 +191,9 @@ module.exports = function(it){
 /* 9 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_to-object.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_to-object.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -206,9 +206,9 @@ module.exports = function(it){
 /* 10 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************!*\
-  !*** ./~/core-js/modules/_has.js ***!
-  \***********************************/
+/*!****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_has.js ***!
+  \****************************************************/
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -220,9 +220,9 @@ module.exports = function(it, key){
 /* 11 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_a-function.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_a-function.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(it){
@@ -234,9 +234,9 @@ module.exports = function(it){
 /* 12 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_hide.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_hide.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(/*! ./_object-dp */ 7)
@@ -252,9 +252,9 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 6) ? function(object,
 /* 13 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/core-js/modules/_redefine.js ***!
-  \****************************************/
+/*!*********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_redefine.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(/*! ./_global */ 2)
@@ -294,9 +294,9 @@ __webpack_require__(/*! ./_core */ 25).inspectSource = function(it){
 /* 14 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_string-html.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-html.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0)
@@ -323,9 +323,9 @@ module.exports = function(NAME, exec){
 /* 15 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_to-iobject.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_to-iobject.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
@@ -336,12 +336,13 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 16 */
+/* 16 */,
+/* 17 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_object-gopd.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-gopd.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var pIE            = __webpack_require__(/*! ./_object-pie */ 48)
@@ -349,7 +350,7 @@ var pIE            = __webpack_require__(/*! ./_object-pie */ 48)
   , toIObject      = __webpack_require__(/*! ./_to-iobject */ 15)
   , toPrimitive    = __webpack_require__(/*! ./_to-primitive */ 24)
   , has            = __webpack_require__(/*! ./_has */ 10)
-  , IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 101)
+  , IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 100)
   , gOPD           = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(/*! ./_descriptors */ 6) ? gOPD : function getOwnPropertyDescriptor(O, P){
@@ -362,12 +363,12 @@ exports.f = __webpack_require__(/*! ./_descriptors */ 6) ? gOPD : function getOw
 };
 
 /***/ }),
-/* 17 */
+/* 18 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_object-gpo.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-gpo.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
@@ -385,13 +386,12 @@ module.exports = Object.getPrototypeOf || function(O){
 };
 
 /***/ }),
-/* 18 */,
 /* 19 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************!*\
-  !*** ./~/core-js/modules/_cof.js ***!
-  \***********************************/
+/*!****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_cof.js ***!
+  \****************************************************/
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -404,9 +404,9 @@ module.exports = function(it){
 /* 20 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/_defined.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_defined.js ***!
+  \********************************************************/
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -419,9 +419,9 @@ module.exports = function(it){
 /* 21 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_strict-method.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_strict-method.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var fails = __webpack_require__(/*! ./_fails */ 3);
@@ -436,9 +436,9 @@ module.exports = function(method, arg){
 /* 22 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_array-methods.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-methods.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 0 -> Array#forEach
@@ -490,9 +490,9 @@ module.exports = function(TYPE, $create){
 /* 23 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_object-sap.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-sap.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
@@ -510,9 +510,9 @@ module.exports = function(KEY, exec){
 /* 24 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/_to-primitive.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_to-primitive.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -532,9 +532,9 @@ module.exports = function(it, S){
 /* 25 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_core.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_core.js ***!
+  \*****************************************************/
 /***/ (function(module, exports) {
 
 var core = module.exports = {version: '2.4.0'};
@@ -544,9 +544,9 @@ if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 /* 26 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************!*\
-  !*** ./~/core-js/modules/_ctx.js ***!
-  \***********************************/
+/*!****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_ctx.js ***!
+  \****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
@@ -574,15 +574,15 @@ module.exports = function(fn, that, length){
 /* 27 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/core-js/modules/_metadata.js ***!
-  \****************************************/
+/*!*********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_metadata.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map     = __webpack_require__(/*! ./es6.map */ 117)
+var Map     = __webpack_require__(/*! ./es6.map */ 116)
   , $export = __webpack_require__(/*! ./_export */ 0)
   , shared  = __webpack_require__(/*! ./_shared */ 59)('metadata')
-  , store   = shared.store || (shared.store = new (__webpack_require__(/*! ./es6.weak-map */ 120)));
+  , store   = shared.store || (shared.store = new (__webpack_require__(/*! ./es6.weak-map */ 119)));
 
 var getOrCreateMetadataMap = function(target, targetKey, create){
   var targetMetadata = store.get(target);
@@ -635,9 +635,9 @@ module.exports = {
 /* 28 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_typed-array.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_typed-array.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -659,13 +659,13 @@ if(__webpack_require__(/*! ./_descriptors */ 6)){
     , toIndex             = __webpack_require__(/*! ./_to-index */ 39)
     , toPrimitive         = __webpack_require__(/*! ./_to-primitive */ 24)
     , has                 = __webpack_require__(/*! ./_has */ 10)
-    , same                = __webpack_require__(/*! ./_same-value */ 114)
+    , same                = __webpack_require__(/*! ./_same-value */ 113)
     , classof             = __webpack_require__(/*! ./_classof */ 46)
     , isObject            = __webpack_require__(/*! ./_is-object */ 4)
     , toObject            = __webpack_require__(/*! ./_to-object */ 9)
     , isArrayIter         = __webpack_require__(/*! ./_is-array-iter */ 69)
     , create              = __webpack_require__(/*! ./_object-create */ 34)
-    , getPrototypeOf      = __webpack_require__(/*! ./_object-gpo */ 17)
+    , getPrototypeOf      = __webpack_require__(/*! ./_object-gpo */ 18)
     , gOPN                = __webpack_require__(/*! ./_object-gopn */ 35).f
     , getIterFn           = __webpack_require__(/*! ./core.get-iterator-method */ 86)
     , uid                 = __webpack_require__(/*! ./_uid */ 40)
@@ -678,9 +678,9 @@ if(__webpack_require__(/*! ./_descriptors */ 6)){
     , $iterDetect         = __webpack_require__(/*! ./_iter-detect */ 56)
     , setSpecies          = __webpack_require__(/*! ./_set-species */ 38)
     , arrayFill           = __webpack_require__(/*! ./_array-fill */ 62)
-    , arrayCopyWithin     = __webpack_require__(/*! ./_array-copy-within */ 94)
+    , arrayCopyWithin     = __webpack_require__(/*! ./_array-copy-within */ 93)
     , $DP                 = __webpack_require__(/*! ./_object-dp */ 7)
-    , $GOPD               = __webpack_require__(/*! ./_object-gopd */ 16)
+    , $GOPD               = __webpack_require__(/*! ./_object-gopd */ 17)
     , dP                  = $DP.f
     , gOPD                = $GOPD.f
     , RangeError          = global.RangeError
@@ -1125,9 +1125,9 @@ if(__webpack_require__(/*! ./_descriptors */ 6)){
 /* 29 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_meta.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_meta.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var META     = __webpack_require__(/*! ./_uid */ 40)('meta')
@@ -1188,9 +1188,9 @@ var meta = module.exports = {
 /* 30 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_property-desc.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_property-desc.js ***!
+  \**************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(bitmap, value){
@@ -1206,9 +1206,9 @@ module.exports = function(bitmap, value){
 /* 31 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_to-integer.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_to-integer.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -1222,9 +1222,9 @@ module.exports = function(it){
 /* 32 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_an-instance.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_an-instance.js ***!
+  \************************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(it, Constructor, name, forbiddenField){
@@ -1237,9 +1237,9 @@ module.exports = function(it, Constructor, name, forbiddenField){
 /* 33 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/_library.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_library.js ***!
+  \********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = false;
@@ -1248,14 +1248,14 @@ module.exports = false;
 /* 34 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_object-create.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-create.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(/*! ./_an-object */ 1)
-  , dPs         = __webpack_require__(/*! ./_object-dps */ 107)
+  , dPs         = __webpack_require__(/*! ./_object-dps */ 106)
   , enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 65)
   , IE_PROTO    = __webpack_require__(/*! ./_shared-key */ 77)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
@@ -1300,13 +1300,13 @@ module.exports = Object.create || function create(O, Properties){
 /* 35 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_object-gopn.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-gopn.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys      = __webpack_require__(/*! ./_object-keys-internal */ 109)
+var $keys      = __webpack_require__(/*! ./_object-keys-internal */ 108)
   , hiddenKeys = __webpack_require__(/*! ./_enum-bug-keys */ 65).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
@@ -1317,13 +1317,13 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
 /* 36 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_object-keys.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-keys.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(/*! ./_object-keys-internal */ 109)
+var $keys       = __webpack_require__(/*! ./_object-keys-internal */ 108)
   , enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 65);
 
 module.exports = Object.keys || function keys(O){
@@ -1334,9 +1334,9 @@ module.exports = Object.keys || function keys(O){
 /* 37 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/_redefine-all.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_redefine-all.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var redefine = __webpack_require__(/*! ./_redefine */ 13);
@@ -1349,9 +1349,9 @@ module.exports = function(target, src, safe){
 /* 38 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_set-species.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_set-species.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1373,9 +1373,9 @@ module.exports = function(KEY){
 /* 39 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/core-js/modules/_to-index.js ***!
-  \****************************************/
+/*!*********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_to-index.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(/*! ./_to-integer */ 31)
@@ -1390,9 +1390,9 @@ module.exports = function(index, length){
 /* 40 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************!*\
-  !*** ./~/core-js/modules/_uid.js ***!
-  \***********************************/
+/*!****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_uid.js ***!
+  \****************************************************/
 /***/ (function(module, exports) {
 
 var id = 0
@@ -1405,9 +1405,9 @@ module.exports = function(key){
 /* 41 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/_add-to-unscopables.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_add-to-unscopables.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.31 Array.prototype[@@unscopables]
@@ -1422,13 +1422,13 @@ module.exports = function(key){
 /* 42 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/_for-of.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_for-of.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(/*! ./_ctx */ 26)
-  , call        = __webpack_require__(/*! ./_iter-call */ 103)
+  , call        = __webpack_require__(/*! ./_iter-call */ 102)
   , isArrayIter = __webpack_require__(/*! ./_is-array-iter */ 69)
   , anObject    = __webpack_require__(/*! ./_an-object */ 1)
   , toLength    = __webpack_require__(/*! ./_to-length */ 8)
@@ -1457,9 +1457,9 @@ exports.RETURN = RETURN;
 /* 43 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_iterators.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iterators.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = {};
@@ -1468,9 +1468,9 @@ module.exports = {};
 /* 44 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/_set-to-string-tag.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_set-to-string-tag.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(/*! ./_object-dp */ 7).f
@@ -1485,9 +1485,9 @@ module.exports = function(it, tag, stat){
 /* 45 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_string-trim.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-trim.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0)
@@ -1525,9 +1525,9 @@ module.exports = exporter;
 /* 46 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/_classof.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_classof.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -1558,9 +1558,9 @@ module.exports = function(it){
 /* 47 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/_iobject.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iobject.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -1573,9 +1573,9 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 /* 48 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_object-pie.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-pie.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
@@ -1585,9 +1585,9 @@ exports.f = {}.propertyIsEnumerable;
 /* 50 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/_array-includes.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-includes.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
@@ -1616,9 +1616,9 @@ module.exports = function(IS_INCLUDES){
 /* 51 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_collection.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_collection.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1712,9 +1712,9 @@ module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
 /* 52 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_fix-re-wks.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_fix-re-wks.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1751,9 +1751,9 @@ module.exports = function(KEY, length, exec){
 /* 53 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/core-js/modules/_flags.js ***!
-  \*************************************/
+/*!******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_flags.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1775,9 +1775,9 @@ module.exports = function(){
 /* 54 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/_invoke.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_invoke.js ***!
+  \*******************************************************/
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -1801,9 +1801,9 @@ module.exports = function(fn, args, that){
 /* 55 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_is-regexp.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_is-regexp.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
@@ -1819,9 +1819,9 @@ module.exports = function(it){
 /* 56 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_iter-detect.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iter-detect.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(/*! ./_wks */ 5)('iterator')
@@ -1850,9 +1850,9 @@ module.exports = function(exec, skipClosing){
 /* 57 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/_object-forced-pam.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-forced-pam.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // Forced replacement prototype accessors methods
@@ -1867,9 +1867,9 @@ module.exports = __webpack_require__(/*! ./_library */ 33)|| !__webpack_require_
 /* 58 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_object-gops.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-gops.js ***!
+  \************************************************************/
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
@@ -1878,9 +1878,9 @@ exports.f = Object.getOwnPropertySymbols;
 /* 59 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/_shared.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_shared.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 2)
@@ -1894,9 +1894,9 @@ module.exports = function(key){
 /* 60 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/core-js/modules/_typed.js ***!
-  \*************************************/
+/*!******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_typed.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 2)
@@ -1943,7 +1943,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.enableMusicForState = exports.centerGameObjects = undefined;
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -1973,9 +1973,9 @@ var enableMusicForState = exports.enableMusicForState = function enableMusicForS
 /* 62 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_array-fill.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-fill.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1999,9 +1999,9 @@ module.exports = function fill(value /*, start = 0, end = @length */){
 /* 63 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/_create-property.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_create-property.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2018,9 +2018,9 @@ module.exports = function(object, index, value){
 /* 64 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_dom-create.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_dom-create.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 4)
@@ -2035,9 +2035,9 @@ module.exports = function(it){
 /* 65 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_enum-bug-keys.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_enum-bug-keys.js ***!
+  \**************************************************************/
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -2049,9 +2049,9 @@ module.exports = (
 /* 66 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/_fails-is-regexp.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_fails-is-regexp.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var MATCH = __webpack_require__(/*! ./_wks */ 5)('match');
@@ -2071,9 +2071,9 @@ module.exports = function(KEY){
 /* 67 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_html.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_html.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./_global */ 2).document && document.documentElement;
@@ -2082,9 +2082,9 @@ module.exports = __webpack_require__(/*! ./_global */ 2).document && document.do
 /* 68 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/_inherit-if-required.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_inherit-if-required.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject       = __webpack_require__(/*! ./_is-object */ 4)
@@ -2100,9 +2100,9 @@ module.exports = function(that, target, C){
 /* 69 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_is-array-iter.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_is-array-iter.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -2118,9 +2118,9 @@ module.exports = function(it){
 /* 70 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/core-js/modules/_is-array.js ***!
-  \****************************************/
+/*!*********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_is-array.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -2133,9 +2133,9 @@ module.exports = Array.isArray || function isArray(arg){
 /* 71 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_iter-create.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iter-create.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2157,9 +2157,9 @@ module.exports = function(Constructor, NAME, next){
 /* 72 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_iter-define.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iter-define.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2172,7 +2172,7 @@ var LIBRARY        = __webpack_require__(/*! ./_library */ 33)
   , Iterators      = __webpack_require__(/*! ./_iterators */ 43)
   , $iterCreate    = __webpack_require__(/*! ./_iter-create */ 71)
   , setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 44)
-  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 17)
+  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 18)
   , ITERATOR       = __webpack_require__(/*! ./_wks */ 5)('iterator')
   , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
   , FF_ITERATOR    = '@@iterator'
@@ -2238,9 +2238,9 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 /* 73 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_math-expm1.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_math-expm1.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -2258,9 +2258,9 @@ module.exports = (!$expm1
 /* 74 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_math-sign.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_math-sign.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -2272,9 +2272,9 @@ module.exports = Math.sign || function sign(x){
 /* 75 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_microtask.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_microtask.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(/*! ./_global */ 2)
@@ -2350,9 +2350,9 @@ module.exports = function(){
 /* 76 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_set-proto.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_set-proto.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -2367,7 +2367,7 @@ module.exports = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function(test, buggy, set){
       try {
-        set = __webpack_require__(/*! ./_ctx */ 26)(Function.call, __webpack_require__(/*! ./_object-gopd */ 16).f(Object.prototype, '__proto__').set, 2);
+        set = __webpack_require__(/*! ./_ctx */ 26)(Function.call, __webpack_require__(/*! ./_object-gopd */ 17).f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch(e){ buggy = true; }
@@ -2385,9 +2385,9 @@ module.exports = {
 /* 77 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_shared-key.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_shared-key.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(/*! ./_shared */ 59)('keys')
@@ -2400,9 +2400,9 @@ module.exports = function(key){
 /* 78 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/_species-constructor.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_species-constructor.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -2418,9 +2418,9 @@ module.exports = function(O, D){
 /* 79 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_string-at.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-at.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(/*! ./_to-integer */ 31)
@@ -2445,9 +2445,9 @@ module.exports = function(TO_STRING){
 /* 80 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/_string-context.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-context.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
@@ -2463,9 +2463,9 @@ module.exports = function(that, searchString, NAME){
 /* 81 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_string-repeat.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-repeat.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2486,9 +2486,9 @@ module.exports = function repeat(count){
 /* 82 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_string-ws.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-ws.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
@@ -2498,9 +2498,9 @@ module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u20
 /* 83 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_task.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_task.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx                = __webpack_require__(/*! ./_ctx */ 26)
@@ -2583,9 +2583,9 @@ module.exports = {
 /* 84 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/_typed-buffer.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_typed-buffer.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2867,15 +2867,15 @@ exports[DATA_VIEW] = $DataView;
 /* 85 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_wks-define.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_wks-define.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global         = __webpack_require__(/*! ./_global */ 2)
   , core           = __webpack_require__(/*! ./_core */ 25)
   , LIBRARY        = __webpack_require__(/*! ./_library */ 33)
-  , wksExt         = __webpack_require__(/*! ./_wks-ext */ 116)
+  , wksExt         = __webpack_require__(/*! ./_wks-ext */ 115)
   , defineProperty = __webpack_require__(/*! ./_object-dp */ 7).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -2886,9 +2886,9 @@ module.exports = function(name){
 /* 86 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/core.get-iterator-method.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/core.get-iterator-method.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var classof   = __webpack_require__(/*! ./_classof */ 46)
@@ -2904,15 +2904,15 @@ module.exports = __webpack_require__(/*! ./_core */ 25).getIteratorMethod = func
 /* 87 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.array.iterator.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.iterator.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var addToUnscopables = __webpack_require__(/*! ./_add-to-unscopables */ 41)
-  , step             = __webpack_require__(/*! ./_iter-step */ 104)
+  , step             = __webpack_require__(/*! ./_iter-step */ 103)
   , Iterators        = __webpack_require__(/*! ./_iterators */ 43)
   , toIObject        = __webpack_require__(/*! ./_to-iobject */ 15);
 
@@ -2951,96 +2951,6 @@ addToUnscopables('entries');
 /* 90 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************!*\
-  !*** ./src/plugins/Curve.js ***!
-  \******************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _phaser = __webpack_require__(/*! phaser */ 18);
-
-var _phaser2 = _interopRequireDefault(_phaser);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _class = function (_Phaser$Plugin) {
-  _inherits(_class, _Phaser$Plugin);
-
-  function _class() {
-    _classCallCheck(this, _class);
-
-    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
-  }
-
-  _createClass(_class, [{
-    key: 'init',
-    value: function init() {
-      this.hasPostRender = true;
-
-      this.setPoints([0]);
-
-      // Preallocate ImageData buffer.
-      this.post = new ImageData(this.game.width, this.game.height);
-    }
-  }, {
-    key: 'setPoints',
-    value: function setPoints(points) {
-      this.game.input.keyboard.addKey(_phaser2.default.Keyboard.C).onDown.add(this.toggle, this);
-
-      // Precompute curve shift amounts for each pixel column.
-      this.curveOff = new Uint32Array(this.game.width * this.game.height * 4);
-      for (var col = 0; col < this.game.width; col++) {
-        var bez = this.game.math.bezierInterpolation(points, col / this.game.width);
-        var off = Math.floor(bez) * this.game.width * 4;
-        for (var row = 0; row < this.game.height; row++) {
-          var start = row * this.game.width * 4 + col * 4;
-          this.curveOff[start] = off;
-          this.curveOff[start + 1] = off;
-          this.curveOff[start + 2] = off;
-          this.curveOff[start + 3] = off;
-        }
-      }
-    }
-  }, {
-    key: 'toggle',
-    value: function toggle() {
-      this.hasPostRender = !this.hasPostRender;
-    }
-  }, {
-    key: 'postRender',
-    value: function postRender() {
-      // Copy ImageData, shifting each column of pixels down by the curve offset.
-      var pre = this.game.context.getImageData(0, 0, this.game.width, this.game.height);
-      for (var i = 0; i < pre.data.length; i++) {
-        this.post.data[i + this.curveOff[i]] = pre.data[i];
-      }
-      this.game.context.putImageData(this.post, 0, 0);
-    }
-  }]);
-
-  return _class;
-}(_phaser2.default.Plugin);
-
-exports.default = _class;
-
-/***/ }),
-/* 91 */
-/* unknown exports provided */
-/* all exports used */
 /*!*********************************!*\
   !*** ./src/sprites/Obstacle.js ***!
   \*********************************/
@@ -3055,7 +2965,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -3102,7 +3012,7 @@ var _class = function (_Phaser$Sprite) {
 exports.default = _class;
 
 /***/ }),
-/* 92 */
+/* 91 */
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************!*\
@@ -3119,7 +3029,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -3176,6 +3086,20 @@ var _class = function (_Phaser$Sprite) {
   }
 
   _createClass(_class, [{
+    key: 'say',
+    value: function say(text, completed) {
+      var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300, align: "center" };
+      this.text = this.game.add.text(0, 0, text, style);
+      this.text.anchor.set(0.5);
+
+      var context = this;
+
+      setTimeout(function () {
+        context.text.destroy();
+        completed();
+      }, 2000);
+    }
+  }, {
     key: 'resetWithAnimation',
     value: function resetWithAnimation() {
       var duration = 500;
@@ -3199,12 +3123,18 @@ var _class = function (_Phaser$Sprite) {
       player.kill();
 
       setTimeout(function () {
-        player.reset(50, world.centerY);
+        player.reset(50, 256);
       }, duration);
     }
   }, {
     key: 'update',
     value: function update() {
+
+      if (this.text != undefined) {
+        this.text.x = Math.floor(this.x - this.width / 2);
+        this.text.y = Math.floor(this.y - 1.5 * this.height);
+      }
+
       this.playerTrail.x = this.x;
       this.playerTrail.y = this.y;
 
@@ -3272,12 +3202,12 @@ var _class = function (_Phaser$Sprite) {
 exports.default = _class;
 
 /***/ }),
-/* 93 */
+/* 92 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/_a-number-value.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_a-number-value.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(/*! ./_cof */ 19);
@@ -3287,12 +3217,12 @@ module.exports = function(it, msg){
 };
 
 /***/ }),
-/* 94 */
+/* 93 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/_array-copy-within.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-copy-within.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3324,12 +3254,12 @@ module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0,
 };
 
 /***/ }),
-/* 95 */
+/* 94 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/_array-from-iterable.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-from-iterable.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(/*! ./_for-of */ 42);
@@ -3342,12 +3272,12 @@ module.exports = function(iter, ITERATOR){
 
 
 /***/ }),
-/* 96 */
+/* 95 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/_array-reduce.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-reduce.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(/*! ./_a-function */ 11)
@@ -3380,12 +3310,12 @@ module.exports = function(that, callbackfn, aLen, memo, isRight){
 };
 
 /***/ }),
-/* 97 */
+/* 96 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_bind.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_bind.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3415,12 +3345,12 @@ module.exports = Function.bind || function bind(that /*, args... */){
 };
 
 /***/ }),
-/* 98 */
+/* 97 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/_collection-strong.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_collection-strong.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3433,7 +3363,7 @@ var dP          = __webpack_require__(/*! ./_object-dp */ 7).f
   , defined     = __webpack_require__(/*! ./_defined */ 20)
   , forOf       = __webpack_require__(/*! ./_for-of */ 42)
   , $iterDefine = __webpack_require__(/*! ./_iter-define */ 72)
-  , step        = __webpack_require__(/*! ./_iter-step */ 104)
+  , step        = __webpack_require__(/*! ./_iter-step */ 103)
   , setSpecies  = __webpack_require__(/*! ./_set-species */ 38)
   , DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 6)
   , fastKey     = __webpack_require__(/*! ./_meta */ 29).fastKey
@@ -3568,17 +3498,17 @@ module.exports = {
 };
 
 /***/ }),
-/* 99 */
+/* 98 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/_collection-to-json.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_collection-to-json.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var classof = __webpack_require__(/*! ./_classof */ 46)
-  , from    = __webpack_require__(/*! ./_array-from-iterable */ 95);
+  , from    = __webpack_require__(/*! ./_array-from-iterable */ 94);
 module.exports = function(NAME){
   return function toJSON(){
     if(classof(this) != NAME)throw TypeError(NAME + "#toJSON isn't generic");
@@ -3587,12 +3517,12 @@ module.exports = function(NAME){
 };
 
 /***/ }),
-/* 100 */
+/* 99 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/_collection-weak.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_collection-weak.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3681,12 +3611,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 101 */
+/* 100 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/_ie8-dom-define.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_ie8-dom-define.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(/*! ./_descriptors */ 6) && !__webpack_require__(/*! ./_fails */ 3)(function(){
@@ -3694,12 +3624,12 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ 6) && !__webpack_req
 });
 
 /***/ }),
-/* 102 */
+/* 101 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_is-integer.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_is-integer.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -3710,12 +3640,12 @@ module.exports = function isInteger(it){
 };
 
 /***/ }),
-/* 103 */
+/* 102 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_iter-call.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iter-call.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -3732,12 +3662,12 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
-/* 104 */
+/* 103 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_iter-step.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_iter-step.js ***!
+  \**********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(done, value){
@@ -3745,12 +3675,12 @@ module.exports = function(done, value){
 };
 
 /***/ }),
-/* 105 */
+/* 104 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_math-log1p.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_math-log1p.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -3759,12 +3689,12 @@ module.exports = Math.log1p || function log1p(x){
 };
 
 /***/ }),
-/* 106 */
+/* 105 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/_object-assign.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-assign.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3803,12 +3733,12 @@ module.exports = !$assign || __webpack_require__(/*! ./_fails */ 3)(function(){
 } : $assign;
 
 /***/ }),
-/* 107 */
+/* 106 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_object-dps.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-dps.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(/*! ./_object-dp */ 7)
@@ -3826,12 +3756,12 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 6) ? Object.definePro
 };
 
 /***/ }),
-/* 108 */
+/* 107 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/_object-gopn-ext.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-gopn-ext.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -3856,12 +3786,12 @@ module.exports.f = function getOwnPropertyNames(it){
 
 
 /***/ }),
-/* 109 */
+/* 108 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/_object-keys-internal.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-keys-internal.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(/*! ./_has */ 10)
@@ -3883,12 +3813,12 @@ module.exports = function(object, names){
 };
 
 /***/ }),
-/* 110 */
+/* 109 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/_object-to-array.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_object-to-array.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(/*! ./_object-keys */ 36)
@@ -3909,12 +3839,12 @@ module.exports = function(isEntries){
 };
 
 /***/ }),
-/* 111 */
+/* 110 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/core-js/modules/_own-keys.js ***!
-  \****************************************/
+/*!*********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_own-keys.js ***!
+  \*********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
@@ -3929,12 +3859,12 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 };
 
 /***/ }),
-/* 112 */
+/* 111 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/_parse-float.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_parse-float.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(/*! ./_global */ 2).parseFloat
@@ -3947,12 +3877,12 @@ module.exports = 1 / $parseFloat(__webpack_require__(/*! ./_string-ws */ 82) + '
 } : $parseFloat;
 
 /***/ }),
-/* 113 */
+/* 112 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_parse-int.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_parse-int.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(/*! ./_global */ 2).parseInt
@@ -3966,12 +3896,12 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ }),
-/* 114 */
+/* 113 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_same-value.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_same-value.js ***!
+  \***********************************************************/
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -3980,12 +3910,12 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ }),
-/* 115 */
+/* 114 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/_string-pad.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_string-pad.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
@@ -4007,28 +3937,28 @@ module.exports = function(that, maxLength, fillString, left){
 
 
 /***/ }),
-/* 116 */
+/* 115 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/_wks-ext.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_wks-ext.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(/*! ./_wks */ 5);
 
 /***/ }),
-/* 117 */
+/* 116 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/es6.map.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.map.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(/*! ./_collection-strong */ 98);
+var strong = __webpack_require__(/*! ./_collection-strong */ 97);
 
 // 23.1 Map Objects
 module.exports = __webpack_require__(/*! ./_collection */ 51)('Map', function(get){
@@ -4046,12 +3976,12 @@ module.exports = __webpack_require__(/*! ./_collection */ 51)('Map', function(ge
 }, strong, true);
 
 /***/ }),
-/* 118 */
+/* 117 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.flags.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.flags.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
@@ -4061,17 +3991,17 @@ if(__webpack_require__(/*! ./_descriptors */ 6) && /./g.flags != 'g')__webpack_r
 });
 
 /***/ }),
-/* 119 */
+/* 118 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./~/core-js/modules/es6.set.js ***!
-  \**************************************/
+/*!*******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.set.js ***!
+  \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(/*! ./_collection-strong */ 98);
+var strong = __webpack_require__(/*! ./_collection-strong */ 97);
 
 // 23.2 Set Objects
 module.exports = __webpack_require__(/*! ./_collection */ 51)('Set', function(get){
@@ -4084,12 +4014,12 @@ module.exports = __webpack_require__(/*! ./_collection */ 51)('Set', function(ge
 }, strong);
 
 /***/ }),
-/* 120 */
+/* 119 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/es6.weak-map.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.weak-map.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4097,8 +4027,8 @@ module.exports = __webpack_require__(/*! ./_collection */ 51)('Set', function(ge
 var each         = __webpack_require__(/*! ./_array-methods */ 22)(0)
   , redefine     = __webpack_require__(/*! ./_redefine */ 13)
   , meta         = __webpack_require__(/*! ./_meta */ 29)
-  , assign       = __webpack_require__(/*! ./_object-assign */ 106)
-  , weak         = __webpack_require__(/*! ./_collection-weak */ 100)
+  , assign       = __webpack_require__(/*! ./_object-assign */ 105)
+  , weak         = __webpack_require__(/*! ./_collection-weak */ 99)
   , isObject     = __webpack_require__(/*! ./_is-object */ 4)
   , getWeak      = meta.getWeak
   , isExtensible = Object.isExtensible
@@ -4151,8 +4081,8 @@ if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
 }
 
 /***/ }),
-/* 121 */,
-/* 122 */
+/* 120 */,
+/* 121 */
 /* unknown exports provided */
 /* all exports used */
 /*!*********************!*\
@@ -4167,7 +4097,7 @@ __webpack_require__(/*! pixi */ 88);
 
 __webpack_require__(/*! p2 */ 89);
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -4187,7 +4117,7 @@ var _Fight = __webpack_require__(/*! ./states/Fight */ 129);
 
 var _Fight2 = _interopRequireDefault(_Fight);
 
-var _config = __webpack_require__(/*! ./config */ 125);
+var _config = __webpack_require__(/*! ./config */ 124);
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -4226,7 +4156,7 @@ var Game = function (_Phaser$Game) {
 window.game = new Game();
 
 /***/ }),
-/* 123 */
+/* 122 */
 /* unknown exports provided */
 /* all exports used */
 /*!***************************************!*\
@@ -4239,7 +4169,7 @@ window.game = new Game();
 
 __webpack_require__(/*! core-js/shim */ 312);
 
-__webpack_require__(/*! regenerator-runtime/runtime */ 316);
+__webpack_require__(/*! regenerator-runtime/runtime */ 313);
 
 __webpack_require__(/*! core-js/fn/regexp/escape */ 132);
 
@@ -4266,8 +4196,8 @@ define(String.prototype, "padRight", "".padEnd);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 49)))
 
 /***/ }),
-/* 124 */,
-/* 125 */
+/* 123 */,
+/* 124 */
 /* unknown exports provided */
 /* all exports used */
 /*!***********************!*\
@@ -4288,6 +4218,96 @@ exports.default = {
 };
 
 /***/ }),
+/* 125 */
+/* unknown exports provided */
+/* all exports used */
+/*!******************************!*\
+  !*** ./src/plugins/Curve.js ***!
+  \******************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _phaser = __webpack_require__(/*! phaser */ 16);
+
+var _phaser2 = _interopRequireDefault(_phaser);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _class = function (_Phaser$Plugin) {
+  _inherits(_class, _Phaser$Plugin);
+
+  function _class() {
+    _classCallCheck(this, _class);
+
+    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+  }
+
+  _createClass(_class, [{
+    key: 'init',
+    value: function init() {
+      this.hasPostRender = true;
+
+      this.setPoints([0]);
+
+      // Preallocate ImageData buffer.
+      this.post = new ImageData(this.game.width, this.game.height);
+    }
+  }, {
+    key: 'setPoints',
+    value: function setPoints(points) {
+      this.game.input.keyboard.addKey(_phaser2.default.Keyboard.C).onDown.add(this.toggle, this);
+
+      // Precompute curve shift amounts for each pixel column.
+      this.curveOff = new Uint32Array(this.game.width * this.game.height * 4);
+      for (var col = 0; col < this.game.width; col++) {
+        var bez = this.game.math.bezierInterpolation(points, col / this.game.width);
+        var off = Math.floor(bez) * this.game.width * 4;
+        for (var row = 0; row < this.game.height; row++) {
+          var start = row * this.game.width * 4 + col * 4;
+          this.curveOff[start] = off;
+          this.curveOff[start + 1] = off;
+          this.curveOff[start + 2] = off;
+          this.curveOff[start + 3] = off;
+        }
+      }
+    }
+  }, {
+    key: 'toggle',
+    value: function toggle() {
+      this.hasPostRender = !this.hasPostRender;
+    }
+  }, {
+    key: 'postRender',
+    value: function postRender() {
+      // Copy ImageData, shifting each column of pixels down by the curve offset.
+      var pre = this.game.context.getImageData(0, 0, this.game.width, this.game.height);
+      for (var i = 0; i < pre.data.length; i++) {
+        this.post.data[i + this.curveOff[i]] = pre.data[i];
+      }
+      this.game.context.putImageData(this.post, 0, 0);
+    }
+  }]);
+
+  return _class;
+}(_phaser2.default.Plugin);
+
+exports.default = _class;
+
+/***/ }),
 /* 126 */
 /* unknown exports provided */
 /* all exports used */
@@ -4305,7 +4325,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -4331,21 +4351,54 @@ var _class = function (_Phaser$Sprite) {
 
     _this.game.physics.arcade.enable(_this);
     _this.body.drag.x = _this.body.drag.y = 500;
+
+    var context = _this;
+
+    // this.player.say("I have been looking for you for a long time, father", function() {
+    // 	context.say("I left you to die in that pit. How did you survive?", function() {
+    // 		context.player.say("That should be the least of your concerns", function() {
+    // 			context.player.say("Time to die, old man", function {})
+    // 		})
+    // 	})
+    // })
     return _this;
   }
 
   _createClass(_class, [{
+    key: 'say',
+    value: function say(text, completed) {
+      var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300, align: "center" };
+      this.text = this.game.add.text(0, 0, text, style);
+      this.text.anchor.set(0.5);
+
+      var context = this;
+
+      setTimeout(function () {
+        context.text.destroy();
+        completed();
+      }, 2000);
+    }
+  }, {
     key: 'update',
     value: function update() {
       this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this);
+
+      if (this.text != undefined) {
+        this.text.x = Math.floor(this.x - this.width / 2);
+        this.text.y = Math.floor(this.y - this.height);
+      }
     }
   }, {
     key: 'onCollision',
     value: function onCollision() {
-      var state = this.game.state;
-      this.flyAway(this, 0, 20, function () {
-        state.start('Travel', true, false, 'earth_fight');
-      });
+      var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2;
+
+      if (velocity > 600) {
+        var state = this.game.state;
+        this.flyAway(this, 0, 20, function () {
+          state.start('Travel', true, false, 'earth_fight');
+        });
+      }
     }
   }, {
     key: 'flyAway',
@@ -4353,7 +4406,6 @@ var _class = function (_Phaser$Sprite) {
       context.body.velocity.y = -200;
       context.body.velocity.x = 100;
 
-      console.log(this.scale.x, this.scale.y);
       var scalex = this.scale.x - 0.01;
       var scaley = this.scale.y - 0.01;
 
@@ -4400,11 +4452,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
-var _Obstacle2 = __webpack_require__(/*! ./Obstacle */ 91);
+var _Obstacle2 = __webpack_require__(/*! ./Obstacle */ 90);
 
 var _Obstacle3 = _interopRequireDefault(_Obstacle2);
 
@@ -4508,7 +4560,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -4573,7 +4625,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
@@ -4581,7 +4633,7 @@ var _Boss = __webpack_require__(/*! ../sprites/Boss */ 126);
 
 var _Boss2 = _interopRequireDefault(_Boss);
 
-var _Player = __webpack_require__(/*! ../sprites/Player */ 92);
+var _Player = __webpack_require__(/*! ../sprites/Player */ 91);
 
 var _Player2 = _interopRequireDefault(_Player);
 
@@ -4645,7 +4697,7 @@ var _class = function (_Phaser$State) {
 
       this.world.add(this.player);
 
-      this.boss = new _Boss2.default(this.game, this.player, bossSpawnX, this.game.world.centerY);
+      this.boss = new _Boss2.default(this.game, this.player, bossSpawnX, this.game.world.height - 90);
       this.world.add(this.boss);
 
       // Add gravity to the sprites.
@@ -4704,11 +4756,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
-var _Curve = __webpack_require__(/*! ../plugins/Curve */ 90);
+var _Curve = __webpack_require__(/*! ../plugins/Curve */ 125);
 
 var _Curve2 = _interopRequireDefault(_Curve);
 
@@ -4793,15 +4845,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _phaser = __webpack_require__(/*! phaser */ 18);
+var _phaser = __webpack_require__(/*! phaser */ 16);
 
 var _phaser2 = _interopRequireDefault(_phaser);
 
-var _Player = __webpack_require__(/*! ../sprites/Player */ 92);
+var _Player = __webpack_require__(/*! ../sprites/Player */ 91);
 
 var _Player2 = _interopRequireDefault(_Player);
 
-var _Obstacle = __webpack_require__(/*! ../sprites/Obstacle */ 91);
+var _Obstacle = __webpack_require__(/*! ../sprites/Obstacle */ 90);
 
 var _Obstacle2 = _interopRequireDefault(_Obstacle);
 
@@ -4849,15 +4901,18 @@ var _class = function (_Phaser$State) {
       this.backgroundLayer = this.map.createLayer('backgroundlayer');
       this.backgroundLayer.resizeWorld();
 
+      this.groundLayer = this.map.createLayer('groundlayer');
+      this.map.setCollisionBetween(1, 1000, true, 'groundlayer');
+
       // Add the sprite to the game and enable arcade physics on it
-      this.player = new _Player2.default(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true });
+      this.player = new _Player2.default(this.game, 100, 256, { canTurn: false, isFalling: true });
       this.world.add(this.player);
       this.player.body.gravity.x = 1800;
 
       this.obstacle = new _Obstacle2.default(this.game, this.player, 300, this.game.world.centerY, 142);
       this.world.add(this.obstacle);
 
-      this.turret = new _Turret2.default(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true, homing: true });
+      this.turret = new _Turret2.default(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true });
       this.world.add(this.turret);
 
       // Make the camera follow the sprite
@@ -4879,6 +4934,11 @@ var _class = function (_Phaser$State) {
       this.game.debug.text(this.time.fps, 10, 20, '#00ff00');
     }
   }, {
+    key: 'update',
+    value: function update() {
+      this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player);
+    }
+  }, {
     key: 'hitWorldBounds',
     value: function hitWorldBounds(sprite, up, down, left, right) {
       if (sprite === this.player && right === true) {
@@ -4896,9 +4956,9 @@ exports.default = _class;
 /* 132 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/fn/regexp/escape.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/fn/regexp/escape.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../../modules/core.regexp.escape */ 141);
@@ -4908,9 +4968,9 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 25).RegExp.escap
 /* 133 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/modules/_array-species-constructor.js ***!
-  \*********************************************************/
+/*!**************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-species-constructor.js ***!
+  \**************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 4)
@@ -4934,9 +4994,9 @@ module.exports = function(original){
 /* 134 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/_array-species-create.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_array-species-create.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
@@ -4950,9 +5010,9 @@ module.exports = function(original, length){
 /* 135 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/_date-to-primitive.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_date-to-primitive.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4970,9 +5030,9 @@ module.exports = function(hint){
 /* 136 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/_enum-keys.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_enum-keys.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
@@ -4995,9 +5055,9 @@ module.exports = function(it){
 /* 137 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************!*\
-  !*** ./~/core-js/modules/_keyof.js ***!
-  \*************************************/
+/*!******************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_keyof.js ***!
+  \******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(/*! ./_object-keys */ 36)
@@ -5015,9 +5075,9 @@ module.exports = function(object, el){
 /* 138 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/_partial.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_partial.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5049,9 +5109,9 @@ module.exports = function(/* ...pargs */){
 /* 139 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************!*\
-  !*** ./~/core-js/modules/_path.js ***!
-  \************************************/
+/*!*****************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_path.js ***!
+  \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./_global */ 2);
@@ -5060,9 +5120,9 @@ module.exports = __webpack_require__(/*! ./_global */ 2);
 /* 140 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************!*\
-  !*** ./~/core-js/modules/_replacer.js ***!
-  \****************************************/
+/*!*********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/_replacer.js ***!
+  \*********************************************************/
 /***/ (function(module, exports) {
 
 module.exports = function(regExp, replace){
@@ -5078,9 +5138,9 @@ module.exports = function(regExp, replace){
 /* 141 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/core.regexp.escape.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/core.regexp.escape.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/benjamingr/RexExp.escape
@@ -5094,15 +5154,15 @@ $export($export.S, 'RegExp', {escape: function escape(it){ return $re(it); }});
 /* 142 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.array.copy-within.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.copy-within.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.P, 'Array', {copyWithin: __webpack_require__(/*! ./_array-copy-within */ 94)});
+$export($export.P, 'Array', {copyWithin: __webpack_require__(/*! ./_array-copy-within */ 93)});
 
 __webpack_require__(/*! ./_add-to-unscopables */ 41)('copyWithin');
 
@@ -5110,9 +5170,9 @@ __webpack_require__(/*! ./_add-to-unscopables */ 41)('copyWithin');
 /* 143 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.array.every.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.every.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5131,9 +5191,9 @@ $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)
 /* 144 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.array.fill.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.fill.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
@@ -5147,9 +5207,9 @@ __webpack_require__(/*! ./_add-to-unscopables */ 41)('fill');
 /* 145 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.array.filter.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.filter.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5168,9 +5228,9 @@ $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)
 /* 146 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.array.find-index.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.find-index.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5193,9 +5253,9 @@ __webpack_require__(/*! ./_add-to-unscopables */ 41)(KEY);
 /* 147 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.array.find.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.find.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5218,9 +5278,9 @@ __webpack_require__(/*! ./_add-to-unscopables */ 41)(KEY);
 /* 148 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.array.for-each.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.for-each.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5240,9 +5300,9 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 /* 149 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.array.from.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.from.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5250,7 +5310,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 var ctx            = __webpack_require__(/*! ./_ctx */ 26)
   , $export        = __webpack_require__(/*! ./_export */ 0)
   , toObject       = __webpack_require__(/*! ./_to-object */ 9)
-  , call           = __webpack_require__(/*! ./_iter-call */ 103)
+  , call           = __webpack_require__(/*! ./_iter-call */ 102)
   , isArrayIter    = __webpack_require__(/*! ./_is-array-iter */ 69)
   , toLength       = __webpack_require__(/*! ./_to-length */ 8)
   , createProperty = __webpack_require__(/*! ./_create-property */ 63)
@@ -5289,9 +5349,9 @@ $export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ 56)(f
 /* 150 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.array.index-of.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.index-of.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5315,9 +5375,9 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(/*! ./_st
 /* 151 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.array.is-array.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.is-array.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
@@ -5329,9 +5389,9 @@ $export($export.S, 'Array', {isArray: __webpack_require__(/*! ./_is-array */ 70)
 /* 152 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.array.join.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.join.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5352,9 +5412,9 @@ $export($export.P + $export.F * (__webpack_require__(/*! ./_iobject */ 47) != Ob
 /* 153 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/modules/es6.array.last-index-of.js ***!
-  \******************************************************/
+/*!***********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.last-index-of.js ***!
+  \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5385,9 +5445,9 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(/*! ./_st
 /* 154 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.array.map.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.map.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5406,9 +5466,9 @@ $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)
 /* 155 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/es6.array.of.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.of.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5436,15 +5496,15 @@ $export($export.S + $export.F * __webpack_require__(/*! ./_fails */ 3)(function(
 /* 156 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.array.reduce-right.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.reduce-right.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(/*! ./_export */ 0)
-  , $reduce = __webpack_require__(/*! ./_array-reduce */ 96);
+  , $reduce = __webpack_require__(/*! ./_array-reduce */ 95);
 
 $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -5457,15 +5517,15 @@ $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)
 /* 157 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.array.reduce.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.reduce.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(/*! ./_export */ 0)
-  , $reduce = __webpack_require__(/*! ./_array-reduce */ 96);
+  , $reduce = __webpack_require__(/*! ./_array-reduce */ 95);
 
 $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -5478,9 +5538,9 @@ $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)
 /* 158 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.array.slice.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.slice.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5517,9 +5577,9 @@ $export($export.P + $export.F * __webpack_require__(/*! ./_fails */ 3)(function(
 /* 159 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.array.some.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.some.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5538,9 +5598,9 @@ $export($export.P + $export.F * !__webpack_require__(/*! ./_strict-method */ 21)
 /* 160 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.array.sort.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.sort.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5572,9 +5632,9 @@ $export($export.P + $export.F * (fails(function(){
 /* 161 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.array.species.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.array.species.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_set-species */ 38)('Array');
@@ -5583,9 +5643,9 @@ __webpack_require__(/*! ./_set-species */ 38)('Array');
 /* 162 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/es6.date.now.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.date.now.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -5597,9 +5657,9 @@ $export($export.S, 'Date', {now: function(){ return new Date().getTime(); }});
 /* 163 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.date.to-iso-string.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.date.to-iso-string.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5636,9 +5696,9 @@ $export($export.P + $export.F * (fails(function(){
 /* 164 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.date.to-json.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.date.to-json.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5661,9 +5721,9 @@ $export($export.P + $export.F * __webpack_require__(/*! ./_fails */ 3)(function(
 /* 165 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.date.to-primitive.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.date.to-primitive.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(/*! ./_wks */ 5)('toPrimitive')
@@ -5675,9 +5735,9 @@ if(!(TO_PRIMITIVE in proto))__webpack_require__(/*! ./_hide */ 12)(proto, TO_PRI
 /* 166 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.date.to-string.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.date.to-string.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var DateProto    = Date.prototype
@@ -5696,29 +5756,29 @@ if(new Date(NaN) + '' != INVALID_DATE){
 /* 167 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.function.bind.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.function.bind.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.P, 'Function', {bind: __webpack_require__(/*! ./_bind */ 97)});
+$export($export.P, 'Function', {bind: __webpack_require__(/*! ./_bind */ 96)});
 
 /***/ }),
 /* 168 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************************!*\
-  !*** ./~/core-js/modules/es6.function.has-instance.js ***!
-  \********************************************************/
+/*!*************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.function.has-instance.js ***!
+  \*************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var isObject       = __webpack_require__(/*! ./_is-object */ 4)
-  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 17)
+  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 18)
   , HAS_INSTANCE   = __webpack_require__(/*! ./_wks */ 5)('hasInstance')
   , FunctionProto  = Function.prototype;
 // 19.2.3.6 Function.prototype[@@hasInstance](V)
@@ -5734,9 +5794,9 @@ if(!(HAS_INSTANCE in FunctionProto))__webpack_require__(/*! ./_object-dp */ 7).f
 /* 169 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.function.name.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.function.name.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(/*! ./_object-dp */ 7).f
@@ -5769,14 +5829,14 @@ NAME in FProto || __webpack_require__(/*! ./_descriptors */ 6) && dP(FProto, NAM
 /* 170 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.acosh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.acosh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(/*! ./_export */ 0)
-  , log1p   = __webpack_require__(/*! ./_math-log1p */ 105)
+  , log1p   = __webpack_require__(/*! ./_math-log1p */ 104)
   , sqrt    = Math.sqrt
   , $acosh  = Math.acosh;
 
@@ -5797,9 +5857,9 @@ $export($export.S + $export.F * !($acosh
 /* 171 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.asinh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.asinh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -5817,9 +5877,9 @@ $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', {asinh: 
 /* 172 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.atanh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.atanh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -5837,9 +5897,9 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 /* 173 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.cbrt.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.cbrt.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
@@ -5856,9 +5916,9 @@ $export($export.S, 'Math', {
 /* 174 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.clz32.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.clz32.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -5874,9 +5934,9 @@ $export($export.S, 'Math', {
 /* 175 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.cosh.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.cosh.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -5893,9 +5953,9 @@ $export($export.S, 'Math', {
 /* 176 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.expm1.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.expm1.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -5908,9 +5968,9 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1})
 /* 177 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.math.fround.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.fround.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
@@ -5944,9 +6004,9 @@ $export($export.S, 'Math', {
 /* 178 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.hypot.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.hypot.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -5979,9 +6039,9 @@ $export($export.S, 'Math', {
 /* 179 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.imul.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.imul.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -6006,9 +6066,9 @@ $export($export.S + $export.F * __webpack_require__(/*! ./_fails */ 3)(function(
 /* 180 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.log10.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.log10.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -6024,23 +6084,23 @@ $export($export.S, 'Math', {
 /* 181 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.log1p.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.log1p.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.S, 'Math', {log1p: __webpack_require__(/*! ./_math-log1p */ 105)});
+$export($export.S, 'Math', {log1p: __webpack_require__(/*! ./_math-log1p */ 104)});
 
 /***/ }),
 /* 182 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.log2.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.log2.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -6056,9 +6116,9 @@ $export($export.S, 'Math', {
 /* 183 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.sign.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.sign.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
@@ -6070,9 +6130,9 @@ $export($export.S, 'Math', {sign: __webpack_require__(/*! ./_math-sign */ 74)});
 /* 184 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.sinh.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.sinh.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
@@ -6095,9 +6155,9 @@ $export($export.S + $export.F * __webpack_require__(/*! ./_fails */ 3)(function(
 /* 185 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.math.tanh.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.tanh.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
@@ -6117,9 +6177,9 @@ $export($export.S, 'Math', {
 /* 186 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.math.trunc.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.math.trunc.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -6135,9 +6195,9 @@ $export($export.S, 'Math', {
 /* 187 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.number.constructor.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.constructor.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6149,7 +6209,7 @@ var global            = __webpack_require__(/*! ./_global */ 2)
   , toPrimitive       = __webpack_require__(/*! ./_to-primitive */ 24)
   , fails             = __webpack_require__(/*! ./_fails */ 3)
   , gOPN              = __webpack_require__(/*! ./_object-gopn */ 35).f
-  , gOPD              = __webpack_require__(/*! ./_object-gopd */ 16).f
+  , gOPD              = __webpack_require__(/*! ./_object-gopd */ 17).f
   , dP                = __webpack_require__(/*! ./_object-dp */ 7).f
   , $trim             = __webpack_require__(/*! ./_string-trim */ 45).trim
   , NUMBER            = 'Number'
@@ -6215,9 +6275,9 @@ if(!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')){
 /* 188 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.number.epsilon.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.epsilon.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -6229,9 +6289,9 @@ $export($export.S, 'Number', {EPSILON: Math.pow(2, -52)});
 /* 189 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.number.is-finite.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.is-finite.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -6248,23 +6308,23 @@ $export($export.S, 'Number', {
 /* 190 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.number.is-integer.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.is-integer.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.S, 'Number', {isInteger: __webpack_require__(/*! ./_is-integer */ 102)});
+$export($export.S, 'Number', {isInteger: __webpack_require__(/*! ./_is-integer */ 101)});
 
 /***/ }),
 /* 191 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.number.is-nan.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.is-nan.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -6280,14 +6340,14 @@ $export($export.S, 'Number', {
 /* 192 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/modules/es6.number.is-safe-integer.js ***!
-  \*********************************************************/
+/*!**************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.is-safe-integer.js ***!
+  \**************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export   = __webpack_require__(/*! ./_export */ 0)
-  , isInteger = __webpack_require__(/*! ./_is-integer */ 102)
+  , isInteger = __webpack_require__(/*! ./_is-integer */ 101)
   , abs       = Math.abs;
 
 $export($export.S, 'Number', {
@@ -6300,9 +6360,9 @@ $export($export.S, 'Number', {
 /* 193 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es6.number.max-safe-integer.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.max-safe-integer.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -6314,9 +6374,9 @@ $export($export.S, 'Number', {MAX_SAFE_INTEGER: 0x1fffffffffffff});
 /* 194 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es6.number.min-safe-integer.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.min-safe-integer.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -6328,13 +6388,13 @@ $export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 /* 195 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.number.parse-float.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.parse-float.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(/*! ./_export */ 0)
-  , $parseFloat = __webpack_require__(/*! ./_parse-float */ 112);
+  , $parseFloat = __webpack_require__(/*! ./_parse-float */ 111);
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {parseFloat: $parseFloat});
 
@@ -6342,13 +6402,13 @@ $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {p
 /* 196 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.number.parse-int.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.parse-int.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(/*! ./_export */ 0)
-  , $parseInt = __webpack_require__(/*! ./_parse-int */ 113);
+  , $parseInt = __webpack_require__(/*! ./_parse-int */ 112);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
@@ -6356,16 +6416,16 @@ $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parse
 /* 197 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/es6.number.to-fixed.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.to-fixed.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export      = __webpack_require__(/*! ./_export */ 0)
   , toInteger    = __webpack_require__(/*! ./_to-integer */ 31)
-  , aNumberValue = __webpack_require__(/*! ./_a-number-value */ 93)
+  , aNumberValue = __webpack_require__(/*! ./_a-number-value */ 92)
   , repeat       = __webpack_require__(/*! ./_string-repeat */ 81)
   , $toFixed     = 1..toFixed
   , floor        = Math.floor
@@ -6480,16 +6540,16 @@ $export($export.P + $export.F * (!!$toFixed && (
 /* 198 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/modules/es6.number.to-precision.js ***!
-  \******************************************************/
+/*!***********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.number.to-precision.js ***!
+  \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export      = __webpack_require__(/*! ./_export */ 0)
   , $fails       = __webpack_require__(/*! ./_fails */ 3)
-  , aNumberValue = __webpack_require__(/*! ./_a-number-value */ 93)
+  , aNumberValue = __webpack_require__(/*! ./_a-number-value */ 92)
   , $toPrecision = 1..toPrecision;
 
 $export($export.P + $export.F * ($fails(function(){
@@ -6509,23 +6569,23 @@ $export($export.P + $export.F * ($fails(function(){
 /* 199 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.object.assign.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.assign.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(/*! ./_object-assign */ 106)});
+$export($export.S + $export.F, 'Object', {assign: __webpack_require__(/*! ./_object-assign */ 105)});
 
 /***/ }),
 /* 200 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.object.create.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.create.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0)
@@ -6536,22 +6596,22 @@ $export($export.S, 'Object', {create: __webpack_require__(/*! ./_object-create *
 /* 201 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/core-js/modules/es6.object.define-properties.js ***!
-  \***********************************************************/
+/*!****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.define-properties.js ***!
+  \****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ 6), 'Object', {defineProperties: __webpack_require__(/*! ./_object-dps */ 107)});
+$export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ 6), 'Object', {defineProperties: __webpack_require__(/*! ./_object-dps */ 106)});
 
 /***/ }),
 /* 202 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/modules/es6.object.define-property.js ***!
-  \*********************************************************/
+/*!**************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.define-property.js ***!
+  \**************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0);
@@ -6562,9 +6622,9 @@ $export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ 6), '
 /* 203 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.object.freeze.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.freeze.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -6581,14 +6641,14 @@ __webpack_require__(/*! ./_object-sap */ 23)('freeze', function($freeze){
 /* 204 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************************************!*\
-  !*** ./~/core-js/modules/es6.object.get-own-property-descriptor.js ***!
-  \*********************************************************************/
+/*!**************************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.get-own-property-descriptor.js ***!
+  \**************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
 var toIObject                 = __webpack_require__(/*! ./_to-iobject */ 15)
-  , $getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 16).f;
+  , $getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 17).f;
 
 __webpack_require__(/*! ./_object-sap */ 23)('getOwnPropertyDescriptor', function(){
   return function getOwnPropertyDescriptor(it, key){
@@ -6600,28 +6660,28 @@ __webpack_require__(/*! ./_object-sap */ 23)('getOwnPropertyDescriptor', functio
 /* 205 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/core-js/modules/es6.object.get-own-property-names.js ***!
-  \****************************************************************/
+/*!*********************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.get-own-property-names.js ***!
+  \*********************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(/*! ./_object-sap */ 23)('getOwnPropertyNames', function(){
-  return __webpack_require__(/*! ./_object-gopn-ext */ 108).f;
+  return __webpack_require__(/*! ./_object-gopn-ext */ 107).f;
 });
 
 /***/ }),
 /* 206 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es6.object.get-prototype-of.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.get-prototype-of.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject        = __webpack_require__(/*! ./_to-object */ 9)
-  , $getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 17);
+  , $getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 18);
 
 __webpack_require__(/*! ./_object-sap */ 23)('getPrototypeOf', function(){
   return function getPrototypeOf(it){
@@ -6633,9 +6693,9 @@ __webpack_require__(/*! ./_object-sap */ 23)('getPrototypeOf', function(){
 /* 207 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es6.object.is-extensible.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.is-extensible.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -6651,9 +6711,9 @@ __webpack_require__(/*! ./_object-sap */ 23)('isExtensible', function($isExtensi
 /* 208 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.object.is-frozen.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.is-frozen.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -6669,9 +6729,9 @@ __webpack_require__(/*! ./_object-sap */ 23)('isFrozen', function($isFrozen){
 /* 209 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.object.is-sealed.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.is-sealed.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -6687,22 +6747,22 @@ __webpack_require__(/*! ./_object-sap */ 23)('isSealed', function($isSealed){
 /* 210 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.object.is.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.is.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(/*! ./_export */ 0);
-$export($export.S, 'Object', {is: __webpack_require__(/*! ./_same-value */ 114)});
+$export($export.S, 'Object', {is: __webpack_require__(/*! ./_same-value */ 113)});
 
 /***/ }),
 /* 211 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.object.keys.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.keys.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -6719,9 +6779,9 @@ __webpack_require__(/*! ./_object-sap */ 23)('keys', function(){
 /* 212 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/core-js/modules/es6.object.prevent-extensions.js ***!
-  \************************************************************/
+/*!*****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.prevent-extensions.js ***!
+  \*****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -6738,9 +6798,9 @@ __webpack_require__(/*! ./_object-sap */ 23)('preventExtensions', function($prev
 /* 213 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.object.seal.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.seal.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -6757,9 +6817,9 @@ __webpack_require__(/*! ./_object-sap */ 23)('seal', function($seal){
 /* 214 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es6.object.set-prototype-of.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.set-prototype-of.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
@@ -6770,9 +6830,9 @@ $export($export.S, 'Object', {setPrototypeOf: __webpack_require__(/*! ./_set-pro
 /* 215 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.object.to-string.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.object.to-string.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6791,13 +6851,13 @@ if(test + '' != '[object z]'){
 /* 216 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.parse-float.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.parse-float.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(/*! ./_export */ 0)
-  , $parseFloat = __webpack_require__(/*! ./_parse-float */ 112);
+  , $parseFloat = __webpack_require__(/*! ./_parse-float */ 111);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parseFloat});
 
@@ -6805,13 +6865,13 @@ $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parse
 /* 217 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es6.parse-int.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.parse-int.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(/*! ./_export */ 0)
-  , $parseInt = __webpack_require__(/*! ./_parse-int */ 113);
+  , $parseInt = __webpack_require__(/*! ./_parse-int */ 112);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 
@@ -6819,9 +6879,9 @@ $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 /* 218 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/core-js/modules/es6.promise.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.promise.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7129,9 +7189,9 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(/*! ./_iter-
 /* 219 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.apply.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.apply.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -7155,9 +7215,9 @@ $export($export.S + $export.F * !__webpack_require__(/*! ./_fails */ 3)(function
 /* 220 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.construct.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.construct.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -7167,7 +7227,7 @@ var $export    = __webpack_require__(/*! ./_export */ 0)
   , anObject   = __webpack_require__(/*! ./_an-object */ 1)
   , isObject   = __webpack_require__(/*! ./_is-object */ 4)
   , fails      = __webpack_require__(/*! ./_fails */ 3)
-  , bind       = __webpack_require__(/*! ./_bind */ 97)
+  , bind       = __webpack_require__(/*! ./_bind */ 96)
   , rConstruct = (__webpack_require__(/*! ./_global */ 2).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -7212,9 +7272,9 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 /* 221 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.define-property.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.define-property.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -7244,14 +7304,14 @@ $export($export.S + $export.F * __webpack_require__(/*! ./_fails */ 3)(function(
 /* 222 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.delete-property.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.delete-property.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
 var $export  = __webpack_require__(/*! ./_export */ 0)
-  , gOPD     = __webpack_require__(/*! ./_object-gopd */ 16).f
+  , gOPD     = __webpack_require__(/*! ./_object-gopd */ 17).f
   , anObject = __webpack_require__(/*! ./_an-object */ 1);
 
 $export($export.S, 'Reflect', {
@@ -7265,9 +7325,9 @@ $export($export.S, 'Reflect', {
 /* 223 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.enumerate.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.enumerate.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7302,13 +7362,13 @@ $export($export.S, 'Reflect', {
 /* 224 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.get-own-property-descriptor.js ***!
-  \**********************************************************************/
+/*!***************************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.get-own-property-descriptor.js ***!
+  \***************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
-var gOPD     = __webpack_require__(/*! ./_object-gopd */ 16)
+var gOPD     = __webpack_require__(/*! ./_object-gopd */ 17)
   , $export  = __webpack_require__(/*! ./_export */ 0)
   , anObject = __webpack_require__(/*! ./_an-object */ 1);
 
@@ -7322,14 +7382,14 @@ $export($export.S, 'Reflect', {
 /* 225 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.get-prototype-of.js ***!
-  \***********************************************************/
+/*!****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.get-prototype-of.js ***!
+  \****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
 var $export  = __webpack_require__(/*! ./_export */ 0)
-  , getProto = __webpack_require__(/*! ./_object-gpo */ 17)
+  , getProto = __webpack_require__(/*! ./_object-gpo */ 18)
   , anObject = __webpack_require__(/*! ./_an-object */ 1);
 
 $export($export.S, 'Reflect', {
@@ -7342,14 +7402,14 @@ $export($export.S, 'Reflect', {
 /* 226 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.get.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.get.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
-var gOPD           = __webpack_require__(/*! ./_object-gopd */ 16)
-  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 17)
+var gOPD           = __webpack_require__(/*! ./_object-gopd */ 17)
+  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 18)
   , has            = __webpack_require__(/*! ./_has */ 10)
   , $export        = __webpack_require__(/*! ./_export */ 0)
   , isObject       = __webpack_require__(/*! ./_is-object */ 4)
@@ -7373,9 +7433,9 @@ $export($export.S, 'Reflect', {get: get});
 /* 227 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.has.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.has.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -7391,9 +7451,9 @@ $export($export.S, 'Reflect', {
 /* 228 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.is-extensible.js ***!
-  \********************************************************/
+/*!*************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.is-extensible.js ***!
+  \*************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -7412,23 +7472,23 @@ $export($export.S, 'Reflect', {
 /* 229 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.own-keys.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.own-keys.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.S, 'Reflect', {ownKeys: __webpack_require__(/*! ./_own-keys */ 111)});
+$export($export.S, 'Reflect', {ownKeys: __webpack_require__(/*! ./_own-keys */ 110)});
 
 /***/ }),
 /* 230 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.prevent-extensions.js ***!
-  \*************************************************************/
+/*!******************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.prevent-extensions.js ***!
+  \******************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -7452,9 +7512,9 @@ $export($export.S, 'Reflect', {
 /* 231 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.set-prototype-of.js ***!
-  \***********************************************************/
+/*!****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.set-prototype-of.js ***!
+  \****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -7477,15 +7537,15 @@ if(setProto)$export($export.S, 'Reflect', {
 /* 232 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.reflect.set.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.reflect.set.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 var dP             = __webpack_require__(/*! ./_object-dp */ 7)
-  , gOPD           = __webpack_require__(/*! ./_object-gopd */ 16)
-  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 17)
+  , gOPD           = __webpack_require__(/*! ./_object-gopd */ 17)
+  , getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 18)
   , has            = __webpack_require__(/*! ./_has */ 10)
   , $export        = __webpack_require__(/*! ./_export */ 0)
   , createDesc     = __webpack_require__(/*! ./_property-desc */ 30)
@@ -7518,9 +7578,9 @@ $export($export.S, 'Reflect', {set: set});
 /* 233 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.constructor.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.constructor.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var global            = __webpack_require__(/*! ./_global */ 2)
@@ -7571,9 +7631,9 @@ __webpack_require__(/*! ./_set-species */ 38)('RegExp');
 /* 234 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.match.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.match.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
@@ -7591,9 +7651,9 @@ __webpack_require__(/*! ./_fix-re-wks */ 52)('match', 1, function(defined, MATCH
 /* 235 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.replace.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.replace.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
@@ -7613,9 +7673,9 @@ __webpack_require__(/*! ./_fix-re-wks */ 52)('replace', 2, function(defined, REP
 /* 236 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.search.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.search.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
@@ -7633,9 +7693,9 @@ __webpack_require__(/*! ./_fix-re-wks */ 52)('search', 1, function(defined, SEAR
 /* 237 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.split.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.split.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
@@ -7713,14 +7773,14 @@ __webpack_require__(/*! ./_fix-re-wks */ 52)('split', 2, function(defined, SPLIT
 /* 238 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.regexp.to-string.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.regexp.to-string.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-__webpack_require__(/*! ./es6.regexp.flags */ 118);
+__webpack_require__(/*! ./es6.regexp.flags */ 117);
 var anObject    = __webpack_require__(/*! ./_an-object */ 1)
   , $flags      = __webpack_require__(/*! ./_flags */ 53)
   , DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 6)
@@ -7749,9 +7809,9 @@ if(__webpack_require__(/*! ./_fails */ 3)(function(){ return $toString.call({sou
 /* 239 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.string.anchor.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.anchor.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7767,9 +7827,9 @@ __webpack_require__(/*! ./_string-html */ 14)('anchor', function(createHTML){
 /* 240 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.string.big.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.big.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7785,9 +7845,9 @@ __webpack_require__(/*! ./_string-html */ 14)('big', function(createHTML){
 /* 241 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.string.blink.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.blink.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7803,9 +7863,9 @@ __webpack_require__(/*! ./_string-html */ 14)('blink', function(createHTML){
 /* 242 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.string.bold.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.bold.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7821,9 +7881,9 @@ __webpack_require__(/*! ./_string-html */ 14)('bold', function(createHTML){
 /* 243 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es6.string.code-point-at.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.code-point-at.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7841,9 +7901,9 @@ $export($export.P, 'String', {
 /* 244 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.string.ends-with.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.ends-with.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7872,9 +7932,9 @@ $export($export.P + $export.F * __webpack_require__(/*! ./_fails-is-regexp */ 66
 /* 245 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.string.fixed.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.fixed.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7890,9 +7950,9 @@ __webpack_require__(/*! ./_string-html */ 14)('fixed', function(createHTML){
 /* 246 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.string.fontcolor.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.fontcolor.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7908,9 +7968,9 @@ __webpack_require__(/*! ./_string-html */ 14)('fontcolor', function(createHTML){
 /* 247 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/es6.string.fontsize.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.fontsize.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7926,9 +7986,9 @@ __webpack_require__(/*! ./_string-html */ 14)('fontsize', function(createHTML){
 /* 248 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************************!*\
-  !*** ./~/core-js/modules/es6.string.from-code-point.js ***!
-  \*********************************************************/
+/*!**************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.from-code-point.js ***!
+  \**************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export        = __webpack_require__(/*! ./_export */ 0)
@@ -7959,9 +8019,9 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 /* 249 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/es6.string.includes.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.includes.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7982,9 +8042,9 @@ $export($export.P + $export.F * __webpack_require__(/*! ./_fails-is-regexp */ 66
 /* 250 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es6.string.italics.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.italics.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8000,9 +8060,9 @@ __webpack_require__(/*! ./_string-html */ 14)('italics', function(createHTML){
 /* 251 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/es6.string.iterator.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.iterator.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8028,9 +8088,9 @@ __webpack_require__(/*! ./_iter-define */ 72)(String, 'String', function(iterate
 /* 252 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.string.link.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.link.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8046,9 +8106,9 @@ __webpack_require__(/*! ./_string-html */ 14)('link', function(createHTML){
 /* 253 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.string.raw.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.raw.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(/*! ./_export */ 0)
@@ -8074,9 +8134,9 @@ $export($export.S, 'String', {
 /* 254 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.string.repeat.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.repeat.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0);
@@ -8090,9 +8150,9 @@ $export($export.P, 'String', {
 /* 255 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/es6.string.small.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.small.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8108,9 +8168,9 @@ __webpack_require__(/*! ./_string-html */ 14)('small', function(createHTML){
 /* 256 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.string.starts-with.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.starts-with.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8137,9 +8197,9 @@ $export($export.P + $export.F * __webpack_require__(/*! ./_fails-is-regexp */ 66
 /* 257 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es6.string.strike.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.strike.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8155,9 +8215,9 @@ __webpack_require__(/*! ./_string-html */ 14)('strike', function(createHTML){
 /* 258 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.string.sub.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.sub.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8173,9 +8233,9 @@ __webpack_require__(/*! ./_string-html */ 14)('sub', function(createHTML){
 /* 259 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es6.string.sup.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.sup.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8191,9 +8251,9 @@ __webpack_require__(/*! ./_string-html */ 14)('sup', function(createHTML){
 /* 260 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es6.string.trim.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.string.trim.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8209,9 +8269,9 @@ __webpack_require__(/*! ./_string-trim */ 45)('trim', function($trim){
 /* 261 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/es6.symbol.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.symbol.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8228,7 +8288,7 @@ var global         = __webpack_require__(/*! ./_global */ 2)
   , setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 44)
   , uid            = __webpack_require__(/*! ./_uid */ 40)
   , wks            = __webpack_require__(/*! ./_wks */ 5)
-  , wksExt         = __webpack_require__(/*! ./_wks-ext */ 116)
+  , wksExt         = __webpack_require__(/*! ./_wks-ext */ 115)
   , wksDefine      = __webpack_require__(/*! ./_wks-define */ 85)
   , keyOf          = __webpack_require__(/*! ./_keyof */ 137)
   , enumKeys       = __webpack_require__(/*! ./_enum-keys */ 136)
@@ -8238,8 +8298,8 @@ var global         = __webpack_require__(/*! ./_global */ 2)
   , toPrimitive    = __webpack_require__(/*! ./_to-primitive */ 24)
   , createDesc     = __webpack_require__(/*! ./_property-desc */ 30)
   , _create        = __webpack_require__(/*! ./_object-create */ 34)
-  , gOPNExt        = __webpack_require__(/*! ./_object-gopn-ext */ 108)
-  , $GOPD          = __webpack_require__(/*! ./_object-gopd */ 16)
+  , gOPNExt        = __webpack_require__(/*! ./_object-gopn-ext */ 107)
+  , $GOPD          = __webpack_require__(/*! ./_object-gopd */ 17)
   , $DP            = __webpack_require__(/*! ./_object-dp */ 7)
   , $keys          = __webpack_require__(/*! ./_object-keys */ 36)
   , gOPD           = $GOPD.f
@@ -8455,9 +8515,9 @@ setToStringTag(global.JSON, 'JSON', true);
 /* 262 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.array-buffer.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.array-buffer.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8512,9 +8572,9 @@ __webpack_require__(/*! ./_set-species */ 38)(ARRAY_BUFFER);
 /* 263 */
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.data-view.js ***!
-  \**************************************************/
+/*!*******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.data-view.js ***!
+  \*******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0);
@@ -8526,9 +8586,9 @@ $export($export.G + $export.W + $export.F * !__webpack_require__(/*! ./_typed */
 /* 264 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.float32-array.js ***!
-  \******************************************************/
+/*!***********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.float32-array.js ***!
+  \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Float32', 4, function(init){
@@ -8541,9 +8601,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Float32', 4, function(init){
 /* 265 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.float64-array.js ***!
-  \******************************************************/
+/*!***********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.float64-array.js ***!
+  \***********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Float64', 8, function(init){
@@ -8556,9 +8616,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Float64', 8, function(init){
 /* 266 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.int16-array.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.int16-array.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Int16', 2, function(init){
@@ -8571,9 +8631,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Int16', 2, function(init){
 /* 267 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.int32-array.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.int32-array.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Int32', 4, function(init){
@@ -8586,9 +8646,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Int32', 4, function(init){
 /* 268 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.int8-array.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.int8-array.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Int8', 1, function(init){
@@ -8601,9 +8661,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Int8', 1, function(init){
 /* 269 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.uint16-array.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.uint16-array.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Uint16', 2, function(init){
@@ -8616,9 +8676,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Uint16', 2, function(init){
 /* 270 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.uint32-array.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.uint32-array.js ***!
+  \**********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Uint32', 4, function(init){
@@ -8631,9 +8691,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Uint32', 4, function(init){
 /* 271 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.uint8-array.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.uint8-array.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Uint8', 1, function(init){
@@ -8646,9 +8706,9 @@ __webpack_require__(/*! ./_typed-array */ 28)('Uint8', 1, function(init){
 /* 272 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/core-js/modules/es6.typed.uint8-clamped-array.js ***!
-  \************************************************************/
+/*!*****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.typed.uint8-clamped-array.js ***!
+  \*****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_typed-array */ 28)('Uint8', 1, function(init){
@@ -8661,14 +8721,14 @@ __webpack_require__(/*! ./_typed-array */ 28)('Uint8', 1, function(init){
 /* 273 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************!*\
-  !*** ./~/core-js/modules/es6.weak-set.js ***!
-  \*******************************************/
+/*!************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es6.weak-set.js ***!
+  \************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var weak = __webpack_require__(/*! ./_collection-weak */ 100);
+var weak = __webpack_require__(/*! ./_collection-weak */ 99);
 
 // 23.4 WeakSet Objects
 __webpack_require__(/*! ./_collection */ 51)('WeakSet', function(get){
@@ -8684,9 +8744,9 @@ __webpack_require__(/*! ./_collection */ 51)('WeakSet', function(get){
 /* 274 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es7.array.includes.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.array.includes.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8707,9 +8767,9 @@ __webpack_require__(/*! ./_add-to-unscopables */ 41)('includes');
 /* 275 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************!*\
-  !*** ./~/core-js/modules/es7.asap.js ***!
-  \***************************************/
+/*!********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.asap.js ***!
+  \********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
@@ -8729,9 +8789,9 @@ $export($export.G, {
 /* 276 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es7.error.is-error.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.error.is-error.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-is-error
@@ -8748,23 +8808,23 @@ $export($export.S, 'Error', {
 /* 277 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es7.map.to-json.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.map.to-json.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export  = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.P + $export.R, 'Map', {toJSON: __webpack_require__(/*! ./_collection-to-json */ 99)('Map')});
+$export($export.P + $export.R, 'Map', {toJSON: __webpack_require__(/*! ./_collection-to-json */ 98)('Map')});
 
 /***/ }),
 /* 278 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es7.math.iaddh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.math.iaddh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -8783,9 +8843,9 @@ $export($export.S, 'Math', {
 /* 279 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es7.math.imulh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.math.imulh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -8809,9 +8869,9 @@ $export($export.S, 'Math', {
 /* 280 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es7.math.isubh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.math.isubh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -8830,9 +8890,9 @@ $export($export.S, 'Math', {
 /* 281 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es7.math.umulh.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.math.umulh.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -8856,9 +8916,9 @@ $export($export.S, 'Math', {
 /* 282 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es7.object.define-getter.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.define-getter.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8879,9 +8939,9 @@ __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_re
 /* 283 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es7.object.define-setter.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.define-setter.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8902,14 +8962,14 @@ __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_re
 /* 284 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es7.object.entries.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.entries.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export  = __webpack_require__(/*! ./_export */ 0)
-  , $entries = __webpack_require__(/*! ./_object-to-array */ 110)(true);
+  , $entries = __webpack_require__(/*! ./_object-to-array */ 109)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it){
@@ -8921,16 +8981,16 @@ $export($export.S, 'Object', {
 /* 285 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************************!*\
-  !*** ./~/core-js/modules/es7.object.get-own-property-descriptors.js ***!
-  \**********************************************************************/
+/*!***************************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.get-own-property-descriptors.js ***!
+  \***************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export        = __webpack_require__(/*! ./_export */ 0)
-  , ownKeys        = __webpack_require__(/*! ./_own-keys */ 111)
+  , ownKeys        = __webpack_require__(/*! ./_own-keys */ 110)
   , toIObject      = __webpack_require__(/*! ./_to-iobject */ 15)
-  , gOPD           = __webpack_require__(/*! ./_object-gopd */ 16)
+  , gOPD           = __webpack_require__(/*! ./_object-gopd */ 17)
   , createProperty = __webpack_require__(/*! ./_create-property */ 63);
 
 $export($export.S, 'Object', {
@@ -8950,9 +9010,9 @@ $export($export.S, 'Object', {
 /* 286 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es7.object.lookup-getter.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.lookup-getter.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8960,8 +9020,8 @@ $export($export.S, 'Object', {
 var $export                  = __webpack_require__(/*! ./_export */ 0)
   , toObject                 = __webpack_require__(/*! ./_to-object */ 9)
   , toPrimitive              = __webpack_require__(/*! ./_to-primitive */ 24)
-  , getPrototypeOf           = __webpack_require__(/*! ./_object-gpo */ 17)
-  , getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 16).f;
+  , getPrototypeOf           = __webpack_require__(/*! ./_object-gpo */ 18)
+  , getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 17).f;
 
 // B.2.2.4 Object.prototype.__lookupGetter__(P)
 __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_require__(/*! ./_object-forced-pam */ 57), 'Object', {
@@ -8979,9 +9039,9 @@ __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_re
 /* 287 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es7.object.lookup-setter.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.lookup-setter.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8989,8 +9049,8 @@ __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_re
 var $export                  = __webpack_require__(/*! ./_export */ 0)
   , toObject                 = __webpack_require__(/*! ./_to-object */ 9)
   , toPrimitive              = __webpack_require__(/*! ./_to-primitive */ 24)
-  , getPrototypeOf           = __webpack_require__(/*! ./_object-gpo */ 17)
-  , getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 16).f;
+  , getPrototypeOf           = __webpack_require__(/*! ./_object-gpo */ 18)
+  , getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 17).f;
 
 // B.2.2.5 Object.prototype.__lookupSetter__(P)
 __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_require__(/*! ./_object-forced-pam */ 57), 'Object', {
@@ -9008,14 +9068,14 @@ __webpack_require__(/*! ./_descriptors */ 6) && $export($export.P + __webpack_re
 /* 288 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es7.object.values.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.object.values.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(/*! ./_export */ 0)
-  , $values = __webpack_require__(/*! ./_object-to-array */ 110)(false);
+  , $values = __webpack_require__(/*! ./_object-to-array */ 109)(false);
 
 $export($export.S, 'Object', {
   values: function values(it){
@@ -9027,9 +9087,9 @@ $export($export.S, 'Object', {
 /* 289 */
 /* unknown exports provided */
 /* all exports used */
-/*!*********************************************!*\
-  !*** ./~/core-js/modules/es7.observable.js ***!
-  \*********************************************/
+/*!**************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.observable.js ***!
+  \**************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9237,9 +9297,9 @@ __webpack_require__(/*! ./_set-species */ 38)('Observable');
 /* 290 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.define-metadata.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.define-metadata.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(/*! ./_metadata */ 27)
@@ -9255,9 +9315,9 @@ metadata.exp({defineMetadata: function defineMetadata(metadataKey, metadataValue
 /* 291 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.delete-metadata.js ***!
-  \**********************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.delete-metadata.js ***!
+  \***************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(/*! ./_metadata */ 27)
@@ -9280,16 +9340,16 @@ metadata.exp({deleteMetadata: function deleteMetadata(metadataKey, target /*, ta
 /* 292 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.get-metadata-keys.js ***!
-  \************************************************************/
+/*!*****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.get-metadata-keys.js ***!
+  \*****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set                     = __webpack_require__(/*! ./es6.set */ 119)
-  , from                    = __webpack_require__(/*! ./_array-from-iterable */ 95)
+var Set                     = __webpack_require__(/*! ./es6.set */ 118)
+  , from                    = __webpack_require__(/*! ./_array-from-iterable */ 94)
   , metadata                = __webpack_require__(/*! ./_metadata */ 27)
   , anObject                = __webpack_require__(/*! ./_an-object */ 1)
-  , getPrototypeOf          = __webpack_require__(/*! ./_object-gpo */ 17)
+  , getPrototypeOf          = __webpack_require__(/*! ./_object-gpo */ 18)
   , ordinaryOwnMetadataKeys = metadata.keys
   , toMetaKey               = metadata.key;
 
@@ -9309,14 +9369,14 @@ metadata.exp({getMetadataKeys: function getMetadataKeys(target /*, targetKey */)
 /* 293 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.get-metadata.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.get-metadata.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(/*! ./_metadata */ 27)
   , anObject               = __webpack_require__(/*! ./_an-object */ 1)
-  , getPrototypeOf         = __webpack_require__(/*! ./_object-gpo */ 17)
+  , getPrototypeOf         = __webpack_require__(/*! ./_object-gpo */ 18)
   , ordinaryHasOwnMetadata = metadata.has
   , ordinaryGetOwnMetadata = metadata.get
   , toMetaKey              = metadata.key;
@@ -9336,9 +9396,9 @@ metadata.exp({getMetadata: function getMetadata(metadataKey, target /*, targetKe
 /* 294 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.get-own-metadata-keys.js ***!
-  \****************************************************************/
+/*!*********************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.get-own-metadata-keys.js ***!
+  \*********************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata                = __webpack_require__(/*! ./_metadata */ 27)
@@ -9354,9 +9414,9 @@ metadata.exp({getOwnMetadataKeys: function getOwnMetadataKeys(target /*, targetK
 /* 295 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.get-own-metadata.js ***!
-  \***********************************************************/
+/*!****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.get-own-metadata.js ***!
+  \****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(/*! ./_metadata */ 27)
@@ -9373,14 +9433,14 @@ metadata.exp({getOwnMetadata: function getOwnMetadata(metadataKey, target /*, ta
 /* 296 */
 /* unknown exports provided */
 /* all exports used */
-/*!*******************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.has-metadata.js ***!
-  \*******************************************************/
+/*!************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.has-metadata.js ***!
+  \************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(/*! ./_metadata */ 27)
   , anObject               = __webpack_require__(/*! ./_an-object */ 1)
-  , getPrototypeOf         = __webpack_require__(/*! ./_object-gpo */ 17)
+  , getPrototypeOf         = __webpack_require__(/*! ./_object-gpo */ 18)
   , ordinaryHasOwnMetadata = metadata.has
   , toMetaKey              = metadata.key;
 
@@ -9399,9 +9459,9 @@ metadata.exp({hasMetadata: function hasMetadata(metadataKey, target /*, targetKe
 /* 297 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.has-own-metadata.js ***!
-  \***********************************************************/
+/*!****************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.has-own-metadata.js ***!
+  \****************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(/*! ./_metadata */ 27)
@@ -9418,9 +9478,9 @@ metadata.exp({hasOwnMetadata: function hasOwnMetadata(metadataKey, target /*, ta
 /* 298 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es7.reflect.metadata.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.reflect.metadata.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(/*! ./_metadata */ 27)
@@ -9443,23 +9503,23 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 /* 299 */
 /* unknown exports provided */
 /* all exports used */
-/*!**********************************************!*\
-  !*** ./~/core-js/modules/es7.set.to-json.js ***!
-  \**********************************************/
+/*!***************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.set.to-json.js ***!
+  \***************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export  = __webpack_require__(/*! ./_export */ 0);
 
-$export($export.P + $export.R, 'Set', {toJSON: __webpack_require__(/*! ./_collection-to-json */ 99)('Set')});
+$export($export.P + $export.R, 'Set', {toJSON: __webpack_require__(/*! ./_collection-to-json */ 98)('Set')});
 
 /***/ }),
 /* 300 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/es7.string.at.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.string.at.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9478,9 +9538,9 @@ $export($export.P, 'String', {
 /* 301 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es7.string.match-all.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.string.match-all.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9519,16 +9579,16 @@ $export($export.P, 'String', {
 /* 302 */
 /* unknown exports provided */
 /* all exports used */
-/*!*************************************************!*\
-  !*** ./~/core-js/modules/es7.string.pad-end.js ***!
-  \*************************************************/
+/*!******************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.string.pad-end.js ***!
+  \******************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(/*! ./_export */ 0)
-  , $pad    = __webpack_require__(/*! ./_string-pad */ 115);
+  , $pad    = __webpack_require__(/*! ./_string-pad */ 114);
 
 $export($export.P, 'String', {
   padEnd: function padEnd(maxLength /*, fillString = ' ' */){
@@ -9540,16 +9600,16 @@ $export($export.P, 'String', {
 /* 303 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es7.string.pad-start.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.string.pad-start.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(/*! ./_export */ 0)
-  , $pad    = __webpack_require__(/*! ./_string-pad */ 115);
+  , $pad    = __webpack_require__(/*! ./_string-pad */ 114);
 
 $export($export.P, 'String', {
   padStart: function padStart(maxLength /*, fillString = ' ' */){
@@ -9561,9 +9621,9 @@ $export($export.P, 'String', {
 /* 304 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************!*\
-  !*** ./~/core-js/modules/es7.string.trim-left.js ***!
-  \***************************************************/
+/*!********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.string.trim-left.js ***!
+  \********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9579,9 +9639,9 @@ __webpack_require__(/*! ./_string-trim */ 45)('trimLeft', function($trim){
 /* 305 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es7.string.trim-right.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.string.trim-right.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9597,9 +9657,9 @@ __webpack_require__(/*! ./_string-trim */ 45)('trimRight', function($trim){
 /* 306 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************************!*\
-  !*** ./~/core-js/modules/es7.symbol.async-iterator.js ***!
-  \********************************************************/
+/*!*************************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.symbol.async-iterator.js ***!
+  \*************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_wks-define */ 85)('asyncIterator');
@@ -9608,9 +9668,9 @@ __webpack_require__(/*! ./_wks-define */ 85)('asyncIterator');
 /* 307 */
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************!*\
-  !*** ./~/core-js/modules/es7.symbol.observable.js ***!
-  \****************************************************/
+/*!*********************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.symbol.observable.js ***!
+  \*********************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./_wks-define */ 85)('observable');
@@ -9619,9 +9679,9 @@ __webpack_require__(/*! ./_wks-define */ 85)('observable');
 /* 308 */
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************!*\
-  !*** ./~/core-js/modules/es7.system.global.js ***!
-  \************************************************/
+/*!*****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/es7.system.global.js ***!
+  \*****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-global
@@ -9633,9 +9693,9 @@ $export($export.S, 'System', {global: __webpack_require__(/*! ./_global */ 2)});
 /* 309 */
 /* unknown exports provided */
 /* all exports used */
-/*!***********************************************!*\
-  !*** ./~/core-js/modules/web.dom.iterable.js ***!
-  \***********************************************/
+/*!****************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/web.dom.iterable.js ***!
+  \****************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators    = __webpack_require__(/*! ./es6.array.iterator */ 87)
@@ -9665,9 +9725,9 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 /* 310 */
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************!*\
-  !*** ./~/core-js/modules/web.immediate.js ***!
-  \********************************************/
+/*!*************************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/web.immediate.js ***!
+  \*************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(/*! ./_export */ 0)
@@ -9681,9 +9741,9 @@ $export($export.G + $export.B, {
 /* 311 */
 /* unknown exports provided */
 /* all exports used */
-/*!*****************************************!*\
-  !*** ./~/core-js/modules/web.timers.js ***!
-  \*****************************************/
+/*!**********************************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/modules/web.timers.js ***!
+  \**********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
@@ -9711,9 +9771,9 @@ $export($export.G + $export.B + $export.F * MSIE, {
 /* 312 */
 /* unknown exports provided */
 /* all exports used */
-/*!***************************!*\
-  !*** ./~/core-js/shim.js ***!
-  \***************************/
+/*!********************************************!*\
+  !*** ./~/babel-polyfill/~/core-js/shim.js ***!
+  \********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./modules/es6.symbol */ 261);
@@ -9818,15 +9878,15 @@ __webpack_require__(/*! ./modules/es6.array.species */ 161);
 __webpack_require__(/*! ./modules/es6.array.iterator */ 87);
 __webpack_require__(/*! ./modules/es6.regexp.constructor */ 233);
 __webpack_require__(/*! ./modules/es6.regexp.to-string */ 238);
-__webpack_require__(/*! ./modules/es6.regexp.flags */ 118);
+__webpack_require__(/*! ./modules/es6.regexp.flags */ 117);
 __webpack_require__(/*! ./modules/es6.regexp.match */ 234);
 __webpack_require__(/*! ./modules/es6.regexp.replace */ 235);
 __webpack_require__(/*! ./modules/es6.regexp.search */ 236);
 __webpack_require__(/*! ./modules/es6.regexp.split */ 237);
 __webpack_require__(/*! ./modules/es6.promise */ 218);
-__webpack_require__(/*! ./modules/es6.map */ 117);
-__webpack_require__(/*! ./modules/es6.set */ 119);
-__webpack_require__(/*! ./modules/es6.weak-map */ 120);
+__webpack_require__(/*! ./modules/es6.map */ 116);
+__webpack_require__(/*! ./modules/es6.set */ 118);
+__webpack_require__(/*! ./modules/es6.weak-map */ 119);
 __webpack_require__(/*! ./modules/es6.weak-set */ 273);
 __webpack_require__(/*! ./modules/es6.typed.array-buffer */ 262);
 __webpack_require__(/*! ./modules/es6.typed.data-view */ 263);
@@ -9894,15 +9954,12 @@ __webpack_require__(/*! ./modules/web.dom.iterable */ 309);
 module.exports = __webpack_require__(/*! ./modules/_core */ 25);
 
 /***/ }),
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */
+/* 313 */
 /* unknown exports provided */
 /* all exports used */
-/*!******************************************!*\
-  !*** ./~/regenerator-runtime/runtime.js ***!
-  \******************************************/
+/*!***********************************************************!*\
+  !*** ./~/babel-polyfill/~/regenerator-runtime/runtime.js ***!
+  \***********************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -10629,9 +10686,12 @@ module.exports = __webpack_require__(/*! ./modules/_core */ 25);
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/global.js */ 49), __webpack_require__(/*! ./../process/browser.js */ 121)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 49), __webpack_require__(/*! ./../../../webpack/~/node-libs-browser/~/process/browser.js */ 120)))
 
 /***/ }),
+/* 314 */,
+/* 315 */,
+/* 316 */,
 /* 317 */
 /* unknown exports provided */
 /* all exports used */
@@ -10640,8 +10700,8 @@ module.exports = __webpack_require__(/*! ./modules/_core */ 25);
   \******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! babel-polyfill */123);
-module.exports = __webpack_require__(/*! /Users/mikk/gamedev/ld38/src/main.js */122);
+__webpack_require__(/*! babel-polyfill */122);
+module.exports = __webpack_require__(/*! /Users/aareundo/Desktop/projects/LD38/src/main.js */121);
 
 
 /***/ })

@@ -7,10 +7,12 @@ export default class extends Phaser.Sprite {
     this.canTurn = options.canTurn
     this.isFalling = options.isFalling
 
+    this.animations.add('explode', ['expl1, expl2'])
+
     this.anchor.setTo(0.5)
 
     this.game.physics.arcade.enable(this)
-    
+
     this.cursors = this.game.input.keyboard.createCursorKeys()
 
     this.wasd = {
@@ -32,7 +34,7 @@ export default class extends Phaser.Sprite {
     this.playerTrail.start(false, 50, 10)
 
     // Default maxVelocity in 1G, this magic number is used everywhere
-    this.body.maxVelocity.x = 800;
+    this.body.maxVelocity.x = 800
   }
 
   resetWithAnimation () {
@@ -41,16 +43,16 @@ export default class extends Phaser.Sprite {
     var x = this.x
     var y = this.y
 
-    this.emitter = this.game.add.emitter(x, y, 6)
-    this.emitter.makeParticles('chars_small', 200)
-    this.emitter.width = 10
-    this.emitter.height = 10
-    this.emitter.minParticleScale = 0.5
-    this.emitter.maxParticleScale = 3
+    this.emitter = this.game.add.emitter(x, y, 4)
+    this.emitter.makeParticles(['expl1', 'expl2'], 2)
+    this.emitter.width = 24
+    this.emitter.height = 24
+    this.emitter.minParticleScale = 1
+    this.emitter.maxParticleScale = 4
     this.emitter.minParticleSpeed.set(0, 0)
     this.emitter.maxParticleSpeed.set(0, 0)
     this.emitter.gravity = 0
-    this.emitter.start(false, duration, 50, 6)
+    this.emitter.start(false, duration, 10, 4)
 
     var player = this
     var world = this.game.world
@@ -76,25 +78,25 @@ export default class extends Phaser.Sprite {
         this.body.velocity.y = accY
       }
     } else {
-      this.body.velocity.y = 0;
+      this.body.velocity.y = 0
     }
 
     const accX = 150
     if (this.isMovingLeft()) {
-      this.body.velocity.x = - 3 * accX
+      this.body.velocity.x = -3 * accX
       if (this.canTurn) {
         this.scale.setTo(-1, 1)
       }
     } else if (this.isMovingRight()) {
       if (this.body.maxVelocity.x <= 800 * 1.4) {
-        this.body.maxVelocity.x += accX;
+        this.body.maxVelocity.x += accX
       }
       this.body.velocity.x += accX
       if (this.canTurn) {
         this.scale.setTo(1, 1)
       }
     } else {
-      this.body.maxVelocity.x = 800;
+      this.body.maxVelocity.x = 800
     }
   }
 

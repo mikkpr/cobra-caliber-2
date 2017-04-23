@@ -4,7 +4,7 @@ export default class extends Phaser.Sprite {
   constructor (game, player, x, y) {
     super(game, x, y, 'chars_large', 72)
 
-    this.player = player;
+    this.player = player
 
     this.anchor.setTo(0.5)
 
@@ -13,10 +13,41 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-  	this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
+    this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
   }
 
   onCollision () {
-  	this.game.state.start('Travel', true, false, "earth_fight")
+
+  	var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
+  	
+  	if (velocity > 600) {
+	  	var state = this.game.state
+	  	this.flyAway(this, 0, 20, function() { state.start('Travel', true, false, "earth_fight"); } );
+  	}
   }
+
+  flyAway (context, counter, angle, completed) {
+
+  	context.body.velocity.y = -200
+  	context.body.velocity.x = 100
+  	
+  	console.log(this.scale.x, this.scale.y)
+  	var scalex = this.scale.x - 0.01;
+  	var scaley = this.scale.y - 0.01;
+
+  	this.scale.set(scalex, scaley)
+
+  	this.angle = angle;
+
+  	if (counter < 40) {
+  		counter++;
+  		angle += 30;
+  		setTimeout(function() { context.flyAway(context, counter, angle, completed) }, 120)
+  	} else {
+  		setTimeout(function() {
+  			completed()
+  		}, 200)
+  	}
+  }
+
 }

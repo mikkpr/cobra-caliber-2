@@ -40,6 +40,15 @@ export default class extends Phaser.State {
     this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true })
     this.world.add(this.turret)
 
+    this.world.add(new Turret(this.game, this.player, 9600, 100, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 7200, 100, 80, 179, { target: this.player, burst: false }))
+    this.world.add(new Turret(this.game, this.player, 10560, 300, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 11200, 200, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 11800, 300, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 11904, 100, 80, 179, { target: this.player, burst: true }))
+    this.world.add(new Turret(this.game, this.player, 14720, 100, 80, 179))
+    this.world.add(new Turret(this.game, this.player, 20384, 256, 80, 179, { target: this.player, burst: true, homing: true }))
+
     // Make the camera follow the sprite
     // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
     //this.game.camera.follow(this.player)

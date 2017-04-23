@@ -1,10 +1,11 @@
 import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
-  constructor (game, x, y, canTurn = false) {
+  constructor (game, x, y, options = { canTurn: false, isFalling: true }) {
     super(game, x, y, 'chars_small', 165)
 
-    this.canTurn = canTurn
+    this.canTurn = options.canTurn
+    this.isFalling = options.isFalling
 
     this.anchor.setTo(0.5)
 
@@ -77,9 +78,13 @@ export default class extends Phaser.Sprite {
     const accV = 300
 
     if (this.isMovingUp()) {
-      this.body.velocity.y = -accV
+      if (this.isFalling || (!this.isFalling && this.body.onFloor())) {
+        this.body.velocity.y = -accV
+      }
     } else if (this.isMovingDown()) {
-      this.body.velocity.y = accV
+      if (this.isFalling) {
+        this.body.velocity.y = accV
+      }
     }
 
     const accH = 500

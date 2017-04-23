@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 
 import Player from '../sprites/Player'
 import Obstacle from '../sprites/Obstacle'
+import Turret from '../sprites/Turret'
 
 import Curve from '../plugins/Curve'
 
@@ -25,11 +26,15 @@ export default class extends Phaser.State {
     this.backgroundLayer.resizeWorld()
 
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 100, this.game.world.centerY)
+    this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
     this.world.add(this.player)
 
-    this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY)
+    this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
+
+    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179)
+    this.world.add(this.turret)
+    this.turret.target = this.player
 
     // Make the camera follow the sprite
     this.game.camera.follow(this.player)
@@ -50,6 +55,6 @@ export default class extends Phaser.State {
   }
 
   shutdown () {
-    this.game.plugins.remove(this.curve)
+    this.game.plugins.remove(Curve)
   }
 }

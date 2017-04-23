@@ -30,10 +30,12 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 100, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    var playerSpawnX = this.game.world.centerX / 2
+    var playerSpawnX = 0
     var bossSpawnX = this.game.world.centerX + this.game.world.centerX / 2
 
-    this.player = new Player(this.game, playerSpawnX, this.game.world.centerY, true)
+    this.player = new Player(this.game, playerSpawnX, this.game.world.centerY, { canTurn: true, isFalling: false })
+    this.player.body.velocity.x = 500
+
     this.world.add(this.player)
 
     this.boss = new Boss(this.game, bossSpawnX, this.game.world.centerY)

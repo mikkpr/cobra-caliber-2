@@ -12,7 +12,8 @@ export default class extends Phaser.State {
   }
 
   create () {
-    enableMusicForState('bigbeat', this)
+    this.disableMusic = enableMusicForState('bigbeat', this)
+
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])
@@ -59,6 +60,10 @@ export default class extends Phaser.State {
 
   update () {
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
+  }
+
+  shutdown () {
+    this.disableMusic()
   }
 
   hitWorldBounds (sprite, up, down, left, right) {

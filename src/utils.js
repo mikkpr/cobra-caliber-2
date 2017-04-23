@@ -18,4 +18,8 @@ export const enableMusicForState = (trackName, state) => {
       music.volume = 1
     }
   }, state)
+
+  return () => {
+    music.stop()
+  }
 }

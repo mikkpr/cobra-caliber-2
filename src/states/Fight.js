@@ -67,6 +67,17 @@ export default class extends Phaser.State {
       this.player.body.velocity.x = 0;
       this.player.x = this.game.world.centerX - this.game.world.centerX / 2;
       this.player.y = this.game.world.height - 80;
+
+      var player = this.player
+      var boss = this.boss
+
+      player.say("I have been looking for you for a long time, father", function() {
+        boss.say("I left you to die in that pit. How did you survive?", function() {
+          player.say("That should be the least of your concerns", function() {
+            player.say("Time to die, old man", function() {})
+          })
+        })
+      })
     }
 
   }

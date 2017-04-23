@@ -10,16 +10,6 @@ export default class extends Phaser.Sprite {
 
     this.game.physics.arcade.enable(this)
     this.body.drag.x = this.body.drag.y = 500
-
-    var context = this
-
-    // this.player.say("I have been looking for you for a long time, father", function() {
-    // 	context.say("I left you to die in that pit. How did you survive?", function() {
-    // 		context.player.say("That should be the least of your concerns", function() {
-    // 			context.player.say("Time to die, old man", function {})
-    // 		})
-    // 	})
-    // })
   }
   
   say (text, completed) {

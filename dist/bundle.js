@@ -4354,16 +4354,6 @@ var _class = function (_Phaser$Sprite) {
 
     _this.game.physics.arcade.enable(_this);
     _this.body.drag.x = _this.body.drag.y = 500;
-
-    var context = _this;
-
-    // this.player.say("I have been looking for you for a long time, father", function() {
-    // 	context.say("I left you to die in that pit. How did you survive?", function() {
-    // 		context.player.say("That should be the least of your concerns", function() {
-    // 			context.player.say("Time to die, old man", function {})
-    // 		})
-    // 	})
-    // })
     return _this;
   }
 
@@ -4723,6 +4713,17 @@ var _class = function (_Phaser$State) {
         this.player.body.velocity.x = 0;
         this.player.x = this.game.world.centerX - this.game.world.centerX / 2;
         this.player.y = this.game.world.height - 80;
+
+        var player = this.player;
+        var boss = this.boss;
+
+        player.say("I have been looking for you for a long time, father", function () {
+          boss.say("I left you to die in that pit. How did you survive?", function () {
+            player.say("That should be the least of your concerns", function () {
+              player.say("Time to die, old man", function () {});
+            });
+          });
+        });
       }
     }
   }, {

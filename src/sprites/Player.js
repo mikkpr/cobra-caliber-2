@@ -30,6 +30,18 @@ export default class extends Phaser.Sprite {
     this.playerTrail.setAlpha(0.8, 0.01, 150)
     this.playerTrail.setRotation(0)
     this.playerTrail.start(false, 50, 10)
+
+
+    this.body.collideWorldBounds = true;
+    this.body.onWorldBounds = new Phaser.Signal();
+    this.body.onWorldBounds.add(this.hitWorldBounds, this);
+
+  }
+
+  hitWorldBounds (sprite, up, down, left, right) {
+    if (sprite === this && right === true) {
+      this.state.start('Fight')
+    }
   }
 
   resetWithAnimation () {

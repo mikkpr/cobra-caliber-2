@@ -28,10 +28,6 @@ export default class extends Phaser.State {
     this.player = new Player(this.game, 100, this.game.world.centerY)
     this.world.add(this.player)
 
-    this.player.body.collideWorldBounds = true;
-    this.player.body.onWorldBounds = new Phaser.Signal();
-    this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
-
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY)
     this.world.add(this.obstacle)
 
@@ -55,21 +51,5 @@ export default class extends Phaser.State {
 
   shutdown () {
     this.game.plugins.remove(this.curve)
-  }
-
-  restartGame () {
-    // Start the 'main' state, which restarts the game
-    this.game.state.start('Travel')
-  }
-
-  onCollision () {
-  	// TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
-    this.player.resetWithAnimation()
-  }
-
-  hitWorldBounds (sprite, up, down, left, right) {
-    if (sprite === this.player && right === true) {
-      this.state.start('Fight')
-    }
   }
 }

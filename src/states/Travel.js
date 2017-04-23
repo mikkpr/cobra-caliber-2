@@ -36,7 +36,7 @@ export default class extends Phaser.State {
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
 
-    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true, homing: true })
+    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true })
     this.world.add(this.turret)
 
     // Make the camera follow the sprite
@@ -58,7 +58,7 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.game.physics.arcade.collide(this.player, this.groundLayer)
+    this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
   }
 
   hitWorldBounds (sprite, up, down, left, right) {

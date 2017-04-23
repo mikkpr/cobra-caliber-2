@@ -76,6 +76,8 @@ export default class extends Phaser.Sprite {
       if (this.isFalling) {
         this.body.velocity.y = accY
       }
+    } else {
+      this.body.velocity.y = 0
     }
 
     const accX = 150

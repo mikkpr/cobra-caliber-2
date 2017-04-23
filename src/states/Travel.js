@@ -9,6 +9,11 @@ import Curve from '../plugins/Curve'
 import { enableMusicForState } from '../utils.js'
 
 export default class extends Phaser.State {
+  
+  init (fightTileMap) {
+    this.fightTileMap = fightTileMap
+  }
+
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
@@ -44,6 +49,10 @@ export default class extends Phaser.State {
     this.game.scale.refresh()
 
     this.game.time.advancedTiming = true
+
+    this.player.body.collideWorldBounds = true;
+    this.player.body.onWorldBounds = new Phaser.Signal();
+    this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
   }
 
   render () {
@@ -52,6 +61,13 @@ export default class extends Phaser.State {
 
   shutdown () {
     this.game.plugins.remove(this.curve)
+  }
+
+
+  hitWorldBounds (sprite, up, down, left, right) {
+    if (sprite === this.player && right === true) {
+      this.game.state.start('Fight', true, false, this.fightTileMap)
+    }
   }
   
 }

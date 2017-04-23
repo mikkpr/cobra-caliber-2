@@ -8,14 +8,20 @@ import Curve from '../plugins/Curve'
 import { enableMusicForState } from '../utils'
 
 export default class extends Phaser.State {
+
+  init(tilemap) {
+    this.tilemap = tilemap;
+  }
+  
   create () {
+    
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
     ::enableMusicForState('ambient')
 
-    this.map = this.game.add.tilemap('moon_fight')
+    this.map = this.game.add.tilemap(this.tilemap)
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
 
     // Add both the background and ground layers. We won't be doing anything
@@ -27,7 +33,7 @@ export default class extends Phaser.State {
     this.groundLayer.resizeWorld()
 
     // Before you can use the collide function you need to set what tiles can collide
-    this.map.setCollisionBetween(1, 100, true, 'groundlayer')
+    this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
     var playerSpawnX = 0
@@ -38,7 +44,7 @@ export default class extends Phaser.State {
 
     this.world.add(this.player)
 
-    this.boss = new Boss(this.game, bossSpawnX, this.game.world.centerY)
+    this.boss = new Boss(this.game, this.player, bossSpawnX, this.game.world.centerY)
     this.world.add(this.boss)
 
     // Add gravity to the sprites.

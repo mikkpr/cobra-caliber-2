@@ -1,5 +1,8 @@
 import Phaser from 'phaser'
 import CurvePlugin from '../plugins/Curve'
+
+import WebFont from 'webfontloader'
+
 import { centerGameObjects } from '../utils'
 
 export default class extends Phaser.State {
@@ -32,9 +35,24 @@ export default class extends Phaser.State {
     this.load.image('tiles', 'assets/images/lofi_environment_4x.png')
 
     this.game.curve = this.game.plugins.add(CurvePlugin)
+
+    this.fontsReady = false
+
+    WebFont.load({
+      google: {
+        families: ['Press Start 2P']
+      },
+      active: ::this.fontsLoaded
+    })
   }
 
-  create () {
-    this.state.start('Fight', true, false, 'moon_fight')
+  render () {
+    if (this.fontsReady) {
+      this.state.start('Fight', true, false, 'moon_fight')
+    }
+  }
+
+  fontsLoaded () {
+    this.fontsReady = true
   }
 }

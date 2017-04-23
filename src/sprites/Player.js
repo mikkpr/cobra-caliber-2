@@ -38,13 +38,14 @@ export default class extends Phaser.Sprite {
   }
 
   say (text, completed) {
-    var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
-    this.text = this.game.add.text(0, 0, text, style);
-    this.text.anchor.set(0.5);
+    var style = { font: '20px Arial', fill: '#ffffff', wordWrap: true, wordWrapWidth: 300, align: 'center' }
+    this.text = this.game.add.text(0, 0, text, style)
+    this.text.font = 'Press Start 2P'
+    this.text.anchor.set(0.5)
 
     var context = this
 
-    setTimeout(function() {
+    setTimeout(function () {
       context.text.destroy()
       completed()
     }, 2000)
@@ -76,10 +77,9 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-
     if (this.text != undefined) {
-      this.text.x = Math.floor(this.x - this.width / 2);
-      this.text.y = Math.floor(this.y - 1.5 * this.height);
+      this.text.x = Math.floor(this.x - this.width / 2)
+      this.text.y = Math.floor(this.y - 1.5 * this.height)
     }
 
     this.playerTrail.x = this.x
@@ -138,10 +138,3 @@ export default class extends Phaser.Sprite {
     return this.cursors.right.isDown || this.wasd.right.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1
   }
 }
-
-
-
-
-
-
-

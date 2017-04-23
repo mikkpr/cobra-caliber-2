@@ -29,7 +29,7 @@ export default class extends Phaser.State {
     // Add the sprite to the game and enable arcade physics on it
     this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
     this.world.add(this.player)
-    this.player.body.gravity.x = 1800;
+    this.player.body.gravity.x = 1800
 
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)

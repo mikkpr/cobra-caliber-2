@@ -5,6 +5,8 @@ import Obstacle from '../sprites/Obstacle'
 
 import Curve from '../plugins/Curve'
 
+import { enableMusicForState } from '../utils.js'
+
 export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
@@ -12,8 +14,7 @@ export default class extends Phaser.State {
 
     this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
-    this.music = this.game.add.audio('bigbeat', 1, true, true)
-    this.music.play()
+    ::enableMusicForState('bigbeat')
 
     this.map = this.game.add.tilemap('earth_travel')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -27,10 +28,9 @@ export default class extends Phaser.State {
     this.player = new Player(this.game, 100, this.game.world.centerY)
     this.world.add(this.player)
 
-    this.player.body.collideWorldBounds = true;
-    this.player.body.onWorldBounds = new Phaser.Signal();
-    this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
-
+    this.player.body.collideWorldBounds = true
+    this.player.body.onWorldBounds = new Phaser.Signal()
+    this.player.body.onWorldBounds.add(this.hitWorldBounds, this)
 
     this.obstacle = new Obstacle(this.game, 300, this.game.world.centerY)
     this.world.add(this.obstacle)
@@ -52,23 +52,13 @@ export default class extends Phaser.State {
     this.game.scale.refresh()
 
     this.game.time.advancedTiming = true
-
-    this.muteButton = this.game.input.keyboard.addKey(Phaser.Keyboard.M)
-    this.muteButton.onDown.add(this.toggleMusic, this)
-  }
-
-  toggleMusic () {
-    if (this.music.isPlaying) {
-      this.music.pause()
-    } else {
-      this.music.resume()
-    }
   }
 
   update () {
+    this.game.physics.arcade.overlap(this.player, this.obstacle, this.playerDeathEvent, null, this)
 
-    this.game.physics.arcade.overlap(this.player, this.obstacle, this.onCollision, null, this);
-    
+    this.game.physics.arcade.overlap(this.player, this.obstacle, this.onCollision, null, this)
+
     this.playerTrail.x = this.player.x
     this.playerTrail.y = this.player.y
   }
@@ -79,52 +69,44 @@ export default class extends Phaser.State {
 
   shutdown () {
     this.game.plugins.remove(this.curve)
-    this.music.stop()
   }
-  
+
   restartGame () {
     // Start the 'main' state, which restarts the game
-    game.state.start('Travel');
+    this.game.state.start('Travel')
   }
 
   onCollision () {
-  	// TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
+    // TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
 
     var duration = 500
 
-    var x = this.player.x;
-    var y = this.player.y;
+    var x = this.player.x
+    var y = this.player.y
 
-    this.emitter = game.add.emitter(x, y, 6);
-    this.emitter.makeParticles('chars_small', 200);
-    this.emitter.width = 10;
-    this.emitter.height = 10;
-    this.emitter.minParticleScale = 0.5;
-    this.emitter.maxParticleScale = 3;
-    this.emitter.minParticleSpeed.set(0, 0);
-    this.emitter.maxParticleSpeed.set(0, 0);
-    this.emitter.gravity = 0;
-    this.emitter.start(false, duration, 50, 6); 
+    this.emitter = this.game.add.emitter(x, y, 6)
+    this.emitter.makeParticles('chars_small', 200)
+    this.emitter.width = 10
+    this.emitter.height = 10
+    this.emitter.minParticleScale = 0.5
+    this.emitter.maxParticleScale = 3
+    this.emitter.minParticleSpeed.set(0, 0)
+    this.emitter.maxParticleSpeed.set(0, 0)
+    this.emitter.gravity = 0
+    this.emitter.start(false, duration, 50, 6)
 
     var player = this.player
     var world = this.game.world
     player.kill()
 
-    setTimeout(function() {
+    setTimeout(function () {
       player.reset(50, world.centerY)
     }, duration)
   }
 
   hitWorldBounds (sprite, up, down, left, right) {
-  	if (sprite == this.player && right == true) {
-  		this.state.start('Fight');
-  	}
+    if (sprite === this.player && right === true) {
+      this.state.start('Fight')
+    }
   }
-
 }
-
-
-
-
-
-

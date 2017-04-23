@@ -12,6 +12,9 @@ export default class extends Phaser.State {
 
     this.load.setPreloadSprite(this.loaderBar)
 
+    this.load.audio('bigbeat', ['assets/audio/music/bigbeat.mp3', 'assets/audio/music/bigbeat.ogg'])
+    this.load.audio('ambient', ['assets/audio/music/ambient.mp3', 'assets/audio/music/ambient.ogg'])
+
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
 

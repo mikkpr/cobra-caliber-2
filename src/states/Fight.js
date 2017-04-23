@@ -11,6 +11,9 @@ export default class extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
+    this.music = this.game.add.audio('ambient', 1, true, true)
+    this.music.play()
+
     this.map = this.game.add.tilemap('moon_fight')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
 
@@ -47,6 +50,17 @@ export default class extends Phaser.State {
     this.game.scale.refresh()
 
     this.game.time.advancedTiming = true
+
+    this.muteButton = this.game.input.keyboard.addKey(Phaser.Keyboard.M)
+    this.muteButton.onDown.add(this.toggleMusic, this)
+  }
+
+  toggleMusic () {
+    if (this.music.isPlaying) {
+      this.music.pause()
+    } else {
+      this.music.resume()
+    }
   }
 
   update () {
@@ -61,6 +75,7 @@ export default class extends Phaser.State {
 
   shutdown () {
     this.game.plugins.remove(this.curve)
+    this.music.stop()
   }
 }
 

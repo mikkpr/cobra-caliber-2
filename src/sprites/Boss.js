@@ -11,8 +11,9 @@ export default class extends Phaser.Sprite {
     this.game.physics.arcade.enable(this)
     this.body.drag.x = this.body.drag.y = 500
   }
-  
+
   say (text, completed) {
+
     var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
     this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
@@ -61,10 +62,9 @@ export default class extends Phaser.Sprite {
     this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
 
     if (this.text != undefined) {
-      this.text.x = Math.floor(this.x - this.width / 2);
-      this.text.y = Math.floor(this.y - this.height);
+      this.text.x = Math.floor(this.x - this.width / 2)
+      this.text.y = Math.floor(this.y - this.height)
     }
-
   }
 
   onCollision () {

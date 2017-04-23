@@ -23,6 +23,8 @@ class Game extends Phaser.Game {
     this.state.add('Fight', FightState, false)
 
     this.state.start('Boot')
+
+    this.deathCounter = 0
   }
 }
 

@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, options = { canTurn: false, isFalling: true }) {
-    super(game, x, y, 'chars_small', 165)
+    super(game, x, y, 'chars_scifi', 220)
 
     this.canTurn = options.canTurn
     this.isFalling = options.isFalling
@@ -26,7 +26,7 @@ export default class extends Phaser.Sprite {
 
     // Add a bitchin trail because we are going supersonic
     this.playerTrail = this.game.add.emitter(this.x, this.y, 15)
-    this.playerTrail.makeParticles('chars_small', 165)
+    this.playerTrail.makeParticles('chars_scifi', 220)
     this.playerTrail.setXSpeed(0, 0)
     this.playerTrail.setYSpeed(0, 0)
     this.playerTrail.setAlpha(0.4, 0.01, 150)
@@ -38,6 +38,7 @@ export default class extends Phaser.Sprite {
   }
 
   say (text, completed) {
+
     var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
     this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
@@ -82,6 +83,7 @@ export default class extends Phaser.Sprite {
     }, 50 * n)    
   }
 
+
   resetWithAnimation () {
     var duration = 500
 
@@ -101,6 +103,7 @@ export default class extends Phaser.Sprite {
 
     var player = this
     player.kill()
+    this.game.deathCounter += 1
 
     setTimeout(function () {
       player.reset(50, 256)
@@ -108,10 +111,9 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-
     if (this.text != undefined) {
-      this.text.x = Math.floor(this.x - this.width / 2);
-      this.text.y = Math.floor(this.y - 1.5 * this.height);
+      this.text.x = Math.floor(this.x - this.width / 2)
+      this.text.y = Math.floor(this.y - 1.5 * this.height)
     }
 
     this.playerTrail.x = this.x
@@ -175,10 +177,3 @@ export default class extends Phaser.Sprite {
   }
 
 }
-
-
-
-
-
-
-

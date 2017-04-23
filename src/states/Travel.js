@@ -63,6 +63,7 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
+    this.game.debug.text(this.game.deathCounter, 980, 20, '#00ff00')
   }
 
   update () {

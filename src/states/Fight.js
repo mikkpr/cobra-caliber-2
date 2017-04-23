@@ -41,7 +41,7 @@ export default class extends Phaser.State {
 
     this.player = new Player(this.game, playerSpawnX, this.game.world.centerY, { canTurn: true, isFalling: false })
     this.player.body.velocity.x = 500
-    
+
     this.world.add(this.player)
 
     this.boss = new Boss(this.game, this.player, bossSpawnX, this.game.world.height - 90)
@@ -62,24 +62,23 @@ export default class extends Phaser.State {
 
     this.player.body.collideWorldBounds = true
 
-    if (this.tilemap == "moon_fight") {
+    if (this.tilemap === 'moon_fight') {
       // Quick hack so game intro would not feature any weird animations (bugged flight)
-      this.player.body.velocity.x = 0;
-      this.player.x = this.game.world.centerX - this.game.world.centerX / 2;
-      this.player.y = this.game.world.height - 80;
+      this.player.body.velocity.x = 0
+      this.player.x = this.game.world.centerX - this.game.world.centerX / 2
+      this.player.y = this.game.world.height - 80
 
       var player = this.player
       var boss = this.boss
 
-      player.say("I have been looking for you for a long time, father", function() {
-        boss.say("I left you to die in that pit. How did you survive?", function() {
-          player.say("That should be the least of your concerns", function() {
-            player.say("Time to die, old man", function() {})
+      player.say('I have been looking for you for a long time, father', function () {
+        boss.say('I left you to die in that pit. How did you survive?', function () {
+          player.say('That should be the least of your concerns', function () {
+            player.say('Time to die, old man', function () {})
           })
         })
       })
     }
-
   }
 
   update () {
@@ -90,6 +89,7 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
+    this.game.debug.text(this.game.deathCounter, 980, 20, '#00ff00')
   }
 
   shutdown () {

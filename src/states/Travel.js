@@ -26,8 +26,11 @@ export default class extends Phaser.State {
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
     this.backgroundLayer.resizeWorld()
 
+    this.groundLayer = this.map.createLayer('groundlayer')
+    this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
+
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
+    this.player = new Player(this.game, 100, 256, { canTurn: false, isFalling: true })
     this.world.add(this.player)
     this.player.body.gravity.x = 1800;
 
@@ -58,6 +61,10 @@ export default class extends Phaser.State {
 
   shutdown () {
     this.game.plugins.remove(this.curve)
+  }
+
+  update () {
+    this.game.physics.arcade.collide(this.player, this.groundLayer)
   }
 
 

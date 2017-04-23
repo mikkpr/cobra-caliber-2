@@ -3,7 +3,9 @@ import CurvePlugin from '../plugins/Curve'
 import { centerGameObjects } from '../utils'
 
 export default class extends Phaser.State {
-  init () {}
+  init () {
+    this.stage.backgroundColor = '#F0F0F0'
+  }
 
   preload () {
     this.loaderBg = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'loaderBg')

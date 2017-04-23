@@ -13,14 +13,14 @@ export default class extends Phaser.Sprite {
     this.body.drag.x = this.body.drag.y = 500
 
     this.cursors = this.game.input.keyboard.createCursorKeys()
-    
+
     this.wasd = {
       up: this.game.input.keyboard.addKey(Phaser.Keyboard.W),
       down: this.game.input.keyboard.addKey(Phaser.Keyboard.S),
       left: this.game.input.keyboard.addKey(Phaser.Keyboard.A),
-      right: this.game.input.keyboard.addKey(Phaser.Keyboard.D),
-    };
-    
+      right: this.game.input.keyboard.addKey(Phaser.Keyboard.D)
+    }
+
     this.game.input.gamepad.start()
 
     // Add a bitchin trail because we are going supersonic
@@ -32,11 +32,9 @@ export default class extends Phaser.Sprite {
     this.playerTrail.setRotation(0)
     this.playerTrail.start(false, 50, 10)
 
-
-    this.body.collideWorldBounds = true;
-    this.body.onWorldBounds = new Phaser.Signal();
-    this.body.onWorldBounds.add(this.hitWorldBounds, this);
-
+    this.body.collideWorldBounds = true
+    this.body.onWorldBounds = new Phaser.Signal()
+    this.body.onWorldBounds.add(this.hitWorldBounds, this)
   }
 
   hitWorldBounds (sprite, up, down, left, right) {
@@ -91,7 +89,7 @@ export default class extends Phaser.Sprite {
 
     if (this.isMovingLeft()) {
       this.body.velocity.x = -accH
-      if (this.canTurn) { 
+      if (this.canTurn) {
         this.scale.setTo(-1, 1)
       }
     } else if (this.isMovingRight()) {
@@ -100,7 +98,6 @@ export default class extends Phaser.Sprite {
         this.scale.setTo(1, 1)
       }
     }
-
   }
 
   isMovingUp () {
@@ -110,7 +107,7 @@ export default class extends Phaser.Sprite {
 
   isMovingDown () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.down.isDown || this.wasd.down.isDown|| pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1
+    return this.cursors.down.isDown || this.wasd.down.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1
   }
 
   isMovingLeft () {

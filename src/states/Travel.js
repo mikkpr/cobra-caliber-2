@@ -53,11 +53,4 @@ export default class extends Phaser.State {
   shutdown () {
     this.game.plugins.remove(this.curve)
   }
-  
 }
-
-
-
-
-
-

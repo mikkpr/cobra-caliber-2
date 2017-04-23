@@ -39,33 +39,47 @@ export default class extends Phaser.Sprite {
 
   say (text, completed) {
     var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
-    this.text = this.game.add.text(0, 0, text, style);
+    this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
-
-    // this.renderByLetter(text, function() {
-    //   context.text.destroy()
-    //   completed()
-    // })
     
-    var context = this
+    var context = this;
 
-    setTimeout(function() {
+    this.renderByLetter(text, function() {
       context.text.destroy()
       completed()
-    }, 2000)
-
+    })
   }
 
   renderByLetter(text, completed) {
 
-    var current = "";
+    var split = text.split('');
+    var current = ""
+    
     var textField = this.text;
 
-    for (var i = 0 + 1; i < text.length 0; i++) {
-      current += text[i]
-      this.text.setText(current)
-    }
+    for (var i = 0; i < split.length; i++) {
+    
+      current += split[i]
+      
+      this.renderLetter(current, i, function(n) {
+        
+        if (n == split.length - 1) {
+          setTimeout(function() {
+            completed()
+          }, 800)
+        }        
 
+      })
+
+    }
+  }
+
+  renderLetter(text, n, completed) {
+    var textField = this.text;
+    setTimeout(function() { 
+      textField.setText(text) 
+      completed(n)
+    }, 50 * n)    
   }
 
   resetWithAnimation () {

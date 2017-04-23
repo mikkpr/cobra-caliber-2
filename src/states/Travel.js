@@ -27,6 +27,11 @@ export default class extends Phaser.State {
     this.player = new Player(this.game, 100, this.game.world.centerY)
     this.world.add(this.player)
 
+    this.player.body.collideWorldBounds = true;
+    this.player.body.onWorldBounds = new Phaser.Signal();
+    this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
+
+
     this.obstacle = new Obstacle(this.game, 300, this.game.world.centerY)
     this.world.add(this.obstacle)
 
@@ -64,10 +69,6 @@ export default class extends Phaser.State {
 
     this.game.physics.arcade.overlap(this.player, this.obstacle, this.playerDeathEvent, null, this);
     
-    if (this.player.body.x >= this.world.bounds.width) {
-      this.state.start('Fight')
-    }
-
     this.playerTrail.x = this.player.x
     this.playerTrail.y = this.player.y
   }
@@ -90,6 +91,12 @@ export default class extends Phaser.State {
   	// TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
   	this.player.x = 100;
   	this.player.y = this.game.world.centerY;
+  }
+
+  hitWorldBounds (sprite, up, down, left, right) {
+  	if (sprite == this.player && right == true) {
+  		this.state.start('Fight');
+  	}
   }
 
 }

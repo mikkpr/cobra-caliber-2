@@ -1,3 +1,5 @@
+import Phaser from 'phaser'
+
 import Obstacle from './Obstacle'
 
 export default class extends Obstacle {
@@ -41,7 +43,7 @@ export default class extends Obstacle {
     if (this.target != null) {
       const saved = this.target
       this.target = null
-      setTimeout(() => this.target = saved, 1000)
+      setTimeout(() => { this.target = saved }, 1000)
     }
   }
 }

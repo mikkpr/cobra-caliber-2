@@ -34,6 +34,6 @@ export default class extends Phaser.State {
   }
 
   create () {
-    this.state.start('Fight', true, false, "moon_fight")
+    this.state.start('Fight', true, false, 'moon_fight')
   }
 }

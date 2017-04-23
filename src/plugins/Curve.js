@@ -10,7 +10,7 @@ export default class extends Phaser.Plugin {
     this.post = new ImageData(this.game.width, this.game.height)
   }
 
-  setPoints(points) {
+  setPoints (points) {
     this.game.input.keyboard.addKey(Phaser.Keyboard.C).onDown.add(this.toggle, this)
 
     // Precompute curve shift amounts for each pixel column.

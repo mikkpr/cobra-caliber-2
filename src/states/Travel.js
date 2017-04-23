@@ -41,7 +41,9 @@ export default class extends Phaser.State {
     this.world.add(this.turret)
 
     // Make the camera follow the sprite
-    this.game.camera.follow(this.player)
+    // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
+    //this.game.camera.follow(this.player)
+    this.game.camera.setPosition(0, 0)
 
     this.game.scale.pageAlignHorizontally = true
     this.game.scale.pageAlignVertically = true
@@ -59,6 +61,7 @@ export default class extends Phaser.State {
   }
 
   update () {
+    this.game.camera.x = this.player.x - this.game.width / 2
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
   }
 

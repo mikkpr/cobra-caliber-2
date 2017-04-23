@@ -26,12 +26,12 @@ export default class extends Phaser.State {
     this.backgroundLayer.resizeWorld()
 
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 100, this.game.world.centerY)
+    this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
     this.world.add(this.player)
 
-    this.player.body.collideWorldBounds = true;
-    this.player.body.onWorldBounds = new Phaser.Signal();
-    this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
+    this.player.body.collideWorldBounds = true
+    this.player.body.onWorldBounds = new Phaser.Signal()
+    this.player.body.onWorldBounds.add(this.hitWorldBounds, this)
 
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
@@ -59,7 +59,7 @@ export default class extends Phaser.State {
   }
 
   shutdown () {
-    this.game.plugins.remove(this.curve)
+    this.game.plugins.remove(Curve)
   }
 
   restartGame () {

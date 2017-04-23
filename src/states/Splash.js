@@ -19,6 +19,7 @@ export default class extends Phaser.State {
     this.load.audio('ambient', ['assets/audio/music/ambient.mp3', 'assets/audio/music/ambient.ogg'])
 
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
+    this.load.spritesheet('chars_scifi', 'assets/images/lofi_scifi_chars_4x.png', 32, 32)
     this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
     this.load.image('expl1', 'assets/images/expl1.png')
     this.load.image('expl2', 'assets/images/expl2.png')

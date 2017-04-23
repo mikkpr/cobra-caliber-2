@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, options = { canTurn: false, isFalling: true }) {
-    super(game, x, y, 'chars_small', 165)
+    super(game, x, y, 'chars_scifi', 220)
 
     this.canTurn = options.canTurn
     this.isFalling = options.isFalling
@@ -26,7 +26,7 @@ export default class extends Phaser.Sprite {
 
     // Add a bitchin trail because we are going supersonic
     this.playerTrail = this.game.add.emitter(this.x, this.y, 15)
-    this.playerTrail.makeParticles('chars_small', 165)
+    this.playerTrail.makeParticles('chars_scifi', 220)
     this.playerTrail.setXSpeed(0, 0)
     this.playerTrail.setYSpeed(0, 0)
     this.playerTrail.setAlpha(0.4, 0.01, 150)

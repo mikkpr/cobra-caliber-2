@@ -22,7 +22,7 @@ export default class extends Phaser.State {
     this.disableMusic = enableMusicForState('ambient', this)
 
     this.map = this.game.add.tilemap(this.tilemap)
-    this.map.addTilesetImage('lofi_environment_4x', 'tiles')
+    this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
 
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though

@@ -18,7 +18,11 @@ export default class extends Phaser.State {
     this.game.curve.setPoints([50, 0, 0, 0, 50])
 
     this.map = this.game.add.tilemap('earth_travel')
-    this.map.addTilesetImage('lofi_environment_4x', 'tiles')
+    this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
+    this.map.addTilesetImage('lofi_scifi_stations_4x', 'tiles_lofi_stations')
+    this.map.addTilesetImage('lofi_scifi_stations_2_4x', 'tiles_lofi_stations_2')
+    this.map.addTilesetImage('lofi_scifi_stations_3_4x', 'tiles_lofi_stations_3')
+    this.map.addTilesetImage('lofi_scifi_items_4x', 'tiles_lofi_items')
 
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though

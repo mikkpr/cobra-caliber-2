@@ -17,8 +17,13 @@ export default class extends Phaser.Sprite {
   }
 
   onCollision () {
-  	var state = this.game.state
-  	this.flyAway(this, 0, 20, function() { state.start('Travel', true, false, "earth_fight"); } );
+
+  	var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
+  	
+  	if (velocity > 600) {
+	  	var state = this.game.state
+	  	this.flyAway(this, 0, 20, function() { state.start('Travel', true, false, "earth_fight"); } );
+  	}
   }
 
   flyAway (context, counter, angle, completed) {
@@ -34,10 +39,10 @@ export default class extends Phaser.Sprite {
 
   	this.angle = angle;
 
-  	if (counter < 30) {
+  	if (counter < 40) {
   		counter++;
   		angle += 30;
-  		setTimeout(function() { context.flyAway(context, counter, angle, completed) }, 150)
+  		setTimeout(function() { context.flyAway(context, counter, angle, completed) }, 120)
   	} else {
   		setTimeout(function() {
   			completed()

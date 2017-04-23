@@ -1,8 +1,16 @@
 import Phaser from 'phaser'
 
 export default class extends Phaser.Plugin {
-  init (points) {
+  init () {
     this.hasPostRender = true
+
+    this.setPoints([0])
+
+    // Preallocate ImageData buffer.
+    this.post = new ImageData(this.game.width, this.game.height)
+  }
+
+  setPoints(points) {
     this.game.input.keyboard.addKey(Phaser.Keyboard.C).onDown.add(this.toggle, this)
 
     // Precompute curve shift amounts for each pixel column.
@@ -18,9 +26,6 @@ export default class extends Phaser.Plugin {
         this.curveOff[start + 3] = off
       }
     }
-
-    // Preallocate ImageData buffer.
-    this.post = new ImageData(this.game.width, this.game.height)
   }
 
   toggle () {

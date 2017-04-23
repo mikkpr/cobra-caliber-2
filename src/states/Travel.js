@@ -4,8 +4,6 @@ import Player from '../sprites/Player'
 import Obstacle from '../sprites/Obstacle'
 import Turret from '../sprites/Turret'
 
-import Curve from '../plugins/Curve'
-
 import { enableMusicForState } from '../utils.js'
 
 export default class extends Phaser.State {
@@ -15,12 +13,10 @@ export default class extends Phaser.State {
   }
 
   create () {
+    enableMusicForState('bigbeat', this)
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
-
-    this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
-
-    ::enableMusicForState('bigbeat')
+    this.game.curve.setPoints([50, 0, 0, 0, 50])
 
     this.map = this.game.add.tilemap('earth_travel')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -33,6 +29,7 @@ export default class extends Phaser.State {
     // Add the sprite to the game and enable arcade physics on it
     this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
     this.world.add(this.player)
+    this.player.body.gravity.x = 1800;
 
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
@@ -71,9 +68,3 @@ export default class extends Phaser.State {
   }
   
 }
-
-
-
-
-
-

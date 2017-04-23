@@ -3,7 +3,7 @@ import Obstacle from './Obstacle'
 export default class extends Obstacle {
   constructor (game, player, x, y, frame, bulletFrame) {
     super(game, player, x, y, frame)
-    
+
     this.weapon = this.game.plugins.add(Phaser.Weapon)
     this.weapon.trackSprite(this)
     this.weapon.createBullets(50, 'chars_small', bulletFrame)
@@ -13,22 +13,28 @@ export default class extends Obstacle {
     this.target = null
   }
 
-  targetPlayer () {
-    this.target = this.player
-  }
-
   update () {
+    super.update()
+
+    this.game.physics.arcade.overlap(this.player, this.weapon.bullets, this.onCollision, null, this)
 
     if (!this.inCamera) {
       return
     }
 
-    super.update()
-    
     if (this.target != null) {
       this.weapon.fireAtSprite(this.target)
     } else if (this.weapon.fire()) {
       this.weapon.fireAngle += 30
+    }
+  }
+
+  onCollision () {
+    super.onCollision()
+    if (this.target != null) {
+      const saved = this.target
+      this.target = null
+      setTimeout(() => this.target = saved, 1000)
     }
   }
 }

@@ -6,18 +6,16 @@ export const centerGameObjects = objects => {
   )
 }
 
-export const enableMusicForState = function (trackName) {
-  const toggleMusic = () => {
-    if (this.music.volume > 0) {
-      this.music.volume = 0
+export const enableMusicForState = (trackName, state) => {
+  const music = state.game.add.audio(trackName, 0, true, true)
+  music.play()
+
+  const muteButton = state.game.input.keyboard.addKey(Phaser.Keyboard.M)
+  muteButton.onDown.add(() => {
+    if (music.volume > 0) {
+      music.volume = 0
     } else {
-      this.music.volume = 1
+      music.volume = 1
     }
-  }
-
-  this.music = this.game.add.audio(trackName, 0, true, true)
-  this.music.play()
-
-  this.muteButton = this.game.input.keyboard.addKey(Phaser.Keyboard.M)
-  this.muteButton.onDown.add(toggleMusic, this)
+  }, state)
 }

@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import CurvePlugin from '../plugins/Curve'
 import { centerGameObjects } from '../utils'
 
 export default class extends Phaser.State {
@@ -24,6 +25,8 @@ export default class extends Phaser.State {
     this.load.tilemap('earth_travel', 'assets/tilemaps/earth_travel.json', null, Phaser.Tilemap.TILED_JSON)
 
     this.load.image('tiles', 'assets/images/lofi_environment_4x.png')
+
+    this.game.curve = this.game.plugins.add(CurvePlugin)
   }
 
   create () {

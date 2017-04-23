@@ -7,7 +7,7 @@ export const centerGameObjects = objects => {
 }
 
 export const enableMusicForState = (trackName, state) => {
-  const music = state.game.add.audio(trackName, 0, true, true)
+  const music = state.game.add.audio(trackName, 1, true, true)
   music.play()
 
   const muteButton = state.game.input.keyboard.addKey(Phaser.Keyboard.M)

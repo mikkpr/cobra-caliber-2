@@ -36,20 +36,19 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    var playerSpawnX = 0
-    var bossSpawnX = this.game.world.centerX + this.game.world.centerX / 2
-
-    this.player = new Player(this.game, playerSpawnX, this.game.world.centerY, { canTurn: true, isFalling: false })
-    this.player.body.velocity.x = 500
-
+    this.player = new Player(this.game, 16, this.game.world.centerY)
     this.world.add(this.player)
 
+    // Player physics in this state.
+    this.player.body.collideWorldBounds = true
+    this.player.body.velocity.x = 500 // Player is flying in from orbit.
+    this.player.body.maxVelocity.x = 500
+    this.player.body.bounce.y = 0.3
+    this.player.body.gravity.y = 2000
+
+    var bossSpawnX = this.game.world.centerX + this.game.world.centerX / 2
     this.boss = new Boss(this.game, this.player, bossSpawnX, this.game.world.height - 90)
     this.world.add(this.boss)
-
-    // Add gravity to the sprites.
-    addGravity(this.player)
-    addGravity(this.boss)
 
     // Make the camera follow the player.
     this.game.camera.follow(this.player)
@@ -60,11 +59,9 @@ export default class extends Phaser.State {
 
     this.game.time.advancedTiming = true
 
-    this.player.body.collideWorldBounds = true
-
     if (this.tilemap === 'moon_fight') {
       
-      // hack for game start.
+      // Hack for game start.
 
       var style = { 
         font: "32px Arial", 
@@ -103,6 +100,23 @@ export default class extends Phaser.State {
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.player, this.groundLayer)
     this.game.physics.arcade.collide(this.boss, this.groundLayer)
+
+    // Jump when on the floor.
+    if (this.player.isMovingUp() && this.player.body.onFloor()) {
+      this.player.body.velocity.y = -800
+    }
+
+    // Horizontal air control is slower than ground.
+    const accX = this.player.body.onFloor() ? 450 : 50
+    if (this.player.isMovingRight()) {
+      this.player.scale.setTo(1, 1)
+      this.player.body.velocity.x += accX
+    } else if (this.player.isMovingLeft()) {
+      this.player.scale.setTo(-1, 1)
+      this.player.body.velocity.x -= accX
+    } else if (this.player.body.onFloor()) {
+      this.player.body.velocity.x /= 2 // Break to a halt.
+    }
   }
 
   render () {
@@ -113,10 +127,4 @@ export default class extends Phaser.State {
   shutdown () {
     this.disableMusic()
   }
-}
-
-function addGravity (item) {
-  item.body.bounce.y = 0.1
-  item.body.gravity.y = 1000
-  item.body.drag.x = 1000
 }

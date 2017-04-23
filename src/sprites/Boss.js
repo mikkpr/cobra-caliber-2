@@ -70,7 +70,7 @@ export default class extends Phaser.Sprite {
   onCollision () {
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
 
-    if (velocity > 600) {
+    if (velocity > 300) {
       var state = this.game.state
       this.flyAway(this, 0, 20, function () { state.start('Travel', true, false, 'earth_fight') })
     }

@@ -32,9 +32,6 @@ export default class extends Phaser.Sprite {
     this.playerTrail.setAlpha(0.4, 0.01, 150)
     this.playerTrail.setRotation(0)
     this.playerTrail.start(false, 50, 10)
-
-    // Default maxVelocity in 1G, this magic number is used everywhere
-    this.body.maxVelocity.x = 500
   }
 
   say (text, completed) {
@@ -118,38 +115,6 @@ export default class extends Phaser.Sprite {
 
     this.playerTrail.x = this.x
     this.playerTrail.y = this.y
-
-    const accY = 800
-
-    if (this.isMovingUp()) {
-      if (this.isFalling || (!this.isFalling && this.body.onFloor())) {
-        this.body.velocity.y = -accY
-      }
-    } else if (this.isMovingDown()) {
-      if (this.isFalling) {
-        this.body.velocity.y = accY
-      }
-    } else {
-      this.body.velocity.y = 0
-    }
-
-    const accX = 150
-    if (this.isMovingLeft()) {
-      this.body.velocity.x = -3 * accX
-      if (this.canTurn) {
-        this.scale.setTo(-1, 1)
-      }
-    } else if (this.isMovingRight()) {
-      if (this.body.maxVelocity.x <= 800 * 1.4) {
-        this.body.maxVelocity.x += accX
-      }
-      this.body.velocity.x += accX
-      if (this.canTurn) {
-        this.scale.setTo(1, 1)
-      }
-    } else {
-      this.body.maxVelocity.x = 800
-    }
   }
 
   isMovingUp () {

@@ -7,7 +7,6 @@ import Turret from '../sprites/Turret'
 import { enableMusicForState } from '../utils.js'
 
 export default class extends Phaser.State {
-  
   init (fightTileMap) {
     this.fightTileMap = fightTileMap
   }
@@ -29,14 +28,13 @@ export default class extends Phaser.State {
     // Add the sprite to the game and enable arcade physics on it
     this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
     this.world.add(this.player)
-    this.player.body.gravity.x = 1800;
+    this.player.body.gravity.x = 1800
 
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
 
-    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { burst: true })
+    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true, homing: true })
     this.world.add(this.turret)
-    this.turret.target = this.player
 
     // Make the camera follow the sprite
     this.game.camera.follow(this.player)
@@ -47,24 +45,18 @@ export default class extends Phaser.State {
 
     this.game.time.advancedTiming = true
 
-    this.player.body.collideWorldBounds = true;
-    this.player.body.onWorldBounds = new Phaser.Signal();
-    this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
+    this.player.body.collideWorldBounds = true
+    this.player.body.onWorldBounds = new Phaser.Signal()
+    this.player.body.onWorldBounds.add(this.hitWorldBounds, this)
   }
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
   }
 
-  shutdown () {
-    this.game.plugins.remove(this.curve)
-  }
-
-
   hitWorldBounds (sprite, up, down, left, right) {
     if (sprite === this.player && right === true) {
       this.game.state.start('Fight', true, false, this.fightTileMap)
     }
   }
-  
 }

@@ -4,7 +4,7 @@ export default class extends Phaser.Sprite {
   constructor (game, player, x, y) {
     super(game, x, y, 'chars_large', 72)
 
-    this.player = player;
+    this.player = player
 
     this.anchor.setTo(0.5)
 
@@ -13,13 +13,11 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-  	this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
+    this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
   }
 
   onCollision () {
-  	
-  	var state = this.game.state;
-
+  	var state = this.game.state
   	this.flyAway(this, 0, 20, function() { state.start('Travel', true, false, "earth_fight"); } );
   }
 

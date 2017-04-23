@@ -6,17 +6,15 @@ import Player from '../sprites/Player'
 import { enableMusicForState } from '../utils'
 
 export default class extends Phaser.State {
+  init (tilemap) {
+    this.tilemap = tilemap
 
-  init(tilemap) {
-    this.tilemap = tilemap;
-
-    if (tilemap === "earth_fight") {
+    if (tilemap === 'earth_fight') {
       this.stage.backgroundColor = '#3598db'
     }
   }
-  
+
   create () {
-    
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])

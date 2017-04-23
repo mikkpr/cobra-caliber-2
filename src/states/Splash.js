@@ -20,6 +20,8 @@ export default class extends Phaser.State {
 
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
+    this.load.image('expl1', 'assets/images/expl1.png')
+    this.load.image('expl2', 'assets/images/expl2.png')
 
     this.load.tilemap('moon_fight', 'assets/tilemaps/moon_fight.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('earth_fight', 'assets/tilemaps/earth_fight.json', null, Phaser.Tilemap.TILED_JSON)
@@ -32,6 +34,6 @@ export default class extends Phaser.State {
   }
 
   create () {
-    this.state.start('Fight', true, false, "moon_fight")
+    this.state.start('Fight', true, false, 'moon_fight')
   }
 }

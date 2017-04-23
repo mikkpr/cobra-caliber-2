@@ -5,6 +5,8 @@ import Obstacle from '../sprites/Obstacle'
 
 import Curve from '../plugins/Curve'
 
+import { enableMusicForState } from '../utils.js'
+
 export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
@@ -12,8 +14,7 @@ export default class extends Phaser.State {
 
     this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
 
-    this.music = this.game.add.audio('bigbeat', 1, true, true)
-    this.music.play()
+    ::enableMusicForState('bigbeat')
 
     this.map = this.game.add.tilemap('earth_travel')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')
@@ -42,22 +43,10 @@ export default class extends Phaser.State {
     this.game.scale.refresh()
 
     this.game.time.advancedTiming = true
-
-    this.muteButton = this.game.input.keyboard.addKey(Phaser.Keyboard.M)
-    this.muteButton.onDown.add(this.toggleMusic, this)
-  }
-
-  toggleMusic () {
-    if (this.music.isPlaying) {
-      this.music.pause()
-    } else {
-      this.music.resume()
-    }
   }
 
   update () {
-
-    this.game.physics.arcade.overlap(this.player, this.obstacle, this.onCollision, null, this);
+    this.game.physics.arcade.overlap(this.player, this.obstacle, this.onCollision, null, this)
   }
 
   render () {
@@ -66,12 +55,11 @@ export default class extends Phaser.State {
 
   shutdown () {
     this.game.plugins.remove(this.curve)
-    this.music.stop()
   }
-  
+
   restartGame () {
     // Start the 'main' state, which restarts the game
-    game.state.start('Travel');
+    this.game.state.start('Travel')
   }
 
   onCollision () {
@@ -80,15 +68,8 @@ export default class extends Phaser.State {
   }
 
   hitWorldBounds (sprite, up, down, left, right) {
-  	if (sprite == this.player && right == true) {
-  		this.state.start('Fight');
-  	}
+    if (sprite === this.player && right === true) {
+      this.state.start('Fight')
+    }
   }
-
 }
-
-
-
-
-
-

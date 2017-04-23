@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 
 import Player from '../sprites/Player'
+import Obstacle from '../sprites/Obstacle'
 
 import Curve from '../plugins/Curve'
 
@@ -25,6 +26,9 @@ export default class extends Phaser.State {
     // Add the sprite to the game and enable arcade physics on it
     this.player = new Player(this.game, 100, this.game.world.centerY)
     this.world.add(this.player)
+
+    this.obstacle = new Obstacle(this.game, 300, this.game.world.centerY)
+    this.world.add(this.obstacle)
 
     // Add a bitchin trail because we are going supersonic
     this.playerTrail = this.game.add.emitter(this.player.x, this.player.y, 15)
@@ -57,6 +61,9 @@ export default class extends Phaser.State {
   }
 
   update () {
+
+    this.game.physics.arcade.overlap(this.player, this.obstacle, this.restartGame, null, this);
+    
     if (this.player.body.x >= this.world.bounds.width) {
       this.state.start('Fight')
     }
@@ -73,4 +80,15 @@ export default class extends Phaser.State {
     this.game.plugins.remove(this.curve)
     this.music.stop()
   }
+  
+  restartGame () {
+    // Start the 'main' state, which restarts the game
+    game.state.start('Travel');
+  }
 }
+
+
+
+
+
+

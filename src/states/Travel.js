@@ -1,7 +1,6 @@
 import Phaser from 'phaser'
 
 import Player from '../sprites/Player'
-import Obstacle from '../sprites/Obstacle'
 import Turret from '../sprites/Turret'
 
 import { enableMusicForState } from '../utils.js'
@@ -34,9 +33,6 @@ export default class extends Phaser.State {
     this.world.add(this.player)
     this.player.body.gravity.x = 1800
 
-    this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
-    this.world.add(this.obstacle)
-
     this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true })
     this.world.add(this.turret)
 
@@ -51,7 +47,7 @@ export default class extends Phaser.State {
 
     // Make the camera follow the sprite
     // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
-    //this.game.camera.follow(this.player)
+    // this.game.camera.follow(this.player)
     this.game.camera.setPosition(0, 0)
 
     this.game.scale.pageAlignHorizontally = true

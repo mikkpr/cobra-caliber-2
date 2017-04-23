@@ -27,12 +27,12 @@ export default class extends Phaser.Sprite {
     this.playerTrail.makeParticles('chars_small', 165)
     this.playerTrail.setXSpeed(0, 0)
     this.playerTrail.setYSpeed(0, 0)
-    this.playerTrail.setAlpha(0.8, 0.01, 150)
+    this.playerTrail.setAlpha(0.4, 0.01, 150)
     this.playerTrail.setRotation(0)
     this.playerTrail.start(false, 50, 10)
 
     // Default maxVelocity in 1G, this magic number is used everywhere
-    this.body.maxVelocity.x = 1400;
+    this.body.maxVelocity.x = 800;
   }
 
   resetWithAnimation () {

@@ -32,7 +32,7 @@ export default class extends Phaser.State {
     this.player.body.onWorldBounds = new Phaser.Signal();
     this.player.body.onWorldBounds.add(this.hitWorldBounds, this);
 
-    this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY)
+    this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
 
     // Make the camera follow the sprite

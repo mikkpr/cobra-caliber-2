@@ -12,9 +12,49 @@ export default class extends Phaser.Sprite {
     this.cursors = this.game.input.keyboard.createCursorKeys()
 
     this.game.input.gamepad.start()
+
+    // Add a bitchin trail because we are going supersonic
+    this.playerTrail = this.game.add.emitter(this.x, this.y, 15)
+    this.playerTrail.makeParticles('chars_small', 165)
+    this.playerTrail.setXSpeed(0, 0)
+    this.playerTrail.setYSpeed(0, 0)
+    this.playerTrail.setAlpha(0.8, 0.01, 150)
+    this.playerTrail.setRotation(0)
+    this.playerTrail.start(false, 50, 10)
+  }
+
+  resetWithAnimation () {
+
+    var duration = 500
+
+    var x = this.x;
+    var y = this.y;
+
+    this.emitter = game.add.emitter(x, y, 6);
+    this.emitter.makeParticles('chars_small', 200);
+    this.emitter.width = 10;
+    this.emitter.height = 10;
+    this.emitter.minParticleScale = 0.5;
+    this.emitter.maxParticleScale = 3;
+    this.emitter.minParticleSpeed.set(0, 0);
+    this.emitter.maxParticleSpeed.set(0, 0);
+    this.emitter.gravity = 0;
+    this.emitter.start(false, duration, 50, 6); 
+
+    var player = this
+    var world = this.game.world
+    player.kill()
+
+    setTimeout(function() {
+      player.reset(50, world.centerY)
+    }, duration)
   }
 
   update () {
+
+    this.playerTrail.x = this.x
+    this.playerTrail.y = this.y
+
     const pad1 = this.game.input.gamepad.pad1
 
     const accV = 300
@@ -32,3 +72,9 @@ export default class extends Phaser.Sprite {
     }
   }
 }
+
+
+
+
+
+

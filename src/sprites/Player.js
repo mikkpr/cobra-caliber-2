@@ -86,7 +86,7 @@ export default class extends Phaser.Sprite {
         this.scale.setTo(-1, 1)
       }
     } else if (this.isMovingRight()) {
-      if (this.body.maxVelocity.x <= 1400 * 1.4) {
+      if (this.body.maxVelocity.x <= 800 * 1.4) {
         this.body.maxVelocity.x += accX;
       }
       this.body.velocity.x += accX
@@ -94,7 +94,7 @@ export default class extends Phaser.Sprite {
         this.scale.setTo(1, 1)
       }
     } else {
-      this.body.maxVelocity.x = 1400;
+      this.body.maxVelocity.x = 800;
     }
   }
 

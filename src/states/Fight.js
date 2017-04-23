@@ -63,8 +63,26 @@ export default class extends Phaser.State {
     this.player.body.collideWorldBounds = true
 
     if (this.tilemap === 'moon_fight') {
-      // Quick hack so game intro would not feature any weird animations (bugged flight)
+      
+      // hack for game start.
+
+      var style = { 
+        font: "32px Arial", 
+        fill: "#F5DEB3", 
+        backgroundColor: '#8B4513', 
+      };
+
+      this.text = this.game.add.text(0, -100, " Cobra Caliber 2: There can be only One more ", style);
+      this.text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+      this.text.strokeThickness = 2;
+
+      // game.add.tween(this.text).to( { y: 100 }, 2000, Phaser.Easing.Bounce.Out, true);
+  
+      this.text.y = 100;
+      this.text.x = this.game.width / 2 - this.text.width / 2;
+
       this.player.body.velocity.x = 0
+
       this.player.x = this.game.world.centerX - this.game.world.centerX / 2
       this.player.y = this.game.world.height - 80
 

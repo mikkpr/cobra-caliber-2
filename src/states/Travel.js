@@ -62,7 +62,7 @@ export default class extends Phaser.State {
 
   update () {
 
-    this.game.physics.arcade.overlap(this.player, this.obstacle, this.restartGame, null, this);
+    this.game.physics.arcade.overlap(this.player, this.obstacle, this.playerDeathEvent, null, this);
     
     if (this.player.body.x >= this.world.bounds.width) {
       this.state.start('Fight')
@@ -85,6 +85,13 @@ export default class extends Phaser.State {
     // Start the 'main' state, which restarts the game
     game.state.start('Travel');
   }
+
+  playerDeathEvent () {
+  	// TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
+  	this.player.x = 100;
+  	this.player.y = this.game.world.centerY;
+  }
+
 }
 
 

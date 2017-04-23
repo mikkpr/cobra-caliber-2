@@ -79,16 +79,16 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.game.camera.x = this.player.x - this.game.width / 2
+    this.game.camera.x = this.player.x - this.game.width / 3 // Possibly go to quarter distance when turrets are fixed
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
 
-    const accY = 800
+    const accY = 250 // Maybe even lower, to make it possible to navigate tight corridors
     if (this.player.isMovingUp()) {
       this.player.body.velocity.y -= accY
     } else if (this.player.isMovingDown()) {
       this.player.body.velocity.y += accY
     } else {
-      this.player.body.velocity.y /= 2
+      this.player.body.velocity.y = 0 // Vertical movement has to be precise 
     }
 
     const accX = 360

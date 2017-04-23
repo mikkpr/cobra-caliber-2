@@ -8,11 +8,10 @@ import { enableMusicForState } from '../utils.js'
 
 export default class extends Phaser.State {
   create () {
+    enableMusicForState('bigbeat', this)
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])
-
-    ::enableMusicForState('bigbeat')
 
     this.map = this.game.add.tilemap('earth_travel')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')

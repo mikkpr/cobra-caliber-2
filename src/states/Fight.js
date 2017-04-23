@@ -11,7 +11,7 @@ export default class extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])
 
-    ::enableMusicForState('ambient')
+    enableMusicForState('ambient', this)
 
     this.map = this.game.add.tilemap('moon_fight')
     this.map.addTilesetImage('lofi_environment_4x', 'tiles')

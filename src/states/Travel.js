@@ -46,15 +46,27 @@ export default class extends Phaser.State {
     this.game.time.advancedTiming = true
   }
 
-  update () {
-    
-  }
-
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
   }
 
   shutdown () {
-    this.game.plugins.remove(Curve)
+    this.game.plugins.remove(this.curve)
+  }
+
+  restartGame () {
+    // Start the 'main' state, which restarts the game
+    this.game.state.start('Travel')
+  }
+
+  onCollision () {
+    // TODO: Check player lives, if lives > 1 then move to some offset location, if lives = 0 then restartGame
+    this.player.resetWithAnimation()
+  }
+
+  hitWorldBounds (sprite, up, down, left, right) {
+    if (sprite === this.player && right === true) {
+      this.state.start('Fight')
+    }
   }
 }

@@ -13,10 +13,6 @@ export default class extends Obstacle {
     this.target = null
   }
 
-  targetPlayer () {
-    this.target = this.player
-  }
-
   update () {
     super.update()
 
@@ -31,5 +27,12 @@ export default class extends Obstacle {
     } else if (this.weapon.fire()) {
       this.weapon.fireAngle += 30
     }
+  }
+
+  onCollision () {
+    super.onCollision()
+    const saved = this.target
+    this.target = null
+    setTimeout(() => this.target = saved, 1000)
   }
 }

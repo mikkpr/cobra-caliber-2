@@ -3,15 +3,13 @@ import Phaser from 'phaser'
 import Boss from '../sprites/Boss'
 import Player from '../sprites/Player'
 
-import Curve from '../plugins/Curve'
-
 import { enableMusicForState } from '../utils'
 
 export default class extends Phaser.State {
   create () {
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
-    this.curve = this.game.plugins.add(Curve, [50, 0, 0, 0, 50])
+    this.game.curve.setPoints([50, 0, 0, 0, 50])
 
     ::enableMusicForState('ambient')
 
@@ -63,10 +61,6 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
-  }
-
-  shutdown () {
-    this.game.plugins.remove(this.curve)
   }
 }
 

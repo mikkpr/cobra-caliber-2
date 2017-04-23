@@ -70,6 +70,7 @@ export default class extends Phaser.Sprite {
 
     var player = this
     player.kill()
+    this.game.deathCounter += 1
 
     setTimeout(function () {
       player.reset(50, 256)

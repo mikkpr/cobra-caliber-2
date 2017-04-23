@@ -34,7 +34,7 @@ export default class extends Phaser.State {
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
 
-    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179)
+    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { burst: true })
     this.world.add(this.turret)
     this.turret.target = this.player
 

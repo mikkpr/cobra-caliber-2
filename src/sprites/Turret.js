@@ -1,14 +1,21 @@
 import Obstacle from './Obstacle'
 
 export default class extends Obstacle {
-  constructor (game, player, x, y, frame, bulletFrame) {
+  constructor (game, player, x, y, frame, bulletFrame, options = { burst: false }) {
     super(game, player, x, y, frame)
 
     this.weapon = this.game.plugins.add(Phaser.Weapon)
     this.weapon.trackSprite(this)
-    this.weapon.createBullets(50, 'chars_small', bulletFrame)
     this.weapon.bulletSpeed = 600
+    this.weapon.bulletAngleVariance = 20
+
+    let bullets = 50
     this.weapon.fireRate = 200
+    if (options.burst) {
+      bullets = 10
+      this.weapon.fireRate = 50
+    }
+    this.weapon.createBullets(bullets, 'chars_small', bulletFrame)
 
     this.target = null
   }

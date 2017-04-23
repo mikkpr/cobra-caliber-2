@@ -40,7 +40,7 @@ export default class extends Phaser.Sprite {
 
   hitWorldBounds (sprite, up, down, left, right) {
     if (sprite === this && right === true) {
-      this.state.start('Fight')
+      this.game.state.start('Fight')
     }
   }
 

@@ -42,12 +42,30 @@ export default class extends Phaser.Sprite {
     this.text = this.game.add.text(0, 0, text, style);
     this.text.anchor.set(0.5);
 
+    // this.renderByLetter(text, function() {
+    //   context.text.destroy()
+    //   completed()
+    // })
+    
     var context = this
 
     setTimeout(function() {
       context.text.destroy()
       completed()
     }, 2000)
+
+  }
+
+  renderByLetter(text, completed) {
+
+    var current = "";
+    var textField = this.text;
+
+    for (var i = 0 + 1; i < text.length 0; i++) {
+      current += text[i]
+      this.text.setText(current)
+    }
+
   }
 
   resetWithAnimation () {
@@ -120,23 +138,28 @@ export default class extends Phaser.Sprite {
 
   isMovingUp () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.up.isDown || this.wasd.up.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1
+    return this.cursors.up.isDown || this.wasd.up.isDown || 
+    pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1
   }
 
   isMovingDown () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.down.isDown || this.wasd.down.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1
+    return this.cursors.down.isDown || this.wasd.down.isDown || 
+    pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1
   }
 
   isMovingLeft () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.left.isDown || this.wasd.left.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1
+    return this.cursors.left.isDown || this.wasd.left.isDown || 
+    pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1
   }
 
   isMovingRight () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.right.isDown || this.wasd.right.isDown || pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1
+    return this.cursors.right.isDown || this.wasd.right.isDown || 
+    pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1
   }
+
 }
 
 

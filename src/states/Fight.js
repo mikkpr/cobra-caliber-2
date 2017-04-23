@@ -44,7 +44,7 @@ export default class extends Phaser.State {
 
     this.world.add(this.player)
 
-    this.boss = new Boss(this.game, this.player, bossSpawnX, this.game.world.centerY)
+    this.boss = new Boss(this.game, this.player, bossSpawnX, this.game.world.height - 90)
     this.world.add(this.boss)
 
     // Add gravity to the sprites.

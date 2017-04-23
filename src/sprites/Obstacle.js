@@ -14,10 +14,10 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-  	this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
+    this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
   }
 
   onCollision () {
-  	this.player.resetWithAnimation()
+    this.player.resetWithAnimation()
   }
 }

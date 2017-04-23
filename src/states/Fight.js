@@ -73,8 +73,8 @@ export default class extends Phaser.State {
 
       player.say('I have been looking for you for a long time, father', function () {
         boss.say('I left you to die in that pit. How did you survive?', function () {
-          player.say('That should be the least of your concerns', function () {
-            player.say('Time to die, old man', function () {})
+          player.say('That should be the least of your concerns, old man', function () {
+            player.say('Time to die', function () {})
           })
         })
       })

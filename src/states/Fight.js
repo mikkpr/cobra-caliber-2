@@ -61,6 +61,14 @@ export default class extends Phaser.State {
     this.game.time.advancedTiming = true
 
     this.player.body.collideWorldBounds = true
+
+    if (this.tilemap == "moon_fight") {
+      // Quick hack so game intro would not feature any weird animations (bugged flight)
+      this.player.body.velocity.x = 0;
+      this.player.x = this.game.world.centerX - this.game.world.centerX / 2;
+      this.player.y = this.game.world.height - 80;
+    }
+
   }
 
   update () {

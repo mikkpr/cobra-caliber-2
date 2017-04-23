@@ -25,15 +25,18 @@ export default class extends Phaser.State {
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
     this.backgroundLayer.resizeWorld()
 
+    this.groundLayer = this.map.createLayer('groundlayer')
+    this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
+
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 100, this.game.world.centerY, { canTurn: false, isFalling: true })
+    this.player = new Player(this.game, 100, 256, { canTurn: false, isFalling: true })
     this.world.add(this.player)
     this.player.body.gravity.x = 1800
 
     this.obstacle = new Obstacle(this.game, this.player, 300, this.game.world.centerY, 142)
     this.world.add(this.obstacle)
 
-    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true, homing: true })
+    this.turret = new Turret(this.game, this.player, 600, 100, 80, 179, { target: this.player, burst: true })
     this.world.add(this.turret)
 
     // Make the camera follow the sprite
@@ -52,6 +55,10 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
+  }
+
+  update () {
+    this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
   }
 
   hitWorldBounds (sprite, up, down, left, right) {

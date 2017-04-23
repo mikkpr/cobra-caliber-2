@@ -29,37 +29,33 @@ export default class extends Phaser.Sprite {
   }
 
   onCollision () {
+    var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
 
-  	var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
-  	
-  	if (velocity > 600) {
-	  	var state = this.game.state
-	  	this.flyAway(this, 0, 20, function() { state.start('Travel', true, false, "earth_fight"); } );
-  	}
+    if (velocity > 600) {
+      var state = this.game.state
+      this.flyAway(this, 0, 20, function () { state.start('Travel', true, false, 'earth_fight') })
+    }
   }
 
   flyAway (context, counter, angle, completed) {
+    context.body.velocity.y = -200
+    context.body.velocity.x = 100
 
-  	context.body.velocity.y = -200
-  	context.body.velocity.x = 100
-  	
-  	console.log(this.scale.x, this.scale.y)
-  	var scalex = this.scale.x - 0.01;
-  	var scaley = this.scale.y - 0.01;
+    var scalex = this.scale.x - 0.01
+    var scaley = this.scale.y - 0.01
 
-  	this.scale.set(scalex, scaley)
+    this.scale.set(scalex, scaley)
 
-  	this.angle = angle;
+    this.angle = angle
 
-  	if (counter < 40) {
-  		counter++;
-  		angle += 30;
-  		setTimeout(function() { context.flyAway(context, counter, angle, completed) }, 120)
-  	} else {
-  		setTimeout(function() {
-  			completed()
-  		}, 200)
-  	}
+    if (counter < 30) {
+      counter++
+      angle += 30
+      setTimeout(function () { context.flyAway(context, counter, angle, completed) }, 150)
+    } else {
+      setTimeout(function () {
+        completed()
+      }, 200)
+    }
   }
-
 }

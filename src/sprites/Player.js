@@ -66,7 +66,7 @@ export default class extends Phaser.Sprite {
     player.kill()
 
     setTimeout(function () {
-      player.reset(50, world.centerY)
+      player.reset(50, 256)
     }, duration)
   }
 

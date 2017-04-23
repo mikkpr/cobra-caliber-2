@@ -1,5 +1,5 @@
 node_modules/
-dist/
+*.map
 .vscode/
 .DS_Store
 yarn.lock

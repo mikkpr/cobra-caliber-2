@@ -10,8 +10,7 @@ export default class extends Phaser.Sprite {
     this.anchor.setTo(0.5)
 
     this.game.physics.arcade.enable(this)
-    this.body.drag.x = this.body.drag.y = 500
-
+    
     this.cursors = this.game.input.keyboard.createCursorKeys()
 
     this.wasd = {
@@ -35,6 +34,9 @@ export default class extends Phaser.Sprite {
     this.body.collideWorldBounds = true
     this.body.onWorldBounds = new Phaser.Signal()
     this.body.onWorldBounds.add(this.hitWorldBounds, this)
+
+    // Default maxVelocity in 1G, this magic number is used everywhere
+    this.body.maxVelocity.x = 1400;
   }
 
   hitWorldBounds (sprite, up, down, left, right) {
@@ -73,30 +75,36 @@ export default class extends Phaser.Sprite {
     this.playerTrail.x = this.x
     this.playerTrail.y = this.y
 
-    const accV = 300
+    const accY = 800
 
     if (this.isMovingUp()) {
       if (this.isFalling || (!this.isFalling && this.body.onFloor())) {
-        this.body.velocity.y = -accV
+        this.body.velocity.y = -accY
       }
     } else if (this.isMovingDown()) {
       if (this.isFalling) {
-        this.body.velocity.y = accV
+        this.body.velocity.y = accY
       }
+    } else {
+      this.body.velocity.y = 0;
     }
 
-    const accH = 500
-
+    const accX = 150
     if (this.isMovingLeft()) {
-      this.body.velocity.x = -accH
+      this.body.velocity.x = - 3 * accX
       if (this.canTurn) {
         this.scale.setTo(-1, 1)
       }
     } else if (this.isMovingRight()) {
-      this.body.velocity.x = accH
+      if (this.body.maxVelocity.x <= 1400 * 1.4) {
+        this.body.maxVelocity.x += accX;
+      }
+      this.body.velocity.x += accX
       if (this.canTurn) {
         this.scale.setTo(1, 1)
       }
+    } else {
+      this.body.maxVelocity.x = 1400;
     }
   }
 

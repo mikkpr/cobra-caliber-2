@@ -31,8 +31,10 @@ export default class extends Obstacle {
 
   onCollision () {
     super.onCollision()
-    const saved = this.target
-    this.target = null
-    setTimeout(() => this.target = saved, 1000)
+    if (this.target != null) {
+      const saved = this.target
+      this.target = null
+      setTimeout(() => this.target = saved, 1000)
+    }
   }
 }

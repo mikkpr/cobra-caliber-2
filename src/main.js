@@ -87,8 +87,10 @@ class Game extends Phaser.Game {
 
   renderLetter (text, n, completed) {
     const textField = this.text
+    const { textSound } = this.sound.repository
     setTimeout(() => {
       textField.setText(text)
+      textSound.play()
       completed(n)
     }, 80 * n)
   }

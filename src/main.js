@@ -22,9 +22,24 @@ class Game extends Phaser.Game {
     this.state.add('Travel', TravelState, false)
     this.state.add('Fight', FightState, false)
 
-    this.state.start('Boot')
+    this.levelIndex = 0
+    this.levels = [
+      ['Boot'],
+      ['Splash'],
+      ['Fight',  'moon_fight'],
+      ['Travel', 'earth_travel'],
+      ['Fight',  'earth_fight'],
+      ['Travel', 'mars_travel'],
+      ['Fight',  'mars_fight'],
+    ]
+    this.nextState()
 
     this.deathCounter = 0
+  }
+
+  nextState () {
+    const [ state, ...args ] = this.levels[Math.min(this.levels.length - 1, this.levelIndex++)]
+    this.state.start(state, true, false, ...args)
   }
 
   say (text, completed) {

@@ -75,7 +75,7 @@ export default class extends Phaser.Sprite {
 
       if (!impactSound.isPlaying) { impactSound.play() }
 
-      this.flyAway(this, 0, 20, () => { state.start('Travel', true, false, 'earth_fight') })
+      this.flyAway(this, 0, 20, () => { this.game.nextState() })
     }
   }
 

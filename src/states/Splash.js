@@ -70,7 +70,7 @@ export default class extends Phaser.State {
   render () {
     if (this.fontsReady) {
       this.game.sound.repository = initSounds(this.game)
-      this.state.start('Fight', true, false, 'moon_fight')
+      this.game.nextState()
     }
   }
 

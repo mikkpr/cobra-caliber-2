@@ -6,8 +6,8 @@ import Turret from '../sprites/Turret'
 import { enableMusicForState } from '../utils.js'
 
 export default class extends Phaser.State {
-  init (fightTileMap) {
-    this.fightTileMap = fightTileMap
+  init (tilemap) {
+    this.tilemap = tilemap
   }
 
   create () {
@@ -17,7 +17,7 @@ export default class extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.curve.setPoints([50, 0, 0, 0, 50])
 
-    this.map = this.game.add.tilemap('earth_travel')
+    this.map = this.game.add.tilemap(this.tilemap)
     this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
     this.map.addTilesetImage('lofi_scifi_stations_4x', 'tiles_lofi_stations')
     this.map.addTilesetImage('lofi_scifi_stations_2_4x', 'tiles_lofi_stations_2')
@@ -151,7 +151,7 @@ export default class extends Phaser.State {
 
   hitWorldBounds (sprite, up, down, left, right) {
     if (sprite === this.player && right === true) {
-      this.game.state.start('Fight', true, false, this.fightTileMap)
+      this.game.nextState()
     }
   }
 }

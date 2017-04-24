@@ -9,6 +9,9 @@ export default class extends Phaser.Sprite {
 
     this.anchor.setTo(0.5)
 
+    this.game.sound.textSound = this.game.sound.textSound || this.game.add.audio('step', 0.25)
+    this.game.sound.textSound.allowMultiple = true
+
     this.game.physics.arcade.enable(this)
 
     this.cursors = this.game.input.keyboard.createCursorKeys()
@@ -39,7 +42,7 @@ export default class extends Phaser.Sprite {
 
     var context = this
 
-    this.renderByLetter(text, function () {
+    this.renderByLetter(text, () => {
       context.text.destroy()
       completed()
     })
@@ -54,9 +57,9 @@ export default class extends Phaser.Sprite {
     for (var i = 0; i < split.length; i++) {
       current += split[i]
 
-      this.renderLetter(current, i, function (n) {
+      this.renderLetter(current, i, (n) => {
         if (n == split.length - 1) {
-          setTimeout(function () {
+          setTimeout(() => {
             completed()
           }, 800)
         }
@@ -66,8 +69,9 @@ export default class extends Phaser.Sprite {
 
   renderLetter (text, n, completed) {
     var textField = this.text
-    setTimeout(function () {
+    setTimeout(() => {
       textField.setText(text)
+      this.game.sound.textSound.play()
       completed(n)
     }, 50 * n)
   }
@@ -97,7 +101,7 @@ export default class extends Phaser.Sprite {
     player.kill()
     this.game.deathCounter += 1
 
-    setTimeout(function () {
+    setTimeout(() => {
       player.reset(50, 256)
     }, duration)
   }

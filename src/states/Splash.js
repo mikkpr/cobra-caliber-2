@@ -23,6 +23,9 @@ export default class extends Phaser.State {
 
     this.load.audio('shoot', ['assets/audio/effects/shoot_b.mp3'])
     this.load.audio('explode', ['assets/audio/effects/explode_b.mp3'])
+    this.load.audio('step', ['assets/audio/effects/step.mp3'])
+    this.load.audio('click', ['assets/audio/effects/click.mp3'])
+    this.load.audio('impact', ['assets/audio/effects/impact.mp3'])
 
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_scifi', 'assets/images/lofi_scifi_chars_4x.png', 32, 32)

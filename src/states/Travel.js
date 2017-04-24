@@ -19,6 +19,9 @@ export default class extends Phaser.State {
 
     this.map = this.game.add.tilemap(this.tilemap)
     switch (this.tilemap) {
+      case 'mars_travel':
+        this.map.addTilesetImage('lofi_scifi_ships_2_4x', 'tiles_ships_2')
+        // fallthrough
       case 'earth_travel':
         this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
         this.map.addTilesetImage('lofi_scifi_stations_4x', 'tiles_lofi_stations')
@@ -26,14 +29,9 @@ export default class extends Phaser.State {
         this.map.addTilesetImage('lofi_scifi_stations_3_4x', 'tiles_lofi_stations_3')
         this.map.addTilesetImage('lofi_scifi_items_4x', 'tiles_lofi_items')
         this.map.addTilesetImage('lofi_interface_4x', 'tiles_interface')
-        // fallthrough
-      case 'mars_travel':
-        this.map.addTilesetImage('lofi_scifi_ships_2_4x', 'tiles_ships_2')
-        break
     }
 
     // Add both the background and ground layers.
-    this.map.createLayer('backgroundlayer').resizeWorld()
 
     this.bg1 = this.game.add.tileSprite(0,
       0,
@@ -41,6 +39,8 @@ export default class extends Phaser.State {
       this.game.world.height,
       'bg1'
     )
+  
+    this.map.createLayer('backgroundlayer').resizeWorld()
 
     this.groundLayer = this.map.createLayer('groundlayer')
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')

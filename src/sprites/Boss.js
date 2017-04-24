@@ -72,6 +72,7 @@ export default class extends Phaser.Sprite {
     const { impactSound } = this.game.sound.repository
 
     if (Math.abs(velocity) > 471) {
+
       var state = this.game.state
 
       if (!impactSound.isPlaying) { impactSound.play() }

@@ -26,11 +26,11 @@ class Game extends Phaser.Game {
     this.levels = [
       ['Boot'],
       ['Splash'],
-      ['Fight',  'moon_fight'],
+      ['Fight', 'moon_fight'],
       ['Travel', 'earth_travel'],
-      ['Fight',  'earth_fight'],
+      ['Fight', 'earth_fight'],
       ['Travel', 'mars_travel'],
-      ['Fight',  'mars_fight'],
+      ['Fight', 'mars_fight']
     ]
     this.nextState()
 
@@ -43,51 +43,44 @@ class Game extends Phaser.Game {
   }
 
   say (text, completed) {
+    const style = {
+      font: '25px Press Start 2P',
+      fill: '#ffffff',
+      wordWrap: true,
+      wordWrapWidth: 700,
+      align: 'center'
+    }
+    this.text = this.add.text(this.width / 2, 250, '', style)
+    this.text.anchor.set(0.5)
 
-    var style = { font: "25px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 700 , align: "center" };
-    this.text = this.add.text(this.width / 2, 250, "", style);
-    this.text.anchor.set(0.5);
-
-    var context = this;
-
-    this.renderByLetter(text, function() {
-      context.text.destroy()
+    this.renderByLetter(text, () => {
+      this.text.destroy()
       completed()
     })
   }
 
-  renderByLetter(text, completed) {
+  renderByLetter (text, completed) {
+    const split = text.split('')
+    let current = ''
 
-    var split = text.split('');
-    var current = ""
-    
-    var textField = this.text;
-
-    for (var i = 0; i < split.length; i++) {
-    
+    for (let i = 0; i < split.length; i++) {
       current += split[i]
-      
-      this.renderLetter(current, i, function(n) {
-        
-        if (n == split.length - 1) {
-          setTimeout(function() {
-            completed()
-          }, 800)
-        }        
 
+      this.renderLetter(current, i, (n) => {
+        if (n === split.length - 1) {
+          setTimeout(completed, 800)
+        }
       })
-
     }
   }
 
-  renderLetter(text, n, completed) {
-    var textField = this.text;
-    setTimeout(function() { 
-      textField.setText(text) 
+  renderLetter (text, n, completed) {
+    const textField = this.text
+    setTimeout(() => {
+      textField.setText(text)
       completed(n)
-    }, 80 * n)    
+    }, 80 * n)
   }
-
 }
 
 window.game = new Game()

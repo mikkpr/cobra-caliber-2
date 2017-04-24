@@ -24,6 +24,7 @@ export default class extends Obstacle {
   }
 
   update () {
+    return
     super.update()
 
     const { shootSound } = this.game.sound.repository

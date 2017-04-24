@@ -29,7 +29,7 @@ export default class extends Phaser.State {
       0,
       this.game.width,
       this.game.height,
-      this.tilemap === 'earth_fight' ? 'bg1' : 'bg2'
+      this.tilemap === 'mars_fight' ? 'bg2' : 'bg1'
     )
 
     // Add both the background and ground layers. We won't be doing anything

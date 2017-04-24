@@ -71,14 +71,26 @@ export default class extends Phaser.Sprite {
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
     const { impactSound } = this.game.sound.repository
 
-    if (Math.abs(velocity) > 500) {
+    if (Math.abs(velocity) > 471) {
       var state = this.game.state
 
       if (!impactSound.isPlaying) { impactSound.play() }
 
-      this.flyAway(this, 0, 20, () => { this.game.nextState() })
-    } else {
+      this.onBossDeath(this, 0, 20, () => { 
+          
+          if (this.game.tilemap === "moon_fight") {
+            
+            this.player.say("Hmm... Looks like he was just a hologram", () => {
+              this.movePlayerOffMap()
+            })
+          } else {
+            this.game.nextState()
+          }
 
+      })
+
+    } else {
+      console.log(velocity)
       this.player.say("No, I remember hitting him way stronger than this", () => {
         this.body.checkCollision.none = false
       })
@@ -86,7 +98,27 @@ export default class extends Phaser.Sprite {
 
   }
 
+  onBossDeath (context, counter, angle, completed) {
+    
+    console.log(this.game.tilemap)
+    if(this.game.tilemap === "moon_fight") {
+      this.fadeOut(completed)
+      console.log("ismoon")
+    } else {
+      this.flyAway(context, counter, angle, completed)
+    }
+  }
+
+  fadeOut(completed) {
+    
+    const duration = 2000;
+
+    game.add.tween(this).to( { alpha: 0 }, duration, Phaser.Easing.Linear.None, true);
+    setTimeout(() => { completed() }, duration)
+  }
+
   flyAway (context, counter, angle, completed) {
+
     context.body.velocity.y = -200
     context.body.velocity.x = 100
 
@@ -107,4 +139,18 @@ export default class extends Phaser.Sprite {
       }, 200)
     }
   }
+
+  movePlayerOffMap () {
+    this.game.camera.target = null
+    this.player.body.gravity.x = 10000
+    this.player.scale.setTo(1, 1)
+    this.player.body.collideWorldBounds = false
+  }
+
 }
+
+
+
+
+
+

@@ -8,6 +8,7 @@ import { enableMusicForState } from '../utils.js'
 export default class extends Phaser.State {
   init (tilemap) {
     this.tilemap = tilemap
+    this.game.tilemap = tilemap
   }
 
   create () {

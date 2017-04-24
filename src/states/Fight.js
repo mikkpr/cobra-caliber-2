@@ -8,7 +8,8 @@ import { enableMusicForState } from '../utils'
 export default class extends Phaser.State {
   init (tilemap) {
     this.tilemap = tilemap
-
+    this.game.tilemap = tilemap
+    
     if (tilemap === 'earth_fight') {
       this.stage.backgroundColor = '#3598db'
     }

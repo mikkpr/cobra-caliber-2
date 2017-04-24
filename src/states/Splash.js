@@ -21,6 +21,8 @@ export default class extends Phaser.State {
 
     this.load.audio('bigbeat', ['assets/audio/music/bigbeat.mp3', 'assets/audio/music/bigbeat.ogg'])
     this.load.audio('ambient', ['assets/audio/music/ambient.mp3', 'assets/audio/music/ambient.ogg'])
+    this.load.audio('techno', ['assets/audio/music/techno.mp3', 'assets/audio/music/techno.ogg'])
+    this.load.audio('synthwave', ['assets/audio/music/synthwave.mp3', 'assets/audio/music/synthwave.ogg'])
 
     this.load.audio('shoot', ['assets/audio/effects/shoot_b.wav'])
     this.load.audio('explode', ['assets/audio/effects/explode_b.wav'])

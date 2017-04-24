@@ -12,7 +12,7 @@ export default class extends Phaser.State {
   }
 
   create () {
-    this.disableMusic = enableMusicForState('bigbeat', this)
+    this.disableMusic = enableMusicForState(this)
 
     this.game.world.enableBody = true
     this.game.physics.startSystem(Phaser.Physics.ARCADE)

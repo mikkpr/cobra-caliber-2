@@ -105,6 +105,10 @@ export default class extends Phaser.State {
           this.turretGroup.add(new Turret(this.game, x, y,
             turretSheetMars, turretFrame, bulletSheetMars, bulletFrame, options))
         })
+        setTimeout(() => {
+          this.player.say("I hear hookers are 50% better here", () => {})
+        }, 300)
+
     }
 
     // Full-screen pulse effect alpha.

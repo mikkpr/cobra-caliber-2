@@ -56,6 +56,7 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
+
     this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
 
     if (this.text !== undefined) {
@@ -66,17 +67,23 @@ export default class extends Phaser.Sprite {
 
   onCollision () {
     this.body.checkCollision.none = true
-
+    
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
     const { impactSound } = this.game.sound.repository
 
-    if (velocity > 300) {
+    if (Math.abs(velocity) > 500) {
       var state = this.game.state
 
       if (!impactSound.isPlaying) { impactSound.play() }
 
       this.flyAway(this, 0, 20, () => { this.game.nextState() })
+    } else {
+
+      this.player.say("No, I remember hitting him way stronger than this", () => {
+        this.body.checkCollision.none = false
+      })
     }
+
   }
 
   flyAway (context, counter, angle, completed) {

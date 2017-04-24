@@ -3,24 +3,24 @@ import Phaser from 'phaser'
 import Obstacle from './Obstacle'
 
 export default class extends Obstacle {
-  constructor (game, player, x, y, frame, bulletFrame, options = { target: null, burst: false, homing: false }) {
-    super(game, player, x, y, frame)
+  constructor (game, player, x, y, turretSheet, turretFrame, bulletSheet, bulletFrame, options = {
+    target: null, bullets: 50, rate: 200, speed: 600, cone: 20, homing: false
+  }) {
+    super(game, player, x, y, turretSheet, turretFrame)
 
     this.weapon = this.game.plugins.add(Phaser.Weapon)
     this.weapon.trackSprite(this)
-    this.weapon.bulletSpeed = 600
-    this.weapon.bulletAngleVariance = 20
-
-    let bullets = 50
-    this.weapon.fireRate = 200
-    if (options.burst) {
-      bullets = 10
-      this.weapon.fireRate = 50
-    }
-    this.weapon.createBullets(bullets, 'chars_small', bulletFrame)
+    this.weapon.createBullets(options.bullets || 50, bulletSheet, bulletFrame)
+    this.weapon.bulletSpeed = options.speed || 600
+    this.weapon.bulletAngleVariance = options.cone || 20
+    this.weapon.fireRate = options.rate || 200
 
     this.homing = options.homing
     this.target = options.target
+
+    this.game.sound.shootSound = this.game.sound.shootSound || this.game.add.audio('shoot', 0.5)
+    this.game.sound.shootSound.allowMultiple = true
+
   }
 
   update () {
@@ -34,12 +34,14 @@ export default class extends Obstacle {
     if (!this.inCamera) {
       return
     }
-
+    let fired
     if (this.target != null) {
-      this.weapon.fireAtSprite(this.target)
+      fired = this.weapon.fireAtSprite(this.target)
     } else if (this.weapon.fire()) {
-      this.weapon.fireAngle += 30
+      fired = this.weapon.fireAngle += 30
     }
+
+    if (fired) { this.game.sound.shootSound.play() }
   }
 
   home (bullet) {

@@ -60,7 +60,6 @@ export default class extends Phaser.State {
     this.game.time.advancedTiming = true
 
     if (this.tilemap === 'moon_fight') {
-      
       // Hack for game start.
 
       var style = { 
@@ -122,12 +121,14 @@ export default class extends Phaser.State {
   }
 
   onStartClick () {
+    this.game.sound.clickSound = this.game.sound.clickSound || this.game.add.audio('click', 0.25)
+    this.game.sound.clickSound.play()
 
-    this.startButton.destroy();
+    this.startButton.destroy()
 
     var player = this.player
     var boss = this.boss
-    
+
     setTimeout(() => {
       this.game.say('The year is 2007. The population of the Milky Way Galaxy is 400 billion', () => {
         this.game.say('But there can only be one...', () => {
@@ -141,7 +142,6 @@ export default class extends Phaser.State {
         })
       })
     }, 600)
-
   }
 
   update () {

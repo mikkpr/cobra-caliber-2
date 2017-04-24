@@ -8,52 +8,49 @@ export default class extends Phaser.Sprite {
 
     this.anchor.setTo(0.5)
 
+    this.game.sound.textSound = this.game.sound.textSound || this.game.add.audio('step', 0.25)
+    this.game.sound.textSound.allowMultiple = true
+
     this.game.physics.arcade.enable(this)
     this.body.drag.x = this.body.drag.y = 500
   }
 
   say (text, completed) {
-
+    
     var style = { font: "15px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
     this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
     
-    var context = this;
-
-    this.renderByLetter(text, function() {
-      context.text.destroy()
+    this.renderByLetter(text, () => {
+      this.text.destroy()
       completed()
     })
   }
 
-  renderByLetter(text, completed) {
+  renderByLetter (text, completed) {
+    var split = text.split('')
+    var current = ''
 
-    var split = text.split('');
-    var current = ""
-    
-    var textField = this.text;
+    var textField = this.text
 
     for (var i = 0; i < split.length; i++) {
-    
       current += split[i]
-      
-      this.renderLetter(current, i, function(n) {
-        
+
+      this.renderLetter(current, i, (n) => {
         if (n == split.length - 1) {
-          setTimeout(function() {
+          setTimeout(() => {
             completed()
           }, 800)
-        }        
-
+        }
       })
-
     }
   }
 
-  renderLetter(text, n, completed) {
-    var textField = this.text;
-    setTimeout(function() { 
-      textField.setText(text) 
+  renderLetter (text, n, completed) {
+    var textField = this.text
+    setTimeout(() => {
+      textField.setText(text)
+      this.game.sound.textSound.play()
       completed(n)
     }, 70 * n)    
   }
@@ -72,7 +69,10 @@ export default class extends Phaser.Sprite {
 
     if (velocity > 300) {
       var state = this.game.state
-      this.flyAway(this, 0, 20, function () { state.start('Travel', true, false, 'earth_fight') })
+      this.game.sound.impactSound = this.game.sound.impactSound || this.game.add.audio('impact', 0.45)
+      this.game.sound.allowMultiple = false
+      if (!this.game.sound.impactSound.isPlaying) { this.game.sound.impactSound.play() }
+      this.flyAway(this, 0, 20, () => { state.start('Travel', true, false, 'earth_fight') })
     }
   }
 
@@ -90,9 +90,9 @@ export default class extends Phaser.Sprite {
     if (counter < 30) {
       counter++
       angle += 30
-      setTimeout(function () { context.flyAway(context, counter, angle, completed) }, 150)
+      setTimeout(() => { context.flyAway(context, counter, angle, completed) }, 150)
     } else {
-      setTimeout(function () {
+      setTimeout(() => {
         completed()
       }, 200)
     }

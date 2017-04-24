@@ -7,9 +7,10 @@ export default class extends Phaser.Sprite {
     this.canTurn = options.canTurn
     this.isFalling = options.isFalling
 
-    this.animations.add('explode', ['expl1, expl2'])
-
     this.anchor.setTo(0.5)
+
+    this.game.sound.textSound = this.game.sound.textSound || this.game.add.audio('step', 0.25)
+    this.game.sound.textSound.allowMultiple = true
 
     this.game.physics.arcade.enable(this)
 
@@ -40,48 +41,44 @@ export default class extends Phaser.Sprite {
     this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
     
-    var context = this;
-
-    this.renderByLetter(text, function() {
-      context.text.destroy()
+    this.renderByLetter(text, () => {
+      this.text.destroy()
       completed()
     })
   }
 
-  renderByLetter(text, completed) {
+  renderByLetter (text, completed) {
+    var split = text.split('')
+    var current = ''
 
-    var split = text.split('');
-    var current = ""
-    
-    var textField = this.text;
+    var textField = this.text
 
     for (var i = 0; i < split.length; i++) {
-    
       current += split[i]
-      
-      this.renderLetter(current, i, function(n) {
-        
+
+      this.renderLetter(current, i, (n) => {
         if (n == split.length - 1) {
-          setTimeout(function() {
+          setTimeout(() => {
             completed()
           }, 800)
-        }        
-
+        }
       })
-
     }
   }
 
-  renderLetter(text, n, completed) {
-    var textField = this.text;
-    setTimeout(function() { 
-      textField.setText(text) 
+  renderLetter (text, n, completed) {
+    var textField = this.text
+    setTimeout(() => {
+      textField.setText(text)
+      this.game.sound.textSound.play()
       completed(n)
     }, 70 * n)    
   }
 
-
   resetWithAnimation () {
+    this.game.sound.explodeSound = this.game.sound.explodeSound || this.game.add.audio('explode', 0.25)
+    this.game.sound.explodeSound.allowMultiple = true
+
     var duration = 500
 
     var x = this.x
@@ -97,12 +94,13 @@ export default class extends Phaser.Sprite {
     this.emitter.maxParticleSpeed.set(0, 0)
     this.emitter.gravity = 0
     this.emitter.start(false, duration, 10, 4)
+    this.game.sound.explodeSound.play()
 
     var player = this
     player.kill()
     this.game.deathCounter += 1
 
-    setTimeout(function () {
+    setTimeout(() => {
       player.reset(50, 256)
     }, duration)
   }
@@ -119,26 +117,25 @@ export default class extends Phaser.Sprite {
 
   isMovingUp () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.up.isDown || this.wasd.up.isDown || 
+    return this.cursors.up.isDown || this.wasd.up.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1
   }
 
   isMovingDown () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.down.isDown || this.wasd.down.isDown || 
+    return this.cursors.down.isDown || this.wasd.down.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1
   }
 
   isMovingLeft () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.left.isDown || this.wasd.left.isDown || 
+    return this.cursors.left.isDown || this.wasd.left.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1
   }
 
   isMovingRight () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.right.isDown || this.wasd.right.isDown || 
+    return this.cursors.right.isDown || this.wasd.right.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1
   }
-
 }

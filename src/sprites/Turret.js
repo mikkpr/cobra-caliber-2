@@ -4,7 +4,7 @@ import Obstacle from './Obstacle'
 
 export default class extends Obstacle {
   constructor (game, player, x, y, frame, bulletFrame, options = { target: null, burst: false, homing: false }) {
-    super(game, player, x, y, frame)
+    super(game, player, x, y, 'chars_large', frame)
 
     this.weapon = this.game.plugins.add(Phaser.Weapon)
     this.weapon.trackSprite(this)

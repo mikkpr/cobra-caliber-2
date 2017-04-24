@@ -36,7 +36,7 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 16, this.game.world.centerY)
+    this.player = new Player(this.game, 16, this.game.world.centerY, { standing: true })
     this.world.add(this.player)
 
     // Player physics in this state.
@@ -63,12 +63,12 @@ export default class extends Phaser.State {
       // Hack for game start.
 
       var style = {
-        font: '50px Press Start 2P',
+        font: '35px Press Start 2P',
         fill: '#F5DEB3',
         backgroundColor: '#8B4513'
       }
 
-      this.title = this.game.add.text(0, -100, '  COBRA CALIBER 2  ', style)
+      this.title = this.game.add.text(0, -100, ' COBRA CALIBER 2 ', style)
       this.title.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2)
       this.title.strokeThickness = 5
 
@@ -76,12 +76,12 @@ export default class extends Phaser.State {
       this.title.x = this.game.width / 2 - this.title.width / 2
 
       style = {
-        font: '20px Press Start 2P',
+        font: '15px Press Start 2P',
         fill: '#F5DEB3',
         backgroundColor: '#8B4513'
       }
 
-      this.subtitle = this.game.add.text(0, -100, '  THERE CAN ONLY BE ONE MORE  ', style)
+      this.subtitle = this.game.add.text(0, -100, ' THERE CAN ONLY BE ONE MORE ', style)
       this.subtitle.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2)
       this.subtitle.strokeThickness = 5
 
@@ -93,51 +93,54 @@ export default class extends Phaser.State {
       this.player.x = this.game.world.centerX - this.game.world.centerX / 2
       this.player.y = this.game.world.height - 80
 
-      var LabelButton = function(game, x, y, key, label, callback, callbackContext, overFrame, outFrame, downFrame, upFrame) {
-        Phaser.Button.call(this, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame);    
-        // Style how you wish...    
-        this.style = { 'font': '40px Arial', 'fill': 'white', 'backgroundColor': 'magenta' };    
-        this.anchor.setTo( 0.5, 0.5 );    
-        this.label = new Phaser.Text(game, 0, 0, label, this.style);    
-        // Puts the label in the center of the button    
-        this.label.anchor.setTo( 0.5, 0.5 );
-        this.addChild(this.label);
-        this.setLabel( label );    
+      var LabelButton = function (game, x, y, key, label, callback, callbackContext, overFrame, outFrame, downFrame, upFrame) {
+        Phaser.Button.call(this, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame)
+        // Style how you wish...
+        this.style = { 'font': '30px Press Start 2P', 'fill': 'white', 'backgroundColor': '#8B4513' }
+        this.anchor.setTo(0.5, 0.5)
+        this.label = new Phaser.Text(game, 0, 0, label, this.style)
+        // Puts the label in the center of the button
+        this.label.anchor.setTo(0.5, 0.5)
+        this.addChild(this.label)
+        this.setLabel(label)
         // Adds button to game
-        game.add.existing(this); 
-      };
-      
-      LabelButton.prototype = Object.create(Phaser.Button.prototype);LabelButton.prototype.constructor = LabelButton;
-      LabelButton.prototype.setLabel = function(label) {
-          this.label.setText(label);
-      };
+        game.add.existing(this)
+      }
 
-      let y = this.subtitle.y + 150;
-      
-      this.startButton = new LabelButton(this.game, 0, y, null, " START GAME ", this.onStartClick, this, 1, 0, 2);
-      this.startButton.x = this.game.width / 2 - this.startButton.width / 2 + 10;
-      this.startButton.strokeThickness = 3;
+      LabelButton.prototype = Object.create(Phaser.Button.prototype); LabelButton.prototype.constructor = LabelButton
+      LabelButton.prototype.setLabel = function (label) {
+        this.label.setText(label)
+      }
 
+      let y = this.subtitle.y + 150
+      this.startButton = new LabelButton(this.game, 0, y, null, ' START GAME ', this.onStartClick, this, 1, 0, 2)
+      this.startButton.x = this.game.width / 2 - this.startButton.width / 2 + 10
+      this.startButton.strokeThickness = 5
     }
   }
 
   onStartClick () {
+    const { clickSound } = this.game.sound.repository
+    clickSound.play()
 
-    this.startButton.destroy();
+    this.startButton.destroy()
 
     var player = this.player
     var boss = this.boss
 
-    setTimeout(function() {
-      player.say('I have been looking for you for a long time, father', function () {
-        boss.say('I left you to die in that pit. How did you survive?', function () {
-          player.say('That should be the least of your concerns, old man', function () {
-            player.say('Time to die', function () {})
+    setTimeout(() => {
+      this.game.say('The year is 2007. The population of the Milky Way Galaxy is 400 billion', () => {
+        this.game.say('But there can only be one...', () => {
+          player.say('I have been looking for you for a long time, father', function () {
+            boss.say('I left you to die in that pit. How did you survive?', function () {
+              player.say('That should be the least of your concerns, old man', function () {
+                player.say('Time to die', function () {})
+              })
+            })
           })
         })
       })
     }, 600)
-    
   }
 
   update () {
@@ -165,7 +168,6 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
-    this.game.debug.text(this.game.deathCounter, 980, 20, '#00ff00')
   }
 
   shutdown () {

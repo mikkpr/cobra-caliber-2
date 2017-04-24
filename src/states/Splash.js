@@ -4,6 +4,7 @@ import CurvePlugin from '../plugins/Curve'
 import WebFont from 'webfontloader'
 
 import { centerGameObjects } from '../utils'
+import initSounds from '../sounds'
 
 export default class extends Phaser.State {
   init () {
@@ -21,8 +22,12 @@ export default class extends Phaser.State {
     this.load.audio('bigbeat', ['assets/audio/music/bigbeat.mp3', 'assets/audio/music/bigbeat.ogg'])
     this.load.audio('ambient', ['assets/audio/music/ambient.mp3', 'assets/audio/music/ambient.ogg'])
 
-    this.load.audio('shoot', ['assets/audio/effects/shoot_b.mp3'])
-    this.load.audio('explode', ['assets/audio/effects/explode_b.mp3'])
+    this.load.audio('shoot', ['assets/audio/effects/shoot_b.wav'])
+    this.load.audio('explode', ['assets/audio/effects/explode_b.wav'])
+    this.load.audio('step', ['assets/audio/effects/step.wav'])
+    this.load.audio('click', ['assets/audio/effects/click.wav'])
+    this.load.audio('impact', ['assets/audio/effects/impact.wav'])
+    this.load.audio('bulletmiss', ['assets/audio/effects/bulletmiss.wav'])
 
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_scifi', 'assets/images/lofi_scifi_chars_4x.png', 32, 32)
@@ -58,6 +63,7 @@ export default class extends Phaser.State {
 
   render () {
     if (this.fontsReady) {
+      this.game.sound.repository = initSounds(this.game)
       this.state.start('Fight', true, false, 'moon_fight')
     }
   }

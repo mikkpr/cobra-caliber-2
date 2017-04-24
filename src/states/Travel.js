@@ -34,7 +34,7 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 100, 256, { canTurn: false, isFalling: true })
+    this.player = new Player(this.game, 100, 256)
     this.world.add(this.player)
 
     // Player physics in this state.
@@ -47,18 +47,21 @@ export default class extends Phaser.State {
     this.player.body.onWorldBounds.add(this.hitWorldBounds, this)
 
     // Add turrets.
+    const turretSheet = 'chars_large'
+    const bulletSheet = 'chars_small'
     new Array( // Use new Array instead of [] so webpack does not get confused.
-      [ 600, 100, {target: this.player, burst: true}],
-      [ 7200, 100, {target: this.player, burst: false}],
-      [ 9600, 100, {target: this.player, burst: true}],
-      [10560, 300, {target: this.player, burst: true}],
-      [11200, 200, {target: this.player, burst: true}],
-      [11900, 366],
-      [11900, 32],
-      [14720, 100],
-      [20384, 256, {target: this.player, burst: true, homing: true}]
-    ).forEach(([x, y, options]) =>
-      this.world.add(new Turret(this.game, this.player, x, y, 80, 179, options)))
+      [ 600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [ 7200, 100, 80, 179, {target: this.player}],
+      [ 9600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [10560, 300, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [11200, 200, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [11900, 366, 80, 179],
+      [11900, 32, 80, 179],
+      [14720, 100, 80, 179],
+      [20384, 256, 80, 179, {target: this.player, bullets: 10, rate: 50, homing: true}]
+    ).forEach(([x, y, turretFrame, bulletFrame, options]) =>
+      this.world.add(new Turret(this.game, this.player, x, y,
+        turretSheet, turretFrame, bulletSheet, bulletFrame, options)))
 
     // Make the camera follow the sprite
     // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
@@ -74,7 +77,7 @@ export default class extends Phaser.State {
 
   render () {
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
-    this.game.debug.text(this.game.deathCounter, 980, 20, '#00ff00')
+    this.game.debug.text(`Alternate dimensions where you could have died: ${this.game.deathCounter}`, 500, 20, '#00ff00')
   }
 
   update () {

@@ -9,9 +9,6 @@ export default class extends Phaser.Sprite {
 
     this.anchor.setTo(0.5)
 
-    this.game.sound.textSound = this.game.sound.textSound || this.game.add.audio('step', 0.25)
-    this.game.sound.textSound.allowMultiple = true
-
     this.game.physics.arcade.enable(this)
 
     this.cursors = this.game.input.keyboard.createCursorKeys()
@@ -51,13 +48,11 @@ export default class extends Phaser.Sprite {
     var split = text.split('')
     var current = ''
 
-    var textField = this.text
-
     for (var i = 0; i < split.length; i++) {
       current += split[i]
 
       this.renderLetter(current, i, (n) => {
-        if (n == split.length - 1) {
+        if (n === split.length - 1) {
           setTimeout(() => {
             completed()
           }, 800)
@@ -67,19 +62,19 @@ export default class extends Phaser.Sprite {
   }
 
   renderLetter (text, n, completed) {
-    var textField = this.text
+    const textField = this.text
+    const { textSound } = this.game.sound.repository
+
     setTimeout(() => {
       textField.setText(text)
-      this.game.sound.textSound.play()
+      textSound.play()
       completed(n)
     }, 70 * n)    
   }
 
   resetWithAnimation () {
-    this.game.sound.explodeSound = this.game.sound.explodeSound || this.game.add.audio('explode', 0.25)
-    this.game.sound.explodeSound.allowMultiple = true
-
-    var duration = 500
+    const duration = 500
+    const { explodeSound } = this.game.sound.repository
 
     var x = this.x
     var y = this.y
@@ -94,7 +89,8 @@ export default class extends Phaser.Sprite {
     this.emitter.maxParticleSpeed.set(0, 0)
     this.emitter.gravity = 0
     this.emitter.start(false, duration, 10, 4)
-    this.game.sound.explodeSound.play()
+
+    explodeSound.play()
 
     var player = this
     player.kill()
@@ -106,7 +102,7 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-    if (this.text != undefined) {
+    if (this.text !== undefined) {
       this.text.x = Math.floor(this.x - this.width / 2)
       this.text.y = Math.floor(this.y - 1.5 * this.height)
     }

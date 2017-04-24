@@ -17,14 +17,12 @@ export default class extends Obstacle {
 
     this.homing = options.homing
     this.target = options.target
-
-    this.game.sound.shootSound = this.game.sound.shootSound || this.game.add.audio('shoot', 0.5)
-    this.game.sound.shootSound.allowMultiple = true
-
   }
 
   update () {
     super.update()
+
+    const { shootSound } = this.game.sound.repository
 
     this.game.physics.arcade.overlap(this.player, this.weapon.bullets, this.onCollision, null, this)
     if (this.target != null && this.homing) {
@@ -41,7 +39,7 @@ export default class extends Obstacle {
       fired = this.weapon.fireAngle += 30
     }
 
-    if (fired) { this.game.sound.shootSound.play() }
+    if (fired) { shootSound.play() }
   }
 
   home (bullet) {

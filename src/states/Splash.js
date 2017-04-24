@@ -4,6 +4,7 @@ import CurvePlugin from '../plugins/Curve'
 import WebFont from 'webfontloader'
 
 import { centerGameObjects } from '../utils'
+import initSounds from '../sounds'
 
 export default class extends Phaser.State {
   init () {
@@ -61,6 +62,7 @@ export default class extends Phaser.State {
 
   render () {
     if (this.fontsReady) {
+      this.game.sound.repository = initSounds(this.game)
       this.state.start('Fight', true, false, 'moon_fight')
     }
   }

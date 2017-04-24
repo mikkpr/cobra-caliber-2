@@ -8,9 +8,6 @@ export default class extends Phaser.Sprite {
 
     this.anchor.setTo(0.5)
 
-    this.game.sound.textSound = this.game.sound.textSound || this.game.add.audio('step', 0.25)
-    this.game.sound.textSound.allowMultiple = true
-
     this.game.physics.arcade.enable(this)
     this.body.drag.x = this.body.drag.y = 500
   }
@@ -31,13 +28,11 @@ export default class extends Phaser.Sprite {
     var split = text.split('')
     var current = ''
 
-    var textField = this.text
-
     for (var i = 0; i < split.length; i++) {
       current += split[i]
 
       this.renderLetter(current, i, (n) => {
-        if (n == split.length - 1) {
+        if (n === split.length - 1) {
           setTimeout(() => {
             completed()
           }, 800)
@@ -48,9 +43,14 @@ export default class extends Phaser.Sprite {
 
   renderLetter (text, n, completed) {
     var textField = this.text
+
+    const { textSound } = this.game.sound.repository
+
     setTimeout(() => {
       textField.setText(text)
-      this.game.sound.textSound.play()
+
+      textSound.play()
+
       completed(n)
     }, 70 * n)    
   }
@@ -58,20 +58,23 @@ export default class extends Phaser.Sprite {
   update () {
     this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
 
-    if (this.text != undefined) {
+    if (this.text !== undefined) {
       this.text.x = Math.floor(this.x - this.width / 2)
       this.text.y = Math.floor(this.y - this.height)
     }
   }
 
   onCollision () {
+    this.body.checkCollision.none = true
+
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
+    const { impactSound } = this.game.sound.repository
 
     if (velocity > 300) {
       var state = this.game.state
-      this.game.sound.impactSound = this.game.sound.impactSound || this.game.add.audio('impact', 0.45)
-      this.game.sound.allowMultiple = false
-      if (!this.game.sound.impactSound.isPlaying) { this.game.sound.impactSound.play() }
+
+      if (!impactSound.isPlaying) { impactSound.play() }
+
       this.flyAway(this, 0, 20, () => { state.start('Travel', true, false, 'earth_fight') })
     }
   }

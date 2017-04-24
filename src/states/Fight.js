@@ -121,8 +121,8 @@ export default class extends Phaser.State {
   }
 
   onStartClick () {
-    this.game.sound.clickSound = this.game.sound.clickSound || this.game.add.audio('click', 0.25)
-    this.game.sound.clickSound.play()
+    const { clickSound } = this.game.sound.repository
+    clickSound.play()
 
     this.startButton.destroy()
 

@@ -79,7 +79,8 @@ export default class extends Phaser.State {
         ).forEach(([x, y, turretFrame, bulletFrame, options]) => {
           this.turretGroup.add(new Turret(this.game, x, y,
             turretSheetEarth, turretFrame, bulletSheetEarth, bulletFrame, options))
-        })
+        }) 
+        break
         case 'mars_travel':
         const turretSheetMars = 'ships_2_large'
         const bulletSheetMars = 'environment_sprites'
@@ -96,6 +97,7 @@ export default class extends Phaser.State {
           [11200, 200, 55, 163, {target: this.player, bullets: 10, rate: 50}],
           [11900, 366, 55, 161, {rate: 400, cone: 0, speed: 80}],
           [11900, 32, 55, 162, {rate: 400, cone: 0, speed: 80}],
+          [18720, 280, 55, 162, {target:this.player, bullets: 10, rate: 200, cone: 0, speed: 400}],
           [20672, 256, 42, 160, {target: this.player, bullets: 12, rate: 40}],
           [24864, 160, 44, 160, {target: this.player, bullets: 12, rate: 40}],
           [24992, 160, 44, 160, {target: this.player, bullets: 12, rate: 40}]

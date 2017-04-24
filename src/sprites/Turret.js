@@ -20,7 +20,7 @@ export default class extends Obstacle {
 
     const { bulletMiss } = this.game.sound.repository
     this.weapon.onKill = new Phaser.Signal()
-    this.weapon.onKill.add(() => bulletMiss.play())
+    this.weapon.onKill.add((bullet) => { if (bullet.inCamera) { bulletMiss.play() }})
   }
 
   update () {

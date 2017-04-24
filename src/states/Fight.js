@@ -25,16 +25,16 @@ export default class extends Phaser.State {
     this.map = this.game.add.tilemap(this.tilemap)
     this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
 
-    // Add both the background and ground layers. We won't be doing anything
-    // with the GroundLayer though
-    this.backgroundLayer = this.map.createLayer('backgroundlayer')
-
     this.bg1 = this.game.add.tileSprite(0,
       0,
-      this.game.world.width,
-      this.game.world.height,
+      this.game.width,
+      this.game.height,
       'bg1'
     )
+    
+    // Add both the background and ground layers. We won't be doing anything
+    // with the GroundLayer though
+    this.backgroundLayer = this.map.createLayer('backgroundlayer').resizeWorld()
 
     // Change the world size to match the size of this layer
     this.groundLayer = this.map.createLayer('groundlayer')
@@ -103,6 +103,8 @@ export default class extends Phaser.State {
   }
 
   update () {
+    this.bg1.position.x = this.game.camera.position.x
+    this.bg1.position.y = this.game.camera.position.y
     this.bg1.tilePosition.x -= this.player.body.velocity.x / 1000.0
 
     // Make the sprite collide with the ground layer

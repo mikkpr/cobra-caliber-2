@@ -13,11 +13,11 @@ export default class extends Phaser.Sprite {
   }
 
   say (text, completed) {
-    
+
     var style = { font: "15px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
     this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
-    
+
     this.renderByLetter(text, () => {
       this.text.destroy()
       completed()
@@ -52,7 +52,7 @@ export default class extends Phaser.Sprite {
       textSound.play()
 
       completed(n)
-    }, 70 * n)    
+    }, 70 * n)
   }
 
   update () {
@@ -67,7 +67,7 @@ export default class extends Phaser.Sprite {
 
   onCollision () {
     this.body.checkCollision.none = true
-    
+
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
     const { impactSound } = this.game.sound.repository
 
@@ -77,8 +77,8 @@ export default class extends Phaser.Sprite {
 
       if (!impactSound.isPlaying) { impactSound.play() }
 
-      this.onBossDeath(this, 0, 20, () => { 
-          
+      this.onBossDeath(this, 0, 20, () => {
+
           if (this.isEarthFight()) {
             this.player.controlsEnabled = false
             this.player.say("Hmm... Looks like he was just a hologram", () => {
@@ -118,8 +118,9 @@ export default class extends Phaser.Sprite {
   }
 
   onBossDeath (context, counter, angle, completed) {
-    
+
     if (this.isEarthFight()) {
+
       this.fadeOut(completed)
     } else {
       this.flyAway(context, counter, angle, completed)
@@ -127,7 +128,7 @@ export default class extends Phaser.Sprite {
   }
 
   fadeOut(completed) {
-    
+
     const duration = 2000;
 
     game.add.tween(this).to( { alpha: 0 }, duration, Phaser.Easing.Linear.None, true);
@@ -158,7 +159,7 @@ export default class extends Phaser.Sprite {
   }
 
   movePlayerOffMap (completed) {
-    
+
     this.game.camera.target = null
     this.player.body.gravity.x = 10000
     this.player.scale.setTo(1, 1)
@@ -166,7 +167,6 @@ export default class extends Phaser.Sprite {
 
     setTimeout(() => { completed() }, 3000)
   }
-
 }
 
 

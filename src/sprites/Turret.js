@@ -32,7 +32,8 @@ export default class extends Obstacle {
       this.weapon.forEach(this.home, this)
     }
 
-    if (!this.inCamera) {
+    // Targeting turrets do not prefire.
+    if (this.target != null && !this.inCamera) {
       return
     }
     let fired
@@ -42,7 +43,7 @@ export default class extends Obstacle {
       fired = this.weapon.fireAngle += 30
     }
 
-    if (fired) { shootSound.play() }
+    if (fired && this.inCamera) { shootSound.play() }
   }
 
   home (bullet) {

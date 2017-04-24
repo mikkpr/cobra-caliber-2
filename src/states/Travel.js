@@ -40,7 +40,7 @@ export default class extends Phaser.State {
       this.game.world.height,
       'bg1'
     )
-  
+
     this.map.createLayer('backgroundlayer').resizeWorld()
 
     this.groundLayer = this.map.createLayer('groundlayer')
@@ -99,6 +99,8 @@ export default class extends Phaser.State {
   }
 
   update () {
+    this.bg1.position.x = this.game.camera.position.x
+    this.bg1.position.y = this.game.camera.position.y
     this.bg1.tilePosition.x -= this.player.body.velocity.x / 1500.0
 
     // Player collides with ground and turrets.

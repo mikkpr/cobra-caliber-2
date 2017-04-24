@@ -50,15 +50,15 @@ export default class extends Phaser.State {
     const turretSheet = 'chars_large'
     const bulletSheet = 'chars_small'
     new Array( // Use new Array instead of [] so webpack does not get confused.
-      [  600, 100, 80, 179, {target: this.player, burst: true}],
-      [ 7200, 100, 80, 179, {target: this.player, burst: false}],
-      [ 9600, 100, 80, 179, {target: this.player, burst: true}],
-      [10560, 300, 80, 179, {target: this.player, burst: true}],
-      [11200, 200, 80, 179, {target: this.player, burst: true}],
+      [  600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [ 7200, 100, 80, 179, {target: this.player}],
+      [ 9600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [10560, 300, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [11200, 200, 80, 179, {target: this.player, bullets: 10, rate: 50}],
       [11900, 366, 80, 179],
       [11900,  32, 80, 179],
       [14720, 100, 80, 179],
-      [20384, 256, 80, 179, {target: this.player, burst: true, homing: true}]
+      [20384, 256, 80, 179, {target: this.player, bullets: 10, rate: 50, homing: true}]
     ).forEach(([x, y, turretFrame, bulletFrame, options]) =>
       this.world.add(new Turret(this.game, this.player, x, y,
         turretSheet, turretFrame, bulletSheet, bulletFrame, options)))

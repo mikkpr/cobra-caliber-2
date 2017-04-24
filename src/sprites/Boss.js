@@ -79,11 +79,20 @@ export default class extends Phaser.Sprite {
 
       this.onBossDeath(this, 0, 20, () => { 
           
-          if (this.game.tilemap === "moon_fight") {
-            
+          if (this.isEarthFight()) {
+            this.player.controlsEnabled = false
             this.player.say("Hmm... Looks like he was just a hologram", () => {
               this.movePlayerOffMap()
             })
+          } else if (this.isMoonFight()) {
+            this.player.controlsEnabled = false
+            this.player.say("After you, there's only room for one...", () => {
+              this.player.say("more!", () => {
+                this.movePlayerOffMap(() => {
+                  this.game.nextState()
+                })
+              });
+            });
           } else {
             this.game.nextState()
           }
@@ -99,9 +108,17 @@ export default class extends Phaser.Sprite {
 
   }
 
+  isEarthFight () {
+    return this.game.tilemap === "earth_fight"
+  }
+
+  isMoonFight () {
+    return this.game.tilemap === "moon_fight"
+  }
+
   onBossDeath (context, counter, angle, completed) {
     
-    if(this.game.tilemap === "moon_fight") {
+    if (this.isEarthFight()) {
       this.fadeOut(completed)
     } else {
       this.flyAway(context, counter, angle, completed)
@@ -139,13 +156,14 @@ export default class extends Phaser.Sprite {
     }
   }
 
-  movePlayerOffMap () {
-    this.game.nextState()
+  movePlayerOffMap (completed) {
+    
     this.game.camera.target = null
-    this.player.controlsEnabled = false
     this.player.body.gravity.x = 10000
     this.player.scale.setTo(1, 1)
     this.player.body.collideWorldBounds = false
+
+    setTimeout(() => { completed() }, 1000)
   }
 
 }

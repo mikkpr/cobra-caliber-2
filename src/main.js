@@ -31,7 +31,7 @@ class Game extends Phaser.Game {
       ['Fight', 'earth_fight'],
       ['Travel', 'mars_travel'],
       ['Fight', 'mars_fight']
-      
+    
     ]
     this.nextState()
 

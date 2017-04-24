@@ -96,7 +96,36 @@ export default class extends Phaser.State {
         })
       })
     } else if (this.tilemap === 'mars_fight') {
-      
+
+      this.player.controlsEnabled = false
+
+      this.player.say("You look scared.", () => {
+        this.boss.say("No, it's just the moons.", () => {
+          this.player.say("I didn't know you knew astronomy.", () => {
+            this.player.say("But I am a master of ass...", () => {
+              this.player.say("kickonomy!", () => {
+                this.boss.say("I can't believe you didn’t die!", () => {
+                  this.boss.say("There were " + this.game.deathCounter + " times I was sure you wouldn’t make it.", () => {
+                    this.player.say("Aren't we immortal, though?", () => {
+                      this.boss.say("Your face is immortal!", () => {
+                        this.player.say("That's what she said!", () => {
+                          this.boss.say("...", () => {
+                            this.player.say("...", () => {
+                              this.player.say("TASTE MY DECAPI-DROPKICK!", () => {
+                                this.player.controlsEnabled = true
+                              })
+                            })
+                          })
+                        })
+                      })
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })
+      })
     }
 
   }

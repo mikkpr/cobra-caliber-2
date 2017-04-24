@@ -5,6 +5,8 @@ export default class extends Phaser.Sprite {
     const spriteIdx = (options.standing || false) ? 208 : 220
     super(game, x, y, 'chars_scifi', spriteIdx)
 
+    this.controlsEnabled = true
+    
     this.anchor.setTo(0.5)
 
     this.game.physics.arcade.enable(this)

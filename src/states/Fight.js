@@ -9,7 +9,7 @@ export default class extends Phaser.State {
   init (tilemap) {
     this.tilemap = tilemap
     this.game.tilemap = tilemap
-    
+
     if (tilemap === 'earth_fight') {
       this.stage.backgroundColor = '#3598db'
     }
@@ -135,6 +135,10 @@ export default class extends Phaser.State {
     this.game.physics.arcade.collide(this.player, this.groundLayer)
     this.game.physics.arcade.collide(this.boss, this.groundLayer)
 
+    if (!this.player.controlsEnabled) {
+      return
+    }
+    
     // Jump when on the floor.
     if (this.player.isMovingUp() && this.player.body.onFloor()) {
       this.player.body.velocity.y = -800

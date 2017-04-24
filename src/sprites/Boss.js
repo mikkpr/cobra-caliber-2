@@ -142,6 +142,7 @@ export default class extends Phaser.Sprite {
   movePlayerOffMap () {
     this.game.nextState()
     this.game.camera.target = null
+    this.player.controlsEnabled = false
     this.player.body.gravity.x = 10000
     this.player.scale.setTo(1, 1)
     this.player.body.collideWorldBounds = false

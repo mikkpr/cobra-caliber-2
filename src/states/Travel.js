@@ -85,20 +85,20 @@ export default class extends Phaser.State {
         const bulletSheetMars = 'environment_sprites'
         new Array( // Use new Array instead of [] so webpack does not get confused.
           [ 500, 90, 44, 160, {target: this.player, bullets: 4, rate: 20, cone: 0}],
-          [ 3264, 160, 55, 161, {bullets: 25, rate: 200, speed: 100}],
-          [ 3800, 160, 55, 162, {bullets: 25, rate: 200, speed: 100}],
-          [ 4200, 160, 55, 163, {bullets: 25, rate: 200, speed: 100}],
-          [ 4600, 160, 55, 161, {bullets: 25, rate: 200, speed: 100}],
+          [ 3264, 160, 55, 161, {bullets: 10, rate: 200, speed: 100}],
+          [ 3800, 160, 55, 162, {bullets: 10, rate: 200, speed: 100}],
+          [ 4200, 160, 55, 163, {bullets: 10, rate: 200, speed: 100}],
+          [ 4600, 160, 55, 161, {bullets: 10, rate: 200, speed: 100}],
           [ 5536, 32, 53, 161, {target: this.player, bullets: 4, rate: 20, cone: 20, speed: 400}],
           [ 5536, 128, 53, 161, {target: this.player, bullets: 4, rate: 20, cone: 20, speed: 400}],
           [ 6000, 186, 53, 162, {target: this.player, bullets: 4, rate: 20, cone: 20, speed: 400}],
-          [ 9600, 100, 55, 164, {target: this.player, bullets: 10, rate: 50, speed: 400, cone: 0}],
-          [10560, 300, 55, 164, {target: this.player, bullets: 10, rate: 50, speed: 400, cone: 0}],
-          [11200, 200, 55, 164, {target: this.player, bullets: 10, rate: 50}],
-          [11900, 366, 55, 164, {rate: 80, cone: 0}],
-          [11900, 32, 55, 164, {rate: 80, cone: 0}],
-          [14720, 100, 18, 164],
-          [20672, 270, 18, 164, {target: this.player, bullets: 12, rate: 40, homing: true}]
+          [ 9600, 100, 55, 162, {target: this.player, bullets: 10, rate: 50, speed: 400, cone: 0}],
+          [11200, 200, 55, 163, {target: this.player, bullets: 10, rate: 50}],
+          [11900, 366, 55, 161, {rate: 400, cone: 0, speed: 80}],
+          [11900, 32, 55, 162, {rate: 400, cone: 0, speed: 80}],
+          [20672, 256, 42, 160, {target: this.player, bullets: 12, rate: 40}],
+          [24864, 160, 44, 160, {target: this.player, bullets: 12, rate: 40}],
+          [24992, 160, 44, 160, {target: this.player, bullets: 12, rate: 40}]
         ).forEach(([x, y, turretFrame, bulletFrame, options]) => {
           this.turretGroup.add(new Turret(this.game, x, y,
             turretSheetMars, turretFrame, bulletSheetMars, bulletFrame, options))

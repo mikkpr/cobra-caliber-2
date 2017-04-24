@@ -41,6 +41,7 @@ export default class extends Phaser.State {
     this.load.image('expl2', 'assets/images/expl2.png')
 
     this.load.image('bg1', 'assets/images/earth_furthestlayer.png')
+    this.load.image('bg2', 'assets/images/mars_furthestlayer.png')
 
     this.load.tilemap('moon_fight', 'assets/tilemaps/moon_fight.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('earth_fight', 'assets/tilemaps/earth_fight.json', null, Phaser.Tilemap.TILED_JSON)

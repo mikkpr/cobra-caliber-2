@@ -11,40 +11,134 @@ export default class extends Phaser.Sprite {
     this.game.physics.arcade.enable(this)
     this.body.drag.x = this.body.drag.y = 500
   }
-  
-  say (text, completed) {
-    var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
-    this.text = this.game.add.text(0, 0, text, style);
-    this.text.anchor.set(0.5);
-    
-    var context = this
 
-    setTimeout(function() {
-    	context.text.destroy()
-    	completed()
-    }, 2000)
+  say (text, completed) {
+
+    var style = { font: "15px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
+    this.text = this.game.add.text(0, 0, "", style);
+    this.text.anchor.set(0.5);
+
+    this.renderByLetter(text, () => {
+      this.text.destroy()
+      completed()
+    })
+  }
+
+  renderByLetter (text, completed) {
+    var split = text.split('')
+    var current = ''
+
+    for (var i = 0; i < split.length; i++) {
+      current += split[i]
+
+      this.renderLetter(current, i, (n) => {
+        if (n === split.length - 1) {
+          setTimeout(() => {
+            completed()
+          }, 800)
+        }
+      })
+    }
+  }
+
+  renderLetter (text, n, completed) {
+    var textField = this.text
+
+    const { textSound } = this.game.sound.repository
+
+    setTimeout(() => {
+      textField.setText(text)
+
+      textSound.play()
+
+      completed(n)
+    }, 70 * n)
   }
 
   update () {
+
     this.game.physics.arcade.overlap(this.player, this, this.onCollision, null, this)
 
-    if (this.text != undefined) {
-      this.text.x = Math.floor(this.x - this.width / 2);
-      this.text.y = Math.floor(this.y - this.height);
+    if (this.text !== undefined) {
+      this.text.x = Math.floor(this.x - this.width / 2)
+      this.text.y = Math.floor(this.y - this.height)
     }
-
   }
 
   onCollision () {
-    var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
+    this.body.checkCollision.none = true
 
-    if (velocity > 600) {
+    var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
+    const { impactSound } = this.game.sound.repository
+
+    if (Math.abs(velocity) > 300) {
+
       var state = this.game.state
-      this.flyAway(this, 0, 20, function () { state.start('Travel', true, false, 'earth_fight') })
+
+      if (!impactSound.isPlaying) { impactSound.play() }
+
+      this.onBossDeath(this, 0, 20, () => {
+
+          if (this.isEarthFight()) {
+            this.player.controlsEnabled = false
+            this.player.say("Hmm... Apparently he was indeed just a hologram", () => {
+              this.movePlayerOffMap(() => {
+                this.game.nextState()
+              })
+            })
+          } else if (this.isMoonFight()) {
+            this.player.controlsEnabled = false
+            this.player.say("After you, there's only room for one...", () => {
+              this.player.say("more!", () => {
+                this.game.addTitle()
+                this.movePlayerOffMap(() => {
+                  this.game.nextState()
+                })
+              });
+            });
+          } else {
+            this.game.nextState()
+          }
+
+      })
+
+    } else {
+      console.log(velocity)
+      this.player.say("No, I remember hitting him way stronger than this", () => {
+        this.body.checkCollision.none = false
+      })
+    }
+
+  }
+
+  isEarthFight () {
+    return this.game.tilemap === "earth_fight"
+  }
+
+  isMoonFight () {
+    return this.game.tilemap === "moon_fight"
+  }
+
+  onBossDeath (context, counter, angle, completed) {
+
+    if (this.isEarthFight()) {
+
+      this.fadeOut(completed)
+    } else {
+      this.flyAway(context, counter, angle, completed)
     }
   }
 
+  fadeOut(completed) {
+
+    const duration = 2000;
+
+    game.add.tween(this).to( { alpha: 0 }, duration, Phaser.Easing.Linear.None, true);
+    setTimeout(() => { completed() }, duration)
+  }
+
   flyAway (context, counter, angle, completed) {
+
     context.body.velocity.y = -200
     context.body.velocity.x = 100
 
@@ -58,11 +152,27 @@ export default class extends Phaser.Sprite {
     if (counter < 30) {
       counter++
       angle += 30
-      setTimeout(function () { context.flyAway(context, counter, angle, completed) }, 150)
+      setTimeout(() => { context.flyAway(context, counter, angle, completed) }, 150)
     } else {
-      setTimeout(function () {
+      setTimeout(() => {
         completed()
       }, 200)
     }
   }
+
+  movePlayerOffMap (completed) {
+
+    this.game.camera.target = null
+    this.player.body.gravity.x = 10000
+    this.player.scale.setTo(1, 1)
+    this.player.body.collideWorldBounds = false
+
+    setTimeout(() => { completed() }, 3000)
+  }
 }
+
+
+
+
+
+

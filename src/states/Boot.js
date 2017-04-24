@@ -13,6 +13,6 @@ export default class extends Phaser.State {
   }
 
   render () {
-    this.state.start('Splash')
+    this.game.nextState()
   }
 }

@@ -75,7 +75,7 @@ export default class extends Phaser.State {
       [14720, 100, 80, 179],
       [20384, 256, 80, 179, {target: this.player, bullets: 10, rate: 50, homing: true}]
     ).forEach(([x, y, turretFrame, bulletFrame, options]) =>
-      this.world.add(new Turret(this.game, this.player, x, y,
+      this.world.add(new Turret(this.game, x, y,
         turretSheet, turretFrame, bulletSheet, bulletFrame, options)))
 
     // Make the camera follow the sprite

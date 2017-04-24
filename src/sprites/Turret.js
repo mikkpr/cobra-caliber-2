@@ -3,10 +3,10 @@ import Phaser from 'phaser'
 import Obstacle from './Obstacle'
 
 export default class extends Obstacle {
-  constructor (game, player, x, y, turretSheet, turretFrame, bulletSheet, bulletFrame, options = {
+  constructor (game, x, y, turretSheet, turretFrame, bulletSheet, bulletFrame, options = {
     target: null, bullets: 50, rate: 200, speed: 600, cone: 20, homing: false
   }) {
-    super(game, player, x, y, turretSheet, turretFrame)
+    super(game, x, y, turretSheet, turretFrame)
 
     this.weapon = this.game.plugins.add(Phaser.Weapon)
     this.weapon.trackSprite(this)
@@ -23,11 +23,6 @@ export default class extends Obstacle {
     super.update()
 
     const { shootSound } = this.game.sound.repository
-
-    // Deaggro on target hit.
-    if (this.target != null) {
-      this.game.physics.arcade.overlap(this.target, this.weapon.bullets, this.onCollision, null, this)
-    }
 
     if (this.target != null && this.homing) {
       this.weapon.forEach(this.home, this)
@@ -50,8 +45,7 @@ export default class extends Obstacle {
     this.game.physics.arcade.accelerateToObject(bullet, this.target, 1000)
   }
 
-  onCollision () {
-    super.onCollision()
+  deaggro () {
     if (this.target != null) {
       const saved = this.target
       this.target = null

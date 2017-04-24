@@ -121,6 +121,14 @@ export default class extends Phaser.State {
     this.game.scale.refresh()
 
     this.game.time.advancedTiming = true
+
+    const world = this.tilemap === 'earth_travel' ? 'earth' : 'mars'
+    this.game.levelTimes[world].start = +(new Date())
+  }
+
+  updateTime () {
+    const world = this.tilemap === 'earth_travel' ? 'earth' : 'mars'
+    this.game.levelTimes[world].stop = +(new Date())
   }
 
   render () {
@@ -130,11 +138,17 @@ export default class extends Phaser.State {
     this.pulse.drawRect(this.game.camera.x, this.game.camera.y, this.game.width, this.game.height)
     this.pulse.endFill()
 
+
+    const world = this.tilemap === 'earth_travel' ? 'earth' : 'mars'
+
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
+    this.game.debug.text((this.game.levelTimes[world].stop - this.game.levelTimes[world].start) / 1000.0, 10, 50, '#00ff00')
     this.game.debug.text(`Alternate dimensions where you could have died: ${this.game.deathCounter}`, 500, 20, '#00ff00')
   }
 
   update () {
+    this.updateTime()
+
     this.background.position.x = this.game.camera.position.x
     this.background.position.y = this.game.camera.position.y
     this.background.tilePosition.x -= this.player.body.velocity.x / 1500.0
@@ -183,6 +197,8 @@ export default class extends Phaser.State {
   }
 
   shutdown () {
+    const world = this.tilemap === 'earth_travel' ? 'earth' : 'mars'
+    this.game.levelTimes[world].stop = +(new Date())
     this.disableMusic()
   }
 

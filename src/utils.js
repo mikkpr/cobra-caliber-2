@@ -6,20 +6,49 @@ export const centerGameObjects = objects => {
   )
 }
 
-export const enableMusicForState = (trackName, state) => {
-  const music = state.game.add.audio(trackName, 0, true, true)
-  music.play()
+export const enableMusicForState = (state) => {
+  let Idx = 0
+  
+  const synthwave = state.game.add.audio('synthwave', 0, true, true)
+  synthwave.allowMultiple = true
+  const bigbeat = state.game.add.audio('bigbeat', 0, true, true)
+  bigbeat.allowMultiple = true
+  const techno = state.game.add.audio('techno', 0, true, true)
+  techno.allowMultiple = true
+  const ambient = state.game.add.audio('ambient', 0, true, true)
+  ambient.allowMultiple = true
+
+  const tracks = [
+    synthwave,
+    bigbeat,
+    techno,
+    ambient
+  ]
+
+  tracks[Idx].play()
+
 
   const muteButton = state.game.input.keyboard.addKey(Phaser.Keyboard.M)
   muteButton.onDown.add(() => {
-    if (music.volume > 0) {
-      music.volume = 0
+    if (tracks[Idx].volume > 0) {
+      tracks[Idx].volume = 0
     } else {
-      music.volume = 0.35
+      tracks[Idx].volume = 0.35
     }
   }, state)
 
+  const nextSongButton = state.game.input.keyboard.addKey(Phaser.Keyboard.N)
+  nextSongButton.onDown.add(() => {
+    tracks.map(t => { t.stop(); t.volume = 0.35; } )
+    if (Idx === tracks.length - 1) {
+      Idx = 0
+    } else {
+      Idx += 1
+    }
+    tracks[Idx].play()
+  })
+
   return () => {
-    music.stop()
+    tracks[Idx].stop()
   }
 }

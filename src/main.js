@@ -39,6 +39,11 @@ class Game extends Phaser.Game {
     this.nextState()
 
     this.deathCounter = 0
+
+    this.levelTimes = {
+      earth: { start: null, stop: null },
+      mars: { start: null, stop: null }
+    }
   }
 
   nextState () {

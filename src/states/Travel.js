@@ -107,6 +107,11 @@ export default class extends Phaser.State {
         })
     }
 
+    // Full-screen pulse effect alpha.
+    this.pulse = this.game.add.graphics()
+    this.pulseAlpha = 0
+    this.game.add.tween(this).to({ pulseAlpha: 0.25 }, 200, null, true, 0, -1, true)
+
     // Make the camera follow the sprite
     this.game.camera.follow(this.player, null, 0.5, 0)
     this.game.camera.deadzone = new Phaser.Rectangle(this.game.camera.width / 3, 0, 10, this.game.camera.height)
@@ -119,6 +124,12 @@ export default class extends Phaser.State {
   }
 
   render () {
+    // Draw full-screen pulse effect.
+    this.pulse.clear()
+    this.pulse.beginFill(0xc32aff, this.pulseAlpha)
+    this.pulse.drawRect(0, 0, this.game.width, this.game.height)
+    this.pulse.endFill()
+
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')
     this.game.debug.text(`Alternate dimensions where you could have died: ${this.game.deathCounter}`, 500, 20, '#00ff00')
   }

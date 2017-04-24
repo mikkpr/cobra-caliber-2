@@ -27,9 +27,23 @@ export default class extends Phaser.State {
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
     this.backgroundLayer = this.map.createLayer('backgroundlayer')
-    this.groundLayer = this.map.createLayer('groundlayer')
+
+    this.bg1 = this.game.add.tileSprite(0,
+      0,
+      this.game.world.width,
+      this.game.world.height,
+      'bg1'
+    )
+
+    this.bg2 = this.game.add.tileSprite(0,
+      0,
+      this.game.world.width,
+      this.game.world.height,
+      'bg2'
+    )
 
     // Change the world size to match the size of this layer
+    this.groundLayer = this.map.createLayer('groundlayer')
     this.groundLayer.resizeWorld()
 
     // Before you can use the collide function you need to set what tiles can collide
@@ -144,6 +158,9 @@ export default class extends Phaser.State {
   }
 
   update () {
+    this.bg1.tilePosition.x -= this.player.body.velocity.x / 1000.0
+    this.bg2.tilePosition.x -= this.player.body.velocity.x / 700.0
+    
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.player, this.groundLayer)
     this.game.physics.arcade.collide(this.boss, this.groundLayer)

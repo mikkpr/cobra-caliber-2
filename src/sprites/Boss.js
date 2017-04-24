@@ -71,7 +71,7 @@ export default class extends Phaser.Sprite {
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
     const { impactSound } = this.game.sound.repository
 
-    if (Math.abs(velocity) > 471) {
+    if (Math.abs(velocity) > 300) {
 
       var state = this.game.state
 

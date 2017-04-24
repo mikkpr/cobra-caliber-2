@@ -83,9 +83,8 @@ export default class extends Phaser.State {
     }
 
     // Make the camera follow the sprite
-    // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
-    // this.game.camera.follow(this.player)
-    this.game.camera.setPosition(0, 0)
+    this.game.camera.follow(this.player, null, 0.5, 0)
+    this.game.camera.deadzone = new Phaser.Rectangle(this.game.camera.width / 3, 0, 10, this.game.camera.height)
 
     this.game.scale.pageAlignHorizontally = true
     this.game.scale.pageAlignVertically = true
@@ -101,8 +100,6 @@ export default class extends Phaser.State {
 
   update () {
     this.bg1.tilePosition.x -= this.player.body.velocity.x / 1500.0
-
-    this.game.camera.x = this.player.x - this.game.width / 3 // Possibly go to quarter distance when turrets are fixed
 
     // Player collides with ground and turrets.
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)

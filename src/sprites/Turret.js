@@ -17,6 +17,10 @@ export default class extends Obstacle {
 
     this.homing = options.homing
     this.target = options.target
+
+    const { bulletMiss } = this.game.sound.repository
+    this.weapon.onKill = new Phaser.Signal()
+    this.weapon.onKill.add(() => bulletMiss.play())
   }
 
   update () {

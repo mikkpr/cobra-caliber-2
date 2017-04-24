@@ -26,10 +26,8 @@ export default class extends Phaser.State {
     this.map.addTilesetImage('lofi_interface_4x', 'tiles_interface')
     this.map.addTilesetImage('lofi_scifi_ships_2_4x', 'tiles_ships_2')
 
-    // Add both the background and ground layers. We won't be doing anything
-    // with the GroundLayer though
-    this.backgroundLayer = this.map.createLayer('backgroundlayer')
-    this.backgroundLayer.resizeWorld()
+    // Add both the background and ground layers.
+    this.map.createLayer('backgroundlayer').resizeWorld()
 
     this.bg1 = this.game.add.tileSprite(0,
       0,
@@ -61,7 +59,9 @@ export default class extends Phaser.State {
     this.player.body.onWorldBounds = new Phaser.Signal()
     this.player.body.onWorldBounds.add(this.hitWorldBounds, this)
 
+
     // Add turrets.
+    this.turretGroup = this.game.add.group()
     const turretSheet = 'chars_large'
     const bulletSheet = 'chars_small'
     new Array( // Use new Array instead of [] so webpack does not get confused.
@@ -74,9 +74,10 @@ export default class extends Phaser.State {
       [11900, 32, 80, 179],
       [14720, 100, 80, 179],
       [20384, 256, 80, 179, {target: this.player, bullets: 10, rate: 50, homing: true}]
-    ).forEach(([x, y, turretFrame, bulletFrame, options]) =>
-      this.world.add(new Turret(this.game, x, y,
-        turretSheet, turretFrame, bulletSheet, bulletFrame, options)))
+    ).forEach(([x, y, turretFrame, bulletFrame, options]) => {
+      this.turretGroup.add(new Turret(this.game, x, y,
+        turretSheet, turretFrame, bulletSheet, bulletFrame, options))
+    })
 
     // Make the camera follow the sprite
     // FIXME: replaced with ugly hack to only travel on x-axis for the presenatation.
@@ -100,7 +101,26 @@ export default class extends Phaser.State {
     this.bg2.tilePosition.x -= this.player.body.velocity.x / 700.0
 
     this.game.camera.x = this.player.x - this.game.width / 3 // Possibly go to quarter distance when turrets are fixed
+
+    // Player collides with ground and turrets.
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
+    this.game.physics.arcade.collide(this.player, this.turretGroup, this.player.resetWithAnimation, null, this.player)
+
+    // Bullets collide with player, ground, and turrets.
+    this.turretGroup.forEach((turret) => {
+      turret.weapon.forEach((bullet) => {
+        // Fuck it, we are running out of time.
+        const kill = this.game.physics.arcade.collide(bullet, this.player, this.player.resetWithAnimation, null, this.player)
+        if (kill) {
+          bullet.kill()
+          if (turret.target === this.player) {
+            turret.deaggro()
+          }
+        }
+        this.game.physics.arcade.collide(bullet, this.groundLayer, bullet.kill, null, bullet)
+        this.game.physics.arcade.collide(bullet, this.turretGroup, bullet.kill, null, bullet)
+      })
+    })
 
     // Vertical movement is instant.
     const accY = 350

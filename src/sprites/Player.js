@@ -36,7 +36,7 @@ export default class extends Phaser.Sprite {
 
   say (text, completed) {
 
-    var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
+    var style = { font: "15px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
     this.text = this.game.add.text(0, 0, "", style);
     this.text.anchor.set(0.5);
     
@@ -77,7 +77,7 @@ export default class extends Phaser.Sprite {
     setTimeout(function() { 
       textField.setText(text) 
       completed(n)
-    }, 50 * n)    
+    }, 70 * n)    
   }
 
 

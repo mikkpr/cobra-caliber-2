@@ -29,7 +29,7 @@ class Game extends Phaser.Game {
 
   say (text, completed) {
 
-    var style = { font: "35px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 700 , align: "center" };
+    var style = { font: "25px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 700 , align: "center" };
     this.text = this.add.text(this.width / 2, 250, "", style);
     this.text.anchor.set(0.5);
 
@@ -70,7 +70,7 @@ class Game extends Phaser.Game {
     setTimeout(function() { 
       textField.setText(text) 
       completed(n)
-    }, 50 * n)    
+    }, 80 * n)    
   }
 
 }

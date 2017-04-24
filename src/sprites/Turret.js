@@ -3,8 +3,10 @@ import Phaser from 'phaser'
 import Obstacle from './Obstacle'
 
 export default class extends Obstacle {
-  constructor (game, player, x, y, frame, bulletFrame, options = { target: null, burst: false, homing: false }) {
-    super(game, player, x, y, 'chars_large', frame)
+  constructor (game, player, x, y, turretSheet, turretFrame, bulletSheet, bulletFrame, options = {
+    target: null, burst: false, homing: false
+  }) {
+    super(game, player, x, y, turretSheet, turretFrame)
 
     this.weapon = this.game.plugins.add(Phaser.Weapon)
     this.weapon.trackSprite(this)
@@ -20,7 +22,7 @@ export default class extends Obstacle {
       bullets = 10
       this.weapon.fireRate = 50
     }
-    this.weapon.createBullets(bullets, 'chars_small', bulletFrame)
+    this.weapon.createBullets(bullets, bulletSheet, bulletFrame)
 
     this.homing = options.homing
     this.target = options.target

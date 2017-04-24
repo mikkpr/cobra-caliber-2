@@ -117,7 +117,7 @@ export default class extends Phaser.State {
     // Full-screen pulse effect alpha.
     this.pulse = this.game.add.graphics()
     this.pulseAlpha = 0
-    this.game.add.tween(this).to({ pulseAlpha: 0.25 }, 200, null, true, 0, -1, true)
+    this.game.add.tween(this).to({ pulseAlpha: 0.3 }, 200, null, true, 0, -1, true)
 
     // Make the camera follow the sprite
     this.game.camera.follow(this.player, null, 0.5, 0)
@@ -141,7 +141,7 @@ export default class extends Phaser.State {
   render () {
     // Draw full-screen pulse effect.
     this.pulse.clear()
-    this.pulse.beginFill(0xc32aff, this.pulseAlpha)
+    this.pulse.beginFill(0xd61b7f, this.pulseAlpha)
     this.pulse.drawRect(this.game.camera.x, this.game.camera.y, this.game.width, this.game.height)
     this.pulse.endFill()
 

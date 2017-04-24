@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
   constructor (game, player, x, y) {
-    super(game, x, y, 'chars_large', 72)
+    super(game, x, y, 'scifi_monsters_large', 14)
 
     this.player = player
 

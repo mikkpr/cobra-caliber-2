@@ -22,12 +22,12 @@ export default class extends Phaser.State {
     this.load.audio('bigbeat', ['assets/audio/music/bigbeat.mp3', 'assets/audio/music/bigbeat.ogg'])
     this.load.audio('ambient', ['assets/audio/music/ambient.mp3', 'assets/audio/music/ambient.ogg'])
 
-    this.load.audio('shoot', ['assets/audio/effects/shoot_b.mp3'])
-    this.load.audio('explode', ['assets/audio/effects/explode_b.mp3'])
-    this.load.audio('step', ['assets/audio/effects/step.mp3'])
-    this.load.audio('click', ['assets/audio/effects/click.mp3'])
-    this.load.audio('impact', ['assets/audio/effects/impact.mp3'])
-    this.load.audio('bulletmiss', ['assets/audio/effects/bulletmiss.mp3'])
+    this.load.audio('shoot', ['assets/audio/effects/shoot_b.wav'])
+    this.load.audio('explode', ['assets/audio/effects/explode_b.wav'])
+    this.load.audio('step', ['assets/audio/effects/step.wav'])
+    this.load.audio('click', ['assets/audio/effects/click.wav'])
+    this.load.audio('impact', ['assets/audio/effects/impact.wav'])
+    this.load.audio('bulletmiss', ['assets/audio/effects/bulletmiss.wav'])
 
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_scifi', 'assets/images/lofi_scifi_chars_4x.png', 32, 32)

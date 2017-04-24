@@ -25,7 +25,7 @@ export default class extends Phaser.State {
     this.map = this.game.add.tilemap(this.tilemap)
     this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
 
-    this.bg1 = this.game.add.tileSprite(0,
+    this.background = this.game.add.tileSprite(0,
       0,
       this.game.width,
       this.game.height,
@@ -103,9 +103,9 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.bg1.position.x = this.game.camera.position.x
-    this.bg1.position.y = this.game.camera.position.y
-    this.bg1.tilePosition.x -= this.player.body.velocity.x / 1000.0
+    this.background.position.x = this.game.camera.position.x
+    this.background.position.y = this.game.camera.position.y
+    this.background.tilePosition.x -= this.player.body.velocity.x / 1000.0
 
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.player, this.groundLayer)

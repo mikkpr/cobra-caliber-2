@@ -34,11 +34,11 @@ export default class extends Phaser.State {
 
     // Add both the background and ground layers.
 
-    this.bg1 = this.game.add.tileSprite(0,
+    this.background = this.game.add.tileSprite(0,
       0,
       this.game.world.width,
       this.game.world.height,
-      'bg1'
+      this.tilemap === 'earth_travel' ? 'bg1' : 'bg2'
     )
 
     this.map.createLayer('backgroundlayer').resizeWorld()
@@ -122,9 +122,9 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.bg1.position.x = this.game.camera.position.x
-    this.bg1.position.y = this.game.camera.position.y
-    this.bg1.tilePosition.x -= this.player.body.velocity.x / 1500.0
+    this.background.position.x = this.game.camera.position.x
+    this.background.position.y = this.game.camera.position.y
+    this.background.tilePosition.x -= this.player.body.velocity.x / 1500.0
 
     // Player collides with ground and turrets.
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)

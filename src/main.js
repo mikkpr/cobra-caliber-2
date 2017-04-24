@@ -51,7 +51,7 @@ class Game extends Phaser.Game {
     this.state.start(state, true, false, ...args)
   }
 
-  say (text, completed) {
+  say (text, completed, keep = false) {
     const style = {
       font: '25px Press Start 2P',
       fill: '#ffffff',
@@ -63,7 +63,9 @@ class Game extends Phaser.Game {
     this.text.anchor.set(0.5)
 
     this.renderByLetter(text, () => {
-      this.text.destroy()
+      if (!keep) {
+        this.text.destroy()
+      }
       completed()
     })
   }

@@ -32,6 +32,7 @@ export default class extends Phaser.State {
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_scifi', 'assets/images/lofi_scifi_chars_4x.png', 32, 32)
     this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
+    this.load.spritesheet('scifi_monsters_large', 'assets/images/lofi_scifi_monsters_4x.png', 64, 64)
     this.load.spritesheet('ships_2', 'assets/images/lofi_scifi_ships_2_4x.png', 32, 32)
     this.load.spritesheet('ships_2_large', 'assets/images/lofi_scifi_ships_2_4x.png', 64, 64)
 

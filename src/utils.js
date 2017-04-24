@@ -15,7 +15,7 @@ export const enableMusicForState = (trackName, state) => {
     if (music.volume > 0) {
       music.volume = 0
     } else {
-      music.volume = 1
+      music.volume = 0.25
     }
   }, state)
 

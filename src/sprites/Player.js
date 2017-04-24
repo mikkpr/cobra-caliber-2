@@ -35,51 +35,45 @@ export default class extends Phaser.Sprite {
   }
 
   say (text, completed) {
-
-    var style = { font: "20px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
-    this.text = this.game.add.text(0, 0, "", style);
-    this.text.anchor.set(0.5);
+    var style = { font: '20px Press Start 2P', fill: '#ffffff', wordWrap: true, wordWrapWidth: 300, align: 'center' }
+    this.text = this.game.add.text(0, 0, '', style)
+    this.text.anchor.set(0.5)
     
-    var context = this;
+    var context = this
 
-    this.renderByLetter(text, function() {
+    this.renderByLetter(text, function () {
       context.text.destroy()
       completed()
     })
   }
 
-  renderByLetter(text, completed) {
+  renderByLetter (text, completed) {
+    var split = text.split('')
+    var current = ''
 
-    var split = text.split('');
-    var current = ""
-    
-    var textField = this.text;
+    var textField = this.text
 
     for (var i = 0; i < split.length; i++) {
-    
       current += split[i]
-      
-      this.renderLetter(current, i, function(n) {
-        
+
+      this.renderLetter(current, i, function (n) {
         if (n == split.length - 1) {
-          setTimeout(function() {
+          setTimeout(function () {
             completed()
           }, 800)
-        }        
+        }
 
       })
-
     }
   }
 
-  renderLetter(text, n, completed) {
-    var textField = this.text;
-    setTimeout(function() { 
-      textField.setText(text) 
+  renderLetter (text, n, completed) {
+    var textField = this.text
+    setTimeout(function () {
+      textField.setText(text)
       completed(n)
-    }, 50 * n)    
+    }, 50 * n)
   }
-
 
   resetWithAnimation () {
     var duration = 500
@@ -119,26 +113,25 @@ export default class extends Phaser.Sprite {
 
   isMovingUp () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.up.isDown || this.wasd.up.isDown || 
+    return this.cursors.up.isDown || this.wasd.up.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_UP) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) < -0.1
   }
 
   isMovingDown () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.down.isDown || this.wasd.down.isDown || 
+    return this.cursors.down.isDown || this.wasd.down.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_DOWN) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_Y) > 0.1
   }
 
   isMovingLeft () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.left.isDown || this.wasd.left.isDown || 
+    return this.cursors.left.isDown || this.wasd.left.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1
   }
 
   isMovingRight () {
     const pad1 = this.game.input.gamepad.pad1
-    return this.cursors.right.isDown || this.wasd.right.isDown || 
+    return this.cursors.right.isDown || this.wasd.right.isDown ||
     pad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || pad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1
   }
-
 }

@@ -60,34 +60,33 @@ export default class extends Phaser.State {
     this.game.time.advancedTiming = true
 
     if (this.tilemap === 'moon_fight') {
-      
       // Hack for game start.
 
-      var style = { 
-        font: "50px Arial", 
-        fill: "#F5DEB3", 
-        backgroundColor: '#8B4513', 
-      };
+      var style = {
+        font: '50px Press Start 2P',
+        fill: '#F5DEB3',
+        backgroundColor: '#8B4513'
+      }
 
-      this.title = this.game.add.text(0, -100, "  COBRA CALIBER 2  ", style);
-      this.title.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
-      this.title.strokeThickness = 5;
-  
-      this.title.y = 50;
-      this.title.x = this.game.width / 2 - this.title.width / 2;
+      this.title = this.game.add.text(0, -100, '  COBRA CALIBER 2  ', style)
+      this.title.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2)
+      this.title.strokeThickness = 5
 
-      style = { 
-        font: "20px Arial", 
-        fill: "#F5DEB3", 
-        backgroundColor: '#8B4513', 
-      };
-      
-      this.subtitle = this.game.add.text(0, -100, "  THERE CAN ONLY BE ONE MORE  ", style);
-      this.subtitle.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
-      this.subtitle.strokeThickness = 5;
-  
-      this.subtitle.y = this.title.y + 90;
-      this.subtitle.x = this.game.width / 2 - this.subtitle.width / 2;
+      this.title.y = 50
+      this.title.x = this.game.width / 2 - this.title.width / 2
+
+      style = {
+        font: '20px Press Start 2P',
+        fill: '#F5DEB3',
+        backgroundColor: '#8B4513'
+      }
+
+      this.subtitle = this.game.add.text(0, -100, '  THERE CAN ONLY BE ONE MORE  ', style)
+      this.subtitle.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2)
+      this.subtitle.strokeThickness = 5
+
+      this.subtitle.y = this.title.y + 90
+      this.subtitle.x = this.game.width / 2 - this.subtitle.width / 2
 
       this.player.body.velocity.x = 0
 

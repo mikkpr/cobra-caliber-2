@@ -6,8 +6,8 @@ export const centerGameObjects = objects => {
   )
 }
 
-export const enableMusicForState = (state) => {
-  let Idx = 0
+export const enableMusicForState = (state, initialIdx = 0) => {
+  let Idx = initialIdx !== 0 ? initialIdx : 0
 
   const synthwave = state.game.add.audio('synthwave', 0.5, true, true)
   synthwave.allowMultiple = true

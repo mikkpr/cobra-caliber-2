@@ -4,6 +4,7 @@ export default (game) => {
   const shootSound = game.add.audio('shoot', 0.5)
   const clickSound = game.add.audio('click', 0.25)
   const impactSound = game.add.audio('impact', 0.45)
+  const bulletMiss = game.add.audio('bulletmiss', 0.05)
 
   shootSound.allowMultiple = true
   explodeSound.allowMultiple = true
@@ -13,6 +14,7 @@ export default (game) => {
     explodeSound,
     shootSound,
     clickSound,
-    impactSound
+    impactSound,
+    bulletMiss
   }
 }

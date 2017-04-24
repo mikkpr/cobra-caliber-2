@@ -26,6 +26,53 @@ class Game extends Phaser.Game {
 
     this.deathCounter = 0
   }
+
+  say (text, completed) {
+
+    var style = { font: "35px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 700 , align: "center" };
+    this.text = this.add.text(this.width / 2, 250, "", style);
+    this.text.anchor.set(0.5);
+
+    var context = this;
+
+    this.renderByLetter(text, function() {
+      context.text.destroy()
+      completed()
+    })
+  }
+
+  renderByLetter(text, completed) {
+
+    var split = text.split('');
+    var current = ""
+    
+    var textField = this.text;
+
+    for (var i = 0; i < split.length; i++) {
+    
+      current += split[i]
+      
+      this.renderLetter(current, i, function(n) {
+        
+        if (n == split.length - 1) {
+          setTimeout(function() {
+            completed()
+          }, 800)
+        }        
+
+      })
+
+    }
+  }
+
+  renderLetter(text, n, completed) {
+    var textField = this.text;
+    setTimeout(function() { 
+      textField.setText(text) 
+      completed(n)
+    }, 50 * n)    
+  }
+
 }
 
 window.game = new Game()

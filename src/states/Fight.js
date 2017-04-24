@@ -128,17 +128,21 @@ export default class extends Phaser.State {
 
     var player = this.player
     var boss = this.boss
-
-    setTimeout(function() {
-      player.say('I have been looking for you for a long time, father', function () {
-        boss.say('I left you to die in that pit. How did you survive?', function () {
-          player.say('That should be the least of your concerns, old man', function () {
-            player.say('Time to die', function () {})
+    
+    setTimeout(() => {
+      this.game.say('The year is 2007. The population of the Milky Way Galaxy is 400 billion', () => {
+        this.game.say('But there can only be one...', () => {
+          player.say('I have been looking for you for a long time, father', function () {
+            boss.say('I left you to die in that pit. How did you survive?', function () {
+              player.say('That should be the least of your concerns, old man', function () {
+                player.say('Time to die', function () {})
+              })
+            })
           })
         })
       })
     }, 600)
-    
+
   }
 
   update () {

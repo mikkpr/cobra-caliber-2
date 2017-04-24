@@ -90,7 +90,7 @@ export default class extends Phaser.Sprite {
     this.game.deathCounter += 1
 
     setTimeout(() => {
-      this.reset(50, 256)
+      this.reset(50, this.y)
     }, duration)
   }
 

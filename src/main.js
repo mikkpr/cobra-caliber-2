@@ -3,6 +3,7 @@ import 'p2'
 import Phaser from 'phaser'
 
 import BootState from './states/Boot'
+import CreditsState from './states/Credits'
 import SplashState from './states/Splash'
 import TravelState from './states/Travel'
 import FightState from './states/Fight'
@@ -18,6 +19,7 @@ class Game extends Phaser.Game {
     super(width, height, Phaser.CANVAS, 'content', null, false, false)
 
     this.state.add('Boot', BootState, false)
+    this.state.add('Credits', CreditsState, false)
     this.state.add('Splash', SplashState, false)
     this.state.add('Travel', TravelState, false)
     this.state.add('Fight', FightState, false)
@@ -30,9 +32,10 @@ class Game extends Phaser.Game {
       ['Travel', 'earth_travel'],
       ['Fight', 'earth_fight'],
       ['Travel', 'mars_travel'],
-      ['Fight', 'mars_fight']
-    
+      ['Fight', 'mars_fight'],
+      ['Credits', 'credits']
     ]
+    
     this.nextState()
 
     this.deathCounter = 0

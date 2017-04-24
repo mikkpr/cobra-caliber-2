@@ -24,7 +24,11 @@ export default class extends Obstacle {
 
     const { shootSound } = this.game.sound.repository
 
-    this.game.physics.arcade.overlap(this.player, this.weapon.bullets, this.onCollision, null, this)
+    // Deaggro on target hit.
+    if (this.target != null) {
+      this.game.physics.arcade.overlap(this.target, this.weapon.bullets, this.onCollision, null, this)
+    }
+
     if (this.target != null && this.homing) {
       this.weapon.forEach(this.home, this)
     }

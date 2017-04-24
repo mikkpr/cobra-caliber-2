@@ -42,13 +42,6 @@ export default class extends Phaser.State {
       'bg1'
     )
 
-    this.bg2 = this.game.add.tileSprite(0,
-      0,
-      this.game.world.width,
-      this.game.world.height,
-      'bg2'
-    )
-
     this.groundLayer = this.map.createLayer('groundlayer')
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
@@ -106,8 +99,7 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.bg1.tilePosition.x -= this.player.body.velocity.x / 1000.0
-    this.bg2.tilePosition.x -= this.player.body.velocity.x / 700.0
+    this.bg1.tilePosition.x -= this.player.body.velocity.x / 1500.0
 
     this.game.camera.x = this.player.x - this.game.width / 3 // Possibly go to quarter distance when turrets are fixed
 

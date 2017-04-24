@@ -35,13 +35,6 @@ export default class extends Phaser.State {
       'bg1'
     )
 
-    this.bg2 = this.game.add.tileSprite(0,
-      0,
-      this.game.world.width,
-      this.game.world.height,
-      'bg2'
-    )
-
     // Change the world size to match the size of this layer
     this.groundLayer = this.map.createLayer('groundlayer')
     this.groundLayer.resizeWorld()
@@ -159,8 +152,7 @@ export default class extends Phaser.State {
 
   update () {
     this.bg1.tilePosition.x -= this.player.body.velocity.x / 1000.0
-    this.bg2.tilePosition.x -= this.player.body.velocity.x / 700.0
-    
+
     // Make the sprite collide with the ground layer
     this.game.physics.arcade.collide(this.player, this.groundLayer)
     this.game.physics.arcade.collide(this.boss, this.groundLayer)

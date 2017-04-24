@@ -18,7 +18,12 @@ export default class extends Phaser.State {
     this.game.curve.setPoints([50, 0, 0, 0, 50])
 
     this.map = this.game.add.tilemap('earth_travel')
-    this.map.addTilesetImage('lofi_environment_4x', 'tiles')
+    this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
+    this.map.addTilesetImage('lofi_scifi_stations_4x', 'tiles_lofi_stations')
+    this.map.addTilesetImage('lofi_scifi_stations_2_4x', 'tiles_lofi_stations_2')
+    this.map.addTilesetImage('lofi_scifi_stations_3_4x', 'tiles_lofi_stations_3')
+    this.map.addTilesetImage('lofi_scifi_items_4x', 'tiles_lofi_items')
+    this.map.addTilesetImage('lofi_interface_4x', 'tiles_interface')
 
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
@@ -49,8 +54,8 @@ export default class extends Phaser.State {
       [ 9600, 100, {target: this.player, burst: true}],
       [10560, 300, {target: this.player, burst: true}],
       [11200, 200, {target: this.player, burst: true}],
-      [11800, 300, {target: this.player, burst: true}],
-      [11904, 100, {target: this.player, burst: true}],
+      [11900, 366],
+      [11900, 32],
       [14720, 100],
       [20384, 256, {target: this.player, burst: true, homing: true}]
     ).forEach(([x, y, options]) =>
@@ -74,16 +79,16 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.game.camera.x = this.player.x - this.game.width / 2
+    this.game.camera.x = this.player.x - this.game.width / 3 // Possibly go to quarter distance when turrets are fixed
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
 
-    const accY = 800
+    const accY = 250 // Maybe even lower, to make it possible to navigate tight corridors
     if (this.player.isMovingUp()) {
       this.player.body.velocity.y -= accY
     } else if (this.player.isMovingDown()) {
       this.player.body.velocity.y += accY
     } else {
-      this.player.body.velocity.y /= 2
+      this.player.body.velocity.y = 0 // Vertical movement has to be precise 
     }
 
     const accX = 360

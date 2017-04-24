@@ -24,6 +24,7 @@ export default class extends Phaser.State {
     this.load.spritesheet('chars_small', 'assets/images/lofi_char_4x.png', 32, 32)
     this.load.spritesheet('chars_scifi', 'assets/images/lofi_scifi_chars_4x.png', 32, 32)
     this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
+    this.load.spritesheet('ships_2_large', 'assets/images/lofi_scifi_ships_2_4x.png', 64, 64)
     this.load.image('expl1', 'assets/images/expl1.png')
     this.load.image('expl2', 'assets/images/expl2.png')
 
@@ -32,7 +33,12 @@ export default class extends Phaser.State {
 
     this.load.tilemap('earth_travel', 'assets/tilemaps/earth_travel.json', null, Phaser.Tilemap.TILED_JSON)
 
-    this.load.image('tiles', 'assets/images/lofi_environment_4x.png')
+    this.load.image('tiles_lofi_environment', 'assets/images/lofi_environment_4x.png')
+    this.load.image('tiles_lofi_stations', 'assets/images/lofi_scifi_stations_4x.png')
+    this.load.image('tiles_lofi_stations_2', 'assets/images/lofi_scifi_stations_2_4x.png')
+    this.load.image('tiles_lofi_stations_3', 'assets/images/lofi_scifi_stations_3_4x.png')
+    this.load.image('tiles_lofi_items', 'assets/images/lofi_scifi_items_4x.png')
+    this.load.image('tiles_interface', 'assets/images/lofi_interface_4x.png')
 
     this.game.curve = this.game.plugins.add(CurvePlugin)
 

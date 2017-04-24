@@ -40,7 +40,6 @@ export default class extends Phaser.State {
     // Player physics in this state.
     this.maxVelocity = 800 // Default max velocity, can be overridden by dashing.
     this.player.body.maxVelocity.x = this.maxVelocityX
-    this.player.body.maxVelocity.y = this.maxVelocity
     this.player.body.gravity.x = 1800
 
     this.player.body.collideWorldBounds = true
@@ -82,22 +81,24 @@ export default class extends Phaser.State {
     this.game.camera.x = this.player.x - this.game.width / 3 // Possibly go to quarter distance when turrets are fixed
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
 
+    // Vertical movement is instant.
     const accY = 250 // Maybe even lower, to make it possible to navigate tight corridors
     if (this.player.isMovingUp()) {
-      this.player.body.velocity.y -= accY
+      this.player.body.velocity.y = -accY
     } else if (this.player.isMovingDown()) {
-      this.player.body.velocity.y += accY
+      this.player.body.velocity.y = accY
     } else {
-      this.player.body.velocity.y = 0 // Vertical movement has to be precise 
+      this.player.body.velocity.y = 0
     }
 
+    // Horizontal dashing is almost instant, braking takes time.
     const accX = 360
     if (this.player.isMovingRight()) {
       this.player.body.maxVelocity.x = this.maxVelocity + accX
       this.player.body.velocity.x += accX
     } else if (this.player.isMovingLeft()) {
       this.player.body.maxVelocity.x = this.maxVelocity - accX
-      this.player.body.velocity.x -= accX / 6 // Braking takes time.
+      this.player.body.velocity.x -= accX / 6
     } else {
       this.player.body.maxVelocity.x = this.maxVelocity
     }

@@ -11,6 +11,9 @@ export default class extends Obstacle {
     this.weapon.bulletSpeed = 600
     this.weapon.bulletAngleVariance = 20
 
+    this.game.sound.shootSound = this.game.sound.shootSound || this.game.add.audio('shoot', 0.5)
+    this.game.sound.shootSound.allowMultiple = true
+
     let bullets = 50
     this.weapon.fireRate = 200
     if (options.burst) {
@@ -34,12 +37,14 @@ export default class extends Obstacle {
     if (!this.inCamera) {
       return
     }
-
+    let fired
     if (this.target != null) {
-      this.weapon.fireAtSprite(this.target)
+      fired = this.weapon.fireAtSprite(this.target)
     } else if (this.weapon.fire()) {
-      this.weapon.fireAngle += 30
+      fired = this.weapon.fireAngle += 30
     }
+
+    if (fired) { this.game.sound.shootSound.play() }
   }
 
   home (bullet) {

@@ -7,8 +7,6 @@ export default class extends Phaser.Sprite {
     this.canTurn = options.canTurn
     this.isFalling = options.isFalling
 
-    this.animations.add('explode', ['expl1, expl2'])
-
     this.anchor.setTo(0.5)
 
     this.game.physics.arcade.enable(this)
@@ -38,7 +36,7 @@ export default class extends Phaser.Sprite {
     var style = { font: '20px Press Start 2P', fill: '#ffffff', wordWrap: true, wordWrapWidth: 300, align: 'center' }
     this.text = this.game.add.text(0, 0, '', style)
     this.text.anchor.set(0.5)
-    
+
     var context = this
 
     this.renderByLetter(text, function () {
@@ -62,7 +60,6 @@ export default class extends Phaser.Sprite {
             completed()
           }, 800)
         }
-
       })
     }
   }
@@ -76,6 +73,9 @@ export default class extends Phaser.Sprite {
   }
 
   resetWithAnimation () {
+    this.game.sound.explodeSound = this.game.sound.explodeSound || this.game.add.audio('explode', 0.25)
+    this.game.sound.explodeSound.allowMultiple = true
+
     var duration = 500
 
     var x = this.x
@@ -91,6 +91,7 @@ export default class extends Phaser.Sprite {
     this.emitter.maxParticleSpeed.set(0, 0)
     this.emitter.gravity = 0
     this.emitter.start(false, duration, 10, 4)
+    this.game.sound.explodeSound.play()
 
     var player = this
     player.kill()

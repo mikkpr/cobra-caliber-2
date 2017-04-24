@@ -48,7 +48,7 @@ export default class extends Phaser.State {
 
     // Add turrets.
     new Array( // Use new Array instead of [] so webpack does not get confused.
-      [  600, 100, {target: this.player, burst: true}],
+      [ 600, 100, {target: this.player, burst: true}],
       [ 7200, 100, {target: this.player, burst: false}],
       [ 9600, 100, {target: this.player, burst: true}],
       [10560, 300, {target: this.player, burst: true}],
@@ -88,7 +88,7 @@ export default class extends Phaser.State {
     } else if (this.player.isMovingDown()) {
       this.player.body.velocity.y = accY
     } else {
-      this.player.body.velocity.y = 0
+      this.player.body.velocity.y = 0 // Vertical movement has to be precise
     }
 
     // Horizontal dashing is almost instant, braking takes time.

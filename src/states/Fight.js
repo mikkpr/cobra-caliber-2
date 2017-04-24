@@ -64,12 +64,12 @@ export default class extends Phaser.State {
       // Hack for game start.
 
       var style = { 
-        font: "50px Arial", 
+        font: "35px Press Start 2P", 
         fill: "#F5DEB3", 
         backgroundColor: '#8B4513', 
       };
 
-      this.title = this.game.add.text(0, -100, "  COBRA CALIBER 2  ", style);
+      this.title = this.game.add.text(0, -100, " COBRA CALIBER 2 ", style);
       this.title.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
       this.title.strokeThickness = 5;
   
@@ -77,12 +77,12 @@ export default class extends Phaser.State {
       this.title.x = this.game.width / 2 - this.title.width / 2;
 
       style = { 
-        font: "20px Arial", 
+        font: "15px Press Start 2P", 
         fill: "#F5DEB3", 
         backgroundColor: '#8B4513', 
       };
       
-      this.subtitle = this.game.add.text(0, -100, "  THERE CAN ONLY BE ONE MORE  ", style);
+      this.subtitle = this.game.add.text(0, -100, " THERE CAN ONLY BE ONE MORE ", style);
       this.subtitle.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
       this.subtitle.strokeThickness = 5;
   
@@ -97,13 +97,13 @@ export default class extends Phaser.State {
       var LabelButton = function(game, x, y, key, label, callback, callbackContext, overFrame, outFrame, downFrame, upFrame) {
         Phaser.Button.call(this, game, x, y, key, callback, callbackContext, overFrame, outFrame, downFrame, upFrame);    
         // Style how you wish...    
-        this.style = { 'font': '40px Arial', 'fill': 'white', 'backgroundColor': 'magenta' };    
-        this.anchor.setTo( 0.5, 0.5 );    
+        this.style = { 'font': '30px Press Start 2P', 'fill': 'white', 'backgroundColor': '#8B4513' };    
+        this.anchor.setTo(0.5, 0.5);    
         this.label = new Phaser.Text(game, 0, 0, label, this.style);    
         // Puts the label in the center of the button    
         this.label.anchor.setTo( 0.5, 0.5 );
         this.addChild(this.label);
-        this.setLabel( label );    
+        this.setLabel(label);    
         // Adds button to game
         game.add.existing(this); 
       };
@@ -114,12 +114,11 @@ export default class extends Phaser.State {
       };
 
       let y = this.subtitle.y + 150;
-      
       this.startButton = new LabelButton(this.game, 0, y, null, " START GAME ", this.onStartClick, this, 1, 0, 2);
       this.startButton.x = this.game.width / 2 - this.startButton.width / 2 + 10;
-      this.startButton.strokeThickness = 3;
-
+      this.startButton.strokeThickness = 5;
     }
+
   }
 
   onStartClick () {

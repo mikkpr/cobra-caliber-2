@@ -81,8 +81,10 @@ export default class extends Phaser.Sprite {
 
           if (this.isEarthFight()) {
             this.player.controlsEnabled = false
-            this.player.say("Hmm... Looks like he was just a hologram", () => {
-              this.movePlayerOffMap()
+            this.player.say("Hmm... Apparently he was indeed just a hologram", () => {
+              this.movePlayerOffMap(() => {
+                this.game.nextState()
+              })
             })
           } else if (this.isMoonFight()) {
             this.player.controlsEnabled = false

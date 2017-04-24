@@ -74,6 +74,27 @@ export default class extends Phaser.State {
 
       this.player.x = this.game.world.centerX - this.game.world.centerX / 2
       this.player.y = this.game.world.height - 80
+    } else if (this.tilemap === 'earth_fight') {
+
+      this.player.controlsEnabled = false
+
+      this.player.say("Mind if I drop in?", () => {
+        this.player.say("This world isn't big enough for the both of us!", () => {
+          this.player.say("Especially after they mined it all out and made it so small", () => {
+            this.boss.say("Ha ha ha!", () => {
+              this.boss.say("This is just a THREE-DIMENSIONAL HOLOGRAM",() => {
+                this.player.say("I will get you!", () => {
+                  this.boss.say("I wouldn't hold my breath.", () => {
+                    this.player.say("Then how do you think I got here?", () => {
+                      this.player.controlsEnabled = true
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })
+      })
     }
 
   }
@@ -111,6 +132,10 @@ export default class extends Phaser.State {
     this.game.physics.arcade.collide(this.player, this.groundLayer)
     this.game.physics.arcade.collide(this.boss, this.groundLayer)
 
+    if (this.player.body.onFloor()) {
+      this.player.body.velocity.x /= 2 // Break to a halt.
+    }
+    
     if (!this.player.controlsEnabled) {
       return
     }

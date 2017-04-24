@@ -95,6 +95,8 @@ export default class extends Phaser.State {
           })
         })
       })
+    } else if (this.tilemap === 'mars_fight') {
+      
     }
 
   }

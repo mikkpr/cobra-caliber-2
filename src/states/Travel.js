@@ -34,7 +34,7 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 100, 256, { canTurn: false, isFalling: true })
+    this.player = new Player(this.game, 100, 256)
     this.world.add(this.player)
 
     // Player physics in this state.
@@ -50,13 +50,13 @@ export default class extends Phaser.State {
     const turretSheet = 'chars_large'
     const bulletSheet = 'chars_small'
     new Array( // Use new Array instead of [] so webpack does not get confused.
-      [  600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
+      [ 600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
       [ 7200, 100, 80, 179, {target: this.player}],
       [ 9600, 100, 80, 179, {target: this.player, bullets: 10, rate: 50}],
       [10560, 300, 80, 179, {target: this.player, bullets: 10, rate: 50}],
       [11200, 200, 80, 179, {target: this.player, bullets: 10, rate: 50}],
       [11900, 366, 80, 179],
-      [11900,  32, 80, 179],
+      [11900, 32, 80, 179],
       [14720, 100, 80, 179],
       [20384, 256, 80, 179, {target: this.player, bullets: 10, rate: 50, homing: true}]
     ).forEach(([x, y, turretFrame, bulletFrame, options]) =>

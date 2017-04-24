@@ -36,7 +36,7 @@ export default class extends Phaser.State {
     this.map.setCollisionBetween(1, 1000, true, 'groundlayer')
 
     // Add the sprite to the game and enable arcade physics on it
-    this.player = new Player(this.game, 16, this.game.world.centerY)
+    this.player = new Player(this.game, 16, this.game.world.centerY, { standing: true })
     this.world.add(this.player)
 
     // Player physics in this state.

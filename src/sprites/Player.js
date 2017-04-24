@@ -1,11 +1,9 @@
 import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
-  constructor (game, x, y, options = { canTurn: false, isFalling: true }) {
-    super(game, x, y, 'chars_scifi', 220)
-
-    this.canTurn = options.canTurn
-    this.isFalling = options.isFalling
+  constructor (game, x, y, options = { standing: false }) {
+    const spriteIdx = (options.standing || false) ? 208 : 220
+    super(game, x, y, 'chars_scifi', spriteIdx)
 
     this.anchor.setTo(0.5)
 
@@ -24,7 +22,7 @@ export default class extends Phaser.Sprite {
 
     // Add a bitchin trail because we are going supersonic
     this.playerTrail = this.game.add.emitter(this.x, this.y, 15)
-    this.playerTrail.makeParticles('chars_scifi', 220)
+    this.playerTrail.makeParticles('chars_scifi', spriteIdx)
     this.playerTrail.setXSpeed(0, 0)
     this.playerTrail.setYSpeed(0, 0)
     this.playerTrail.setAlpha(0.4, 0.01, 150)
@@ -33,11 +31,10 @@ export default class extends Phaser.Sprite {
   }
 
   say (text, completed) {
+    var style = { font: '15px Press Start 2P', fill: '#ffffff', wordWrap: true, wordWrapWidth: 300, align: 'center' }
+    this.text = this.game.add.text(0, 0, '', style)
+    this.text.anchor.set(0.5)
 
-    var style = { font: "15px Press Start 2P", fill: "#ffffff", wordWrap: true, wordWrapWidth: 300 , align: "center" };
-    this.text = this.game.add.text(0, 0, "", style);
-    this.text.anchor.set(0.5);
-    
     this.renderByLetter(text, () => {
       this.text.destroy()
       completed()
@@ -69,7 +66,7 @@ export default class extends Phaser.Sprite {
       textField.setText(text)
       textSound.play()
       completed(n)
-    }, 70 * n)    
+    }, 70 * n)
   }
 
   resetWithAnimation () {

@@ -12,7 +12,7 @@ export default class extends Phaser.State {
 	    // this.game.physics.startSystem(Phaser.Physics.ARCADE)
 	    // this.game.curve.setPoints([50, 0, 0, 0, 50])
 
-	    // this.disableMusic = enableMusicForState('ambient', this)
+	    this.disableMusic = enableMusicForState(this, 1)
 
 	    // this.map = this.game.add.tilemap(this.tilemap)
 	    // this.map.addTilesetImage('lofi_environment_4x', 'tiles_lofi_environment')
@@ -33,7 +33,7 @@ export default class extends Phaser.State {
 	    // this.groundLayer.resizeWorld()
 
 		this.game.say("Thanks for playing", () => {
-			this.game.say("Created by:\n Aare Undo\n Juhan Trink\n Mikk Pristavka\n Tiit Pikma", () => {})
+			this.game.say("Created by:\n Aare Undo\n Juhan Trink\n Mikk Pristavka\n Tiit Pikma", () => {}, true)
 		})
 	}
 }

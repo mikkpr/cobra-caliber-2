@@ -127,7 +127,7 @@ export default class extends Phaser.State {
     // Draw full-screen pulse effect.
     this.pulse.clear()
     this.pulse.beginFill(0xc32aff, this.pulseAlpha)
-    this.pulse.drawRect(0, 0, this.game.width, this.game.height)
+    this.pulse.drawRect(this.game.camera.x, this.game.camera.y, this.game.width, this.game.height)
     this.pulse.endFill()
 
     this.game.debug.text(this.time.fps, 10, 20, '#00ff00')

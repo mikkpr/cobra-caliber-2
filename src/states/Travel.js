@@ -79,7 +79,10 @@ export default class extends Phaser.State {
         ).forEach(([x, y, turretFrame, bulletFrame, options]) => {
           this.turretGroup.add(new Turret(this.game, x, y,
             turretSheetEarth, turretFrame, bulletSheetEarth, bulletFrame, options))
-        }) 
+        })
+        setTimeout(() => {
+          this.player.say("... And that number is about to go down.", () => {})
+        }, 300)
         break
         case 'mars_travel':
         const turretSheetMars = 'ships_2_large'

@@ -24,6 +24,7 @@ export default class extends Phaser.State {
     this.map.addTilesetImage('lofi_scifi_stations_3_4x', 'tiles_lofi_stations_3')
     this.map.addTilesetImage('lofi_scifi_items_4x', 'tiles_lofi_items')
     this.map.addTilesetImage('lofi_interface_4x', 'tiles_interface')
+    this.map.addTilesetImage('lofi_scifi_ships_2_4x', 'tiles_ships_2')
 
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
@@ -85,7 +86,7 @@ export default class extends Phaser.State {
     this.game.physics.arcade.collide(this.player, this.groundLayer, this.player.resetWithAnimation, null, this.player)
 
     // Vertical movement is instant.
-    const accY = 250 // Maybe even lower, to make it possible to navigate tight corridors
+    const accY = 350
     if (this.player.isMovingUp()) {
       this.player.body.velocity.y = -accY
     } else if (this.player.isMovingDown()) {

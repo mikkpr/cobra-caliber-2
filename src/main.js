@@ -35,7 +35,7 @@ class Game extends Phaser.Game {
       ['Fight', 'mars_fight'],
       ['Credits', 'credits']
     ]
-    
+
     this.nextState()
 
     this.deathCounter = 0

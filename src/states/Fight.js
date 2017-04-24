@@ -31,7 +31,7 @@ export default class extends Phaser.State {
       this.game.height,
       'bg1'
     )
-    
+
     // Add both the background and ground layers. We won't be doing anything
     // with the GroundLayer though
     this.backgroundLayer = this.map.createLayer('backgroundlayer').resizeWorld()
@@ -165,7 +165,7 @@ export default class extends Phaser.State {
     if (this.player.body.onFloor()) {
       this.player.body.velocity.x /= 2 // Break to a halt.
     }
-    
+
     if (!this.player.controlsEnabled) {
       return
     }

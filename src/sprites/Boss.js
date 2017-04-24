@@ -71,7 +71,7 @@ export default class extends Phaser.Sprite {
     var velocity = (this.player.body.velocity.x + this.player.body.velocity.y) / 2
     const { impactSound } = this.game.sound.repository
 
-    if (Math.abs(velocity) > 300) {
+    if (Math.abs(velocity) > 200) {
 
       var state = this.game.state
 
@@ -81,7 +81,7 @@ export default class extends Phaser.Sprite {
 
           if (this.isEarthFight()) {
             this.player.controlsEnabled = false
-            this.player.say("Hmm... Apparently he was indeed just a hologram", () => {
+            this.player.say("What sorcery is this?", () => {
               this.movePlayerOffMap(() => {
                 this.game.nextState()
               })
@@ -92,7 +92,23 @@ export default class extends Phaser.Sprite {
               this.player.say("more!", () => {
                 this.game.addTitle()
                 this.movePlayerOffMap(() => {
-                  this.game.nextState()
+                  setTimeout(() => { // FIXME: Doing this feels dumb
+                    this.game.say('The year is 2007.\n The population of the MILKY WAY GALAXY is\n400 eleventy billion', () => {
+                      this.game.say('Humanity has mined out the planets for money and now lives in orbit.', () => {
+                        this.game.say('But for COBRA CALIBER,\nonly one life matters.', () => {
+                          this.game.say('After slaying BARON NEON \nin his previous adventure,', () => {
+                            this.game.say('only one man stands in the way of COBRA CALIBER.', () => {
+                              this.game.say('COBRA CALIBER now jumps to other planets\nto defeat POWER ARMOR JOE, ', () => {
+                                this.game.say('and to become the only IMMORTAL in the Galaxy!', () => {
+                                  this.game.nextState()
+                                })
+                              })
+                            })
+                          })
+                        })
+                      })
+                    })
+                  }, 600)
                 })
               });
             });
@@ -104,7 +120,7 @@ export default class extends Phaser.Sprite {
 
     } else {
       console.log(velocity)
-      this.player.say("No, I remember hitting him way stronger than this", () => {
+      this.player.say("No, I remember hitting him way harder than this", () => {
         this.body.checkCollision.none = false
       })
     }

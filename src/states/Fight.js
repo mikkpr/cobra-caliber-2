@@ -64,19 +64,30 @@ export default class extends Phaser.State {
       // Hack for game start.
 
       var style = { 
-        font: "32px Arial", 
+        font: "50px Arial", 
         fill: "#F5DEB3", 
         backgroundColor: '#8B4513', 
       };
 
-      this.text = this.game.add.text(0, -100, " Cobra Caliber 2: There can be only One more ", style);
-      this.text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
-      this.text.strokeThickness = 2;
-
-      // game.add.tween(this.text).to( { y: 100 }, 2000, Phaser.Easing.Bounce.Out, true);
+      this.title = this.game.add.text(0, -100, "  COBRA CALIBER 2  ", style);
+      this.title.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+      this.title.strokeThickness = 5;
   
-      this.text.y = 100;
-      this.text.x = this.game.width / 2 - this.text.width / 2;
+      this.title.y = 50;
+      this.title.x = this.game.width / 2 - this.title.width / 2;
+
+      style = { 
+        font: "20px Arial", 
+        fill: "#F5DEB3", 
+        backgroundColor: '#8B4513', 
+      };
+      
+      this.subtitle = this.game.add.text(0, -100, "  THERE CAN ONLY BE ONE MORE  ", style);
+      this.subtitle.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+      this.subtitle.strokeThickness = 5;
+  
+      this.subtitle.y = this.title.y + 90;
+      this.subtitle.x = this.game.width / 2 - this.subtitle.width / 2;
 
       this.player.body.velocity.x = 0
 

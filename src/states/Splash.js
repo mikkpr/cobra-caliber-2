@@ -34,8 +34,12 @@ export default class extends Phaser.State {
     this.load.spritesheet('chars_large', 'assets/images/lofi_char_4x.png', 64, 64)
     this.load.spritesheet('ships_2', 'assets/images/lofi_scifi_ships_2_4x.png', 32, 32)
     this.load.spritesheet('ships_2_large', 'assets/images/lofi_scifi_ships_2_4x.png', 64, 64)
+
     this.load.image('expl1', 'assets/images/expl1.png')
     this.load.image('expl2', 'assets/images/expl2.png')
+
+    this.load.image('bg1', 'assets/images/earth_furthestlayer.png')
+    this.load.image('bg2', 'assets/images/earth_midlayer.png')
 
     this.load.tilemap('moon_fight', 'assets/tilemaps/moon_fight.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('earth_fight', 'assets/tilemaps/earth_fight.json', null, Phaser.Tilemap.TILED_JSON)

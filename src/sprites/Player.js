@@ -73,10 +73,7 @@ export default class extends Phaser.Sprite {
     const duration = 500
     const { explodeSound } = this.game.sound.repository
 
-    var x = this.x
-    var y = this.y
-
-    this.emitter = this.game.add.emitter(x, y, 4)
+    this.emitter = this.game.add.emitter(this.x, this.y, 4)
     this.emitter.makeParticles(['expl1', 'expl2'], 2)
     this.emitter.width = 24
     this.emitter.height = 24
@@ -89,12 +86,11 @@ export default class extends Phaser.Sprite {
 
     explodeSound.play()
 
-    var player = this
-    player.kill()
+    this.kill()
     this.game.deathCounter += 1
 
     setTimeout(() => {
-      player.reset(50, 256)
+      this.reset(50, 256)
     }, duration)
   }
 

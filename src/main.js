@@ -81,6 +81,42 @@ class Game extends Phaser.Game {
       completed(n)
     }, 80 * n)
   }
+
+  addTitle() {
+
+    var style = {
+      font: '35px Press Start 2P',
+      fill: '#F5DEB3',
+      backgroundColor: '#8B4513',
+      alpha: 0
+    }
+
+    this.title = this.add.text(0, -100, ' COBRA CALIBER 2 ', style)
+    this.title.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2)
+    this.title.strokeThickness = 5
+
+    this.title.y = 50
+    this.title.x = this.width / 2 - this.title.width / 2
+
+    style = {
+      font: '15px Press Start 2P',
+      fill: '#F5DEB3',
+      backgroundColor: '#8B4513'
+    }
+
+    this.subtitle = this.add.text(0, -100, ' THERE CAN ONLY BE ONE MORE ', style)
+    this.subtitle.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2)
+    this.subtitle.strokeThickness = 5
+
+    this.subtitle.y = this.title.y + 90
+    this.subtitle.x = this.width / 2 - this.subtitle.width / 2
+  }
+
 }
 
 window.game = new Game()
+
+
+
+
+

@@ -88,6 +88,7 @@ export default class extends Phaser.Sprite {
             this.player.controlsEnabled = false
             this.player.say("After you, there's only room for one...", () => {
               this.player.say("more!", () => {
+                this.game.addTitle()
                 this.movePlayerOffMap(() => {
                   this.game.nextState()
                 })
@@ -163,7 +164,7 @@ export default class extends Phaser.Sprite {
     this.player.scale.setTo(1, 1)
     this.player.body.collideWorldBounds = false
 
-    setTimeout(() => { completed() }, 1000)
+    setTimeout(() => { completed() }, 3000)
   }
 
 }
